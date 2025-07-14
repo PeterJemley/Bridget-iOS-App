@@ -155,4 +155,21 @@ let modelContainer = try ModelContainer(
 
 ---
 
+## 🆔 Use of Locally-Generated UUIDs in SwiftData Models
+
+All core SwiftData models (e.g., DrawbridgeEvent, DrawbridgeInfo) use locally-generated UUIDs as their primary keys. This approach provides:
+- Globally unique identification for each object, supporting robust relationship management and UI diffing.
+- Reliable primary keys for SwiftUI List/ForEach, drag-and-drop, and state management.
+- Support for offline object creation and later sync/merge with server data.
+- Simplified conflict resolution and traceability for analytics/debugging.
+- Enhanced privacy and security, as UUIDs are non-sequential and hard to guess.
+
+**Future Engineering Considerations:**
+- When implementing offline support or multi-device sync, leverage UUIDs for temporary IDs and reconciliation with server-side identifiers.
+- Use UUIDs for analytics, debugging, and crash reporting to trace specific objects.
+- Consider mapping server-provided IDs to local UUIDs for seamless integration.
+- Review UUID usage in all new models and features to ensure consistency and best practices.
+
+---
+
 *This technical architecture document provides the foundation for a robust, scalable, and maintainable Bridget app, supporting the proactive, stepwise rebuild plan.* 
