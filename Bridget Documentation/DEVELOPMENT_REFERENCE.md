@@ -103,3 +103,20 @@ gh pr create --fill --web
 ---
 
 *This development reference ensures all contributors have quick access to the workflow, commands, and structure needed for a proactive, stepwise rebuild of Bridget.* 
+
+---
+
+## ⚠️ SwiftData & Toolchain Note
+
+**SwiftData macros and features (e.g., @Model) require macOS 14+ and iOS 17+.**
+
+- Building in Xcode 16.4+ with iOS 17+ works as expected.
+- Building in the terminal (e.g., `swift build`) may fail if the Command Line Tools or an older toolchain is active, even if Xcode is installed.
+- If you see errors about missing SwiftData macros or plugins in the terminal, check your toolchain with `xcode-select -p` and switch to Xcode with:
+  ```sh
+  sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+  ```
+- For CI or scripts, ensure the environment matches your Xcode version and platform requirements.
+- When in doubt, use Xcode for all SwiftData development and testing.
+
+*This prevents confusion and ensures a smooth, proactive workflow for all contributors.* 
