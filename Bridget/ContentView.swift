@@ -6,56 +6,45 @@
 //
 
 import SwiftUI
-import SwiftData
+import BridgetCore
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        TabView {
+            BridgesListView()
+                .tabItem {
+                    Image(systemName: "bridge.fill")
+                    Text("Bridges")
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            
+            EventsListView()
+                .tabItem {
+                    Image(systemName: "clock.fill")
+                    Text("Events")
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            
+            TrafficFlowView()
+                .tabItem {
+                    Image(systemName: "car.fill")
+                    Text("Traffic")
                 }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+            
+            RoutesView()
+                .tabItem {
+                    Image(systemName: "map.fill")
+                    Text("Routes")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: [Item.self, DrawbridgeEvent.self, DrawbridgeInfo.self, TrafficFlow.self, Route.self], inMemory: true)
 }

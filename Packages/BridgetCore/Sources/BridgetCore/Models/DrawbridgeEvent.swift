@@ -7,6 +7,7 @@ public final class DrawbridgeEvent {
     public var entityID: String
     public var entityName: String
     public var entityType: String
+    @Relationship public var bridge: DrawbridgeInfo
     public var openDateTime: Date
     public var closeDateTime: Date?
     public var minutesOpen: Double
@@ -20,6 +21,7 @@ public final class DrawbridgeEvent {
         entityID: String,
         entityName: String,
         entityType: String,
+        bridge: DrawbridgeInfo,
         openDateTime: Date,
         closeDateTime: Date? = nil,
         minutesOpen: Double = 0.0,
@@ -30,6 +32,7 @@ public final class DrawbridgeEvent {
         self.entityID = entityID
         self.entityName = entityName
         self.entityType = entityType
+        self.bridge = bridge
         self.openDateTime = openDateTime
         self.closeDateTime = closeDateTime
         self.minutesOpen = minutesOpen

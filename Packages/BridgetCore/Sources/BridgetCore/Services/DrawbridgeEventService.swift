@@ -16,9 +16,9 @@ public final class DrawbridgeEventService {
     /// - Returns: Array of drawbridge events sorted by open date (newest first)
     public func fetchEvents(for entityID: String? = nil) async throws -> [DrawbridgeEvent] {
         do {
-            let descriptor = FetchDescriptor<DrawbridgeEvent>(
+            var descriptor = FetchDescriptor<DrawbridgeEvent>(
                 predicate: entityID != nil ? #Predicate<DrawbridgeEvent> { event in
-                    event.entityID == entityID
+                    event.entityID == entityID!
                 } : nil,
                 sortBy: [SortDescriptor(\.openDateTime, order: .reverse)]
             )
@@ -196,7 +196,7 @@ public final class DrawbridgeEventService {
                 "totalOpenings": totalOpenings,
                 "completedOpenings": completedEvents.count,
                 "averageDuration": averageDuration,
-                "lastOpening": events.first?.openDateTime
+                "lastOpening": events.first?.openDateTime as Any
             ]
         } catch {
             throw BridgetDataError.fetchFailed(error)

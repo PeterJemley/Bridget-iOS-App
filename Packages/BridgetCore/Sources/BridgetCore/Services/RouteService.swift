@@ -34,7 +34,7 @@ public final class RouteService {
     /// - Returns: The route if found, nil otherwise
     public func fetchRoute(id: UUID) async throws -> Route? {
         do {
-            let descriptor = FetchDescriptor<Route>(
+            var descriptor = FetchDescriptor<Route>(
                 predicate: #Predicate<Route> { route in
                     route.id == id
                 }
@@ -203,7 +203,7 @@ public final class RouteService {
                 "favoriteRoutes": favoriteRoutes.count,
                 "totalBridges": totalBridges,
                 "averageBridgesPerRoute": averageBridgesPerRoute,
-                "mostRecentRoute": allRoutes.first?.createdAt
+                "mostRecentRoute": allRoutes.first?.createdAt as Any
             ]
         } catch {
             throw BridgetDataError.fetchFailed(error)

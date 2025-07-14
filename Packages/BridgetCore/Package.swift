@@ -4,7 +4,8 @@ import PackageDescription
 let package = Package(
     name: "BridgetCore",
     platforms: [
-        .iOS("18.5")
+        .iOS("17.0"),
+        .macOS("14.0")
     ],
     products: [
         .library(

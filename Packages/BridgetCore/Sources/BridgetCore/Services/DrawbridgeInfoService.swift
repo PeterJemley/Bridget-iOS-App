@@ -30,7 +30,7 @@ public final class DrawbridgeInfoService {
     /// - Returns: The bridge information if found, nil otherwise
     public func fetchBridge(entityID: String) async throws -> DrawbridgeInfo? {
         do {
-            let descriptor = FetchDescriptor<DrawbridgeInfo>(
+            var descriptor = FetchDescriptor<DrawbridgeInfo>(
                 predicate: #Predicate<DrawbridgeInfo> { bridge in
                     bridge.entityID == entityID
                 }
@@ -244,7 +244,7 @@ public final class DrawbridgeInfoService {
                     "minLongitude": minLon,
                     "maxLongitude": maxLon
                 ],
-                "lastUpdated": allBridges.first?.updatedAt
+                "lastUpdated": allBridges.first?.updatedAt as Any
             ]
         } catch {
             throw BridgetDataError.fetchFailed(error)

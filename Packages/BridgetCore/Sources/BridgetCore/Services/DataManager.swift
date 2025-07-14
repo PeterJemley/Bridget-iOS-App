@@ -121,7 +121,7 @@ public final class DataManager {
             let affectedRoutes = try await routeService.getRoutesAffectedByBridgeOpening(bridgeID)
             
             return [
-                "bridgeInfo": bridgeInfo,
+                "bridgeInfo": bridgeInfo as Any,
                 "events": events,
                 "trafficStats": trafficStats,
                 "predictedCongestion": predictedCongestion,
@@ -195,8 +195,8 @@ public final class DataManager {
                         "id": event.id.uuidString,
                         "entityID": event.entityID,
                         "entityName": event.entityName,
-                        "openDateTime": event.openDateTime,
-                        "closeDateTime": event.closeDateTime,
+                        "openDateTime": event.openDateTime as Any,
+                        "closeDateTime": event.closeDateTime as Any,
                         "minutesOpen": event.minutesOpen,
                         "latitude": event.latitude,
                         "longitude": event.longitude

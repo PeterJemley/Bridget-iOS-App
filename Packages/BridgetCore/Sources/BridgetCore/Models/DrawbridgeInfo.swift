@@ -12,6 +12,8 @@ public final class DrawbridgeInfo {
     public var createdAt: Date
     public var updatedAt: Date
     
+    @Relationship(deleteRule: .cascade, inverse: \DrawbridgeEvent.bridge) public var events: [DrawbridgeEvent] = []
+    
     public init(
         id: UUID = UUID(),
         entityID: String,

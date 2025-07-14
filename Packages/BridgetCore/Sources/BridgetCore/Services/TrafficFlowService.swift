@@ -16,9 +16,9 @@ public final class TrafficFlowService {
     /// - Returns: Array of traffic flow data sorted by timestamp (newest first)
     public func fetchTrafficFlow(bridgeID: String? = nil) async throws -> [TrafficFlow] {
         do {
-            let descriptor = FetchDescriptor<TrafficFlow>(
+            var descriptor = FetchDescriptor<TrafficFlow>(
                 predicate: bridgeID != nil ? #Predicate<TrafficFlow> { flow in
-                    flow.bridgeID == bridgeID
+                    flow.bridgeID == bridgeID!
                 } : nil,
                 sortBy: [SortDescriptor(\.timestamp, order: .reverse)]
             )
@@ -65,7 +65,7 @@ public final class TrafficFlowService {
     /// - Returns: The most recent traffic flow data for the bridge
     public func fetchLatestTrafficFlow(for bridgeID: String) async throws -> TrafficFlow? {
         do {
-            let descriptor = FetchDescriptor<TrafficFlow>(
+            var descriptor = FetchDescriptor<TrafficFlow>(
                 predicate: #Predicate<TrafficFlow> { flow in
                     flow.bridgeID == bridgeID
                 },
@@ -221,7 +221,7 @@ public final class TrafficFlowService {
                 "averageVolume": averageVolume,
                 "averageCorrelation": averageCorrelation,
                 "highCongestionCount": highCongestionCount,
-                "lastRecord": flows.first?.timestamp
+                "lastRecord": flows.first?.timestamp as Any
             ]
         } catch {
             throw BridgetDataError.fetchFailed(error)
@@ -246,7 +246,7 @@ public final class TrafficFlowService {
                 "uniqueBridges": uniqueBridges,
                 "averageCongestion": averageCongestion,
                 "averageVolume": averageVolume,
-                "lastRecord": allFlows.first?.timestamp
+                "lastRecord": allFlows.first?.timestamp as Any
             ]
         } catch {
             throw BridgetDataError.fetchFailed(error)
