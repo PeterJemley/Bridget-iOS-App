@@ -135,12 +135,17 @@ public final class DrawbridgeInfoService {
     /// Save multiple bridge information records in a batch
     /// - Parameter bridges: Array of bridge information to save
     public func saveBridges(_ bridges: [DrawbridgeInfo]) async throws {
+        // Transactional block is preferred for atomicity, but if unavailable, fallback to single save after all inserts.
+        // If any error occurs, no partial save is committed (SwiftData will throw before committing changes).
+        // If transactional APIs become available, replace this with a transactional closure for true rollback.
         do {
             for bridge in bridges {
                 modelContext.insert(bridge)
             }
             try modelContext.save()
         } catch {
+            // At this point, if save fails, none of the bridges are persisted.
+            // Recovery: The caller should retry or report the error to the user.
             throw BridgetDataError.saveFailed(error)
         }
     }
@@ -202,15 +207,9 @@ public final class DrawbridgeInfoService {
     
     /// Delete all bridge information
     public func deleteAllBridges() async throws {
-        do {
-            let bridges = try await fetchAllBridges()
-            for bridge in bridges {
-                modelContext.delete(bridge)
-            }
-            try modelContext.save()
-        } catch {
-            throw BridgetDataError.deleteFailed(error)
-        }
+        // Use SwiftData batch delete for efficiency (see documentation)
+        try modelContext.delete(model: DrawbridgeInfo.self)
+        try modelContext.save()
     }
     
     // MARK: - Analytics Operations

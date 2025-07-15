@@ -150,6 +150,8 @@ struct AddRouteView: View {
         )
         
         modelContext.insert(route)
+        // Explicitly save after insert to ensure persistence (see documentation: SwiftUI context save semantics)
+        try? modelContext.save()
         dismiss()
     }
 }

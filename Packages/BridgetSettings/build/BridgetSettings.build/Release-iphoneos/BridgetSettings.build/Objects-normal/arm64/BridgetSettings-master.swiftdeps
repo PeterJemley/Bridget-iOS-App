@@ -1,0 +1,6 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "b8e7b991b68f775c79eb06ae07050337db45fec2f0a9b36519fb5e4f4f20f516"
+build_start_time: [1752587777, 311294000]
+build_end_time: [1752587777, 471363000]
+inputs:
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/Sources/BridgetSettings/BridgetSettings.swift": [1752452113, 377517920]

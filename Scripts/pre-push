@@ -1,0 +1,26 @@
+#!/bin/sh
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+fail() {
+  echo "${RED}❌ $1${NC}"
+  exit 1
+}
+
+echo "Checking for Swift or test file changes to determine if tests should run..."
+
+# Only run tests if there are Swift or test file changes staged for push
+if git diff --cached --name-only | grep -E '\.(swift|xctest)$'; then
+  echo "Swift or test files changed. Running full test suite..."
+  xcodebuild test -scheme Bridget -destination 'platform=iOS Simulator,name=iPhone 15 Pro' -quiet
+  if [ $? -ne 0 ]; then
+    fail "Tests failed. Please fix before pushing."
+  fi
+  echo "${GREEN}All tests passed!${NC}"
+else
+  echo "No Swift or test file changes detected. Skipping test suite."
+fi
+
+exit 0 

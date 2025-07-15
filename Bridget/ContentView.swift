@@ -13,7 +13,7 @@ struct ContentView: View {
         TabView {
             BridgesListView()
                 .tabItem {
-                    Image(systemName: "bridge.fill")
+                    Image(systemName: "puzzlepiece.fill")
                     Text("Bridges")
                 }
             

@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/Sources/BridgetBridgeDetail/BridgetBridgeDetail.swift" : {
+    "index-unit-output-path" : "/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail/build/BridgetBridgeDetail.build/Release-iphoneos/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.o"
+  }
+}

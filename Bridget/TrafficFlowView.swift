@@ -190,6 +190,8 @@ struct AddTrafficFlowView: View {
         )
         
         modelContext.insert(flow)
+        // Explicitly save after insert to ensure persistence (see documentation: SwiftUI context save semantics)
+        try? modelContext.save()
         dismiss()
     }
 }

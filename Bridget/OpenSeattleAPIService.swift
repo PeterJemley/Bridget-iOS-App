@@ -1,6 +1,7 @@
 import Foundation
 import BridgetCore
 import SwiftData
+import SwiftUI
 
 private struct DrawbridgeEventResponse: Codable {
     let entityid: String?
@@ -28,96 +29,88 @@ class OpenSeattleAPIService: ObservableObject {
     }()
     
     // MARK: - Event & Bridge Data Fetching (Batch)
+    /// Refactored: All async network fetches are performed before entering the transaction block.
+    /// Accumulate all DrawbridgeEventResponse objects first, then perform a single transaction for all SwiftData mutations (deletes/inserts/updates).
+    /// Rationale: SwiftData's transaction block is synchronous and must not contain any await calls. See technical documentation for details.
     func fetchAndStoreAllData(modelContext: ModelContext) async throws {
         isLoading = true
         defer { isLoading = false }
-        var allResponses: [DrawbridgeEventResponse] = []
         var offset = 0
-        var retryCount = 0
-        
-        // Batch fetch all event rows
+        var allResponses: [DrawbridgeEventResponse] = []
+        // 1. Fetch all batches from the network (async)
         while true {
-            do {
-                let batch = try await fetchBatch(offset: offset, limit: batchSize)
-                if batch.isEmpty { break }
-                allResponses.append(contentsOf: batch)
-                if batch.count < batchSize { break }
-                offset += batchSize
-                retryCount = 0
-            } catch {
-                retryCount += 1
-                if retryCount >= maxRetries { throw error }
-                try await Task.sleep(nanoseconds: UInt64(pow(2.0, Double(retryCount))) * 1_000_000_000)
-            }
+            let batch = try await fetchBatch(offset: offset, limit: batchSize)
+            if batch.isEmpty { break }
+            allResponses.append(contentsOf: batch)
+            if batch.count < batchSize { break }
+            offset += batchSize
         }
-        lastFetchDate = Date()
-        
-        // Deduplicate bridges by entityID
-        var bridgeMap: [String: DrawbridgeInfo] = [:]
-        for response in allResponses {
-            guard let entityID = response.entityid,
-                  let entityName = response.entityname,
-                  let entityType = response.entitytype,
-                  let latitudeString = response.latitude,
-                  let latitude = Double(latitudeString),
-                  let longitudeString = response.longitude,
-                  let longitude = Double(longitudeString) else { continue }
-            if bridgeMap[entityID] == nil {
-                // Try to fetch existing bridge from context
-                let fetchDescriptor = FetchDescriptor<DrawbridgeInfo>(predicate: #Predicate { $0.entityID == entityID })
-                let existing = try? modelContext.fetch(fetchDescriptor).first
-                let bridge = existing ?? DrawbridgeInfo(
+        // 2. Perform all SwiftData mutations in a single transaction (sync)
+        try modelContext.transaction {
+            // Remove all existing events before import using SwiftData batch delete for efficiency
+            try modelContext.delete(model: DrawbridgeEvent.self)
+            var bridgeMap: [String: DrawbridgeInfo] = [:]
+            // Deduplicate and insert/update bridges for all responses
+            for response in allResponses {
+                guard let entityID = response.entityid,
+                      let entityName = response.entityname,
+                      let entityType = response.entitytype,
+                      let latitudeString = response.latitude,
+                      let latitude = Double(latitudeString),
+                      let longitudeString = response.longitude,
+                      let longitude = Double(longitudeString) else { continue }
+                if bridgeMap[entityID] == nil {
+                    let fetchDescriptor = FetchDescriptor<DrawbridgeInfo>(predicate: #Predicate { $0.entityID == entityID })
+                    let existing = try? modelContext.fetch(fetchDescriptor).first
+                    let bridge = existing ?? DrawbridgeInfo(
+                        entityID: entityID,
+                        entityName: entityName,
+                        entityType: entityType,
+                        latitude: latitude,
+                        longitude: longitude
+                    )
+                    bridge.entityName = entityName
+                    bridge.entityType = entityType
+                    bridge.latitude = latitude
+                    bridge.longitude = longitude
+                    bridge.updatedAt = Date()
+                    if existing == nil { modelContext.insert(bridge) }
+                    bridgeMap[entityID] = bridge
+                }
+            }
+            // Insert new events for all responses
+            for response in allResponses {
+                guard let entityID = response.entityid,
+                      let entityName = response.entityname,
+                      let entityType = response.entitytype,
+                      let bridge = bridgeMap[entityID],
+                      let openDateTimeString = response.opendatetime,
+                      let openDateTime = parseDate(openDateTimeString),
+                      let latitudeString = response.latitude,
+                      let latitude = Double(latitudeString),
+                      let longitudeString = response.longitude,
+                      let longitude = Double(longitudeString) else { continue }
+                let closeDateTime = response.closedatetime.flatMap { parseDate($0) }
+                let minutesOpen: Double = {
+                    if let m = response.minutesopen, let val = Double(m) { return val }
+                    if let close = closeDateTime { return close.timeIntervalSince(openDateTime) / 60.0 }
+                    return 0.0
+                }()
+                let event = DrawbridgeEvent(
                     entityID: entityID,
                     entityName: entityName,
                     entityType: entityType,
+                    bridge: bridge,
+                    openDateTime: openDateTime,
+                    closeDateTime: closeDateTime,
+                    minutesOpen: minutesOpen,
                     latitude: latitude,
                     longitude: longitude
                 )
-                // Update name/type/coords in case they changed
-                bridge.entityName = entityName
-                bridge.entityType = entityType
-                bridge.latitude = latitude
-                bridge.longitude = longitude
-                bridge.updatedAt = Date()
-                if existing == nil { modelContext.insert(bridge) }
-                bridgeMap[entityID] = bridge
+                modelContext.insert(event)
             }
+            lastFetchDate = Date()
         }
-        // Remove all existing events
-        let existingEvents = try modelContext.fetch(FetchDescriptor<DrawbridgeEvent>())
-        for event in existingEvents { modelContext.delete(event) }
-        // Insert new events, linking to bridges
-        for response in allResponses {
-            guard let entityID = response.entityid,
-                  let entityName = response.entityname,
-                  let entityType = response.entitytype,
-                  let bridge = bridgeMap[entityID],
-                  let openDateTimeString = response.opendatetime,
-                  let openDateTime = parseDate(openDateTimeString),
-                  let latitudeString = response.latitude,
-                  let latitude = Double(latitudeString),
-                  let longitudeString = response.longitude,
-                  let longitude = Double(longitudeString) else { continue }
-            let closeDateTime = response.closedatetime.flatMap { parseDate($0) }
-            let minutesOpen: Double = {
-                if let m = response.minutesopen, let val = Double(m) { return val }
-                if let close = closeDateTime { return close.timeIntervalSince(openDateTime) / 60.0 }
-                return 0.0
-            }()
-            let event = DrawbridgeEvent(
-                entityID: entityID,
-                entityName: entityName,
-                entityType: entityType,
-                bridge: bridge,
-                openDateTime: openDateTime,
-                closeDateTime: closeDateTime,
-                minutesOpen: minutesOpen,
-                latitude: latitude,
-                longitude: longitude
-            )
-            modelContext.insert(event)
-        }
-        try modelContext.save()
     }
     
     private func fetchBatch(offset: Int, limit: Int) async throws -> [DrawbridgeEventResponse] {

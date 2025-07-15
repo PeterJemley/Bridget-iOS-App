@@ -1,0 +1,6 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "f54136887368fb334cffb12805b22dfdafae2b3c8f1c9ba4779b41e41641e452"
+build_start_time: [1752587777, 312661000]
+build_end_time: [1752587777, 491482000]
+inputs:
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/Sources/BridgetRouting/BridgetRouting.swift": [1752452106, 629453082]

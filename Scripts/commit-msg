@@ -1,0 +1,19 @@
+#!/bin/sh
+
+RED='\033[0;31m'
+NC='\033[0m'
+
+commit_msg=$(cat "$1")
+
+# Only check the first line (subject)
+subject=$(echo "$commit_msg" | head -n1)
+
+regex='^(feat|fix|docs|style|refactor|test|chore)(\([a-zA-Z0-9_-]+\))?: .+'
+
+if ! echo "$subject" | grep -qE "$regex"; then
+  echo "${RED}❌ Commit message does not follow Conventional Commits format.${NC}"
+  echo "Example: 'feat(ui): add new button'"
+  exit 1
+fi
+
+exit 0 

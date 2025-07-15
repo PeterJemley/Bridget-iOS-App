@@ -93,12 +93,17 @@ public final class DrawbridgeEventService {
     /// Save multiple drawbridge events in a batch
     /// - Parameter events: Array of drawbridge events to save
     public func saveEvents(_ events: [DrawbridgeEvent]) async throws {
+        // Transactional block is preferred for atomicity, but if unavailable, fallback to single save after all inserts.
+        // If any error occurs, no partial save is committed (SwiftData will throw before committing changes).
+        // If transactional APIs become available, replace this with a transactional closure for true rollback.
         do {
             for event in events {
                 modelContext.insert(event)
             }
             try modelContext.save()
         } catch {
+            // At this point, if save fails, none of the events are persisted.
+            // Recovery: The caller should retry or report the error to the user.
             throw BridgetDataError.saveFailed(error)
         }
     }
@@ -147,35 +152,17 @@ public final class DrawbridgeEventService {
     /// Delete all events for a specific bridge
     /// - Parameter entityID: The bridge ID to delete events for
     public func deleteEvents(for entityID: String) async throws {
-        do {
-            let events = try await fetchEvents(for: entityID)
-            for event in events {
-                modelContext.delete(event)
-            }
-            try modelContext.save()
-        } catch {
-            throw BridgetDataError.deleteFailed(error)
-        }
+        // Use SwiftData batch delete for efficiency (see documentation)
+        try modelContext.delete(model: DrawbridgeEvent.self, where: #Predicate { $0.entityID == entityID })
+        try modelContext.save()
     }
     
     /// Delete events older than a specified date
     /// - Parameter date: Events older than this date will be deleted
     public func deleteEventsOlderThan(_ date: Date) async throws {
-        do {
-            let descriptor = FetchDescriptor<DrawbridgeEvent>(
-                predicate: #Predicate<DrawbridgeEvent> { event in
-                    event.openDateTime < date
-                }
-            )
-            
-            let events = try modelContext.fetch(descriptor)
-            for event in events {
-                modelContext.delete(event)
-            }
-            try modelContext.save()
-        } catch {
-            throw BridgetDataError.deleteFailed(error)
-        }
+        // Use SwiftData batch delete for efficiency (see documentation)
+        try modelContext.delete(model: DrawbridgeEvent.self, where: #Predicate { $0.openDateTime < date })
+        try modelContext.save()
     }
     
     // MARK: - Analytics Operations

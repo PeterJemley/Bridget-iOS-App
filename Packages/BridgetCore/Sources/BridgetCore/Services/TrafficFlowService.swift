@@ -114,12 +114,17 @@ public final class TrafficFlowService {
     /// Save multiple traffic flow records in a batch
     /// - Parameter trafficFlows: Array of traffic flow data to save
     public func saveTrafficFlows(_ trafficFlows: [TrafficFlow]) async throws {
+        // Transactional block is preferred for atomicity, but if unavailable, fallback to single save after all inserts.
+        // If any error occurs, no partial save is committed (SwiftData will throw before committing changes).
+        // If transactional APIs become available, replace this with a transactional closure for true rollback.
         do {
             for flow in trafficFlows {
                 modelContext.insert(flow)
             }
             try modelContext.save()
         } catch {
+            // At this point, if save fails, none of the flows are persisted.
+            // Recovery: The caller should retry or report the error to the user.
             throw BridgetDataError.saveFailed(error)
         }
     }
@@ -165,35 +170,17 @@ public final class TrafficFlowService {
     /// Delete all traffic flow data for a specific bridge
     /// - Parameter bridgeID: The bridge ID to delete traffic data for
     public func deleteTrafficFlow(for bridgeID: String) async throws {
-        do {
-            let flows = try await fetchTrafficFlow(bridgeID: bridgeID)
-            for flow in flows {
-                modelContext.delete(flow)
-            }
-            try modelContext.save()
-        } catch {
-            throw BridgetDataError.deleteFailed(error)
-        }
+        // Use SwiftData batch delete for efficiency (see documentation)
+        try modelContext.delete(model: TrafficFlow.self, where: #Predicate { $0.bridgeID == bridgeID })
+        try modelContext.save()
     }
     
     /// Delete traffic flow data older than a specified date
     /// - Parameter date: Traffic data older than this date will be deleted
     public func deleteTrafficFlowOlderThan(_ date: Date) async throws {
-        do {
-            let descriptor = FetchDescriptor<TrafficFlow>(
-                predicate: #Predicate<TrafficFlow> { flow in
-                    flow.timestamp < date
-                }
-            )
-            
-            let flows = try modelContext.fetch(descriptor)
-            for flow in flows {
-                modelContext.delete(flow)
-            }
-            try modelContext.save()
-        } catch {
-            throw BridgetDataError.deleteFailed(error)
-        }
+        // Use SwiftData batch delete for efficiency (see documentation)
+        try modelContext.delete(model: TrafficFlow.self, where: #Predicate { $0.timestamp < date })
+        try modelContext.save()
     }
     
     // MARK: - Analytics Operations

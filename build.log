@@ -1,30 +1,20 @@
 Command line invocation:
-    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild clean build -project Bridget.xcodeproj -scheme Bridget -destination "platform=iOS Simulator,name=iPhone 16 Pro"
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme Bridget -destination "platform=iOS Simulator,name=iPhone 16 Pro"
 
 Resolve Package Graph
 
 
 Resolved source packages:
-  BridgetSettings: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings @ local
+  BridgetDashboard: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard @ local
+  BridgetNetworking: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking @ local
   BridgetSharedUI: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI @ local
+  BridgetBridgesList: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList @ local
   BridgetHistory: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory @ local
   BridgetStatistics: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics @ local
   BridgetRouting: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting @ local
-  BridgetDashboard: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard @ local
-  BridgetNetworking: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking @ local
   BridgetBridgeDetail: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail @ local
-  BridgetBridgesList: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList @ local
+  BridgetSettings: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings @ local
   BridgetCore: /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore @ local
-
-ComputePackagePrebuildTargetDependencyGraph
-
-CreateBuildRequest
-
-SendProjectDescription
-
-CreateBuildOperation
-
-** CLEAN SUCCEEDED **
 
 ComputePackagePrebuildTargetDependencyGraph
 
@@ -127,403 +117,15 @@ ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --
 
 ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
 
-Build description signature: 034c663d2ef364964c763d748b8a29e0
-Build description path: /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/XCBuildData/034c663d2ef364964c763d748b8a29e0.xcbuilddata
+Build description signature: d66d16a6a6c53611d85bbf2ed9c5ef57
+Build description path: /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/XCBuildData/d66d16a6a6c53611d85bbf2ed9c5ef57.xcbuilddata
 ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk /Users/peterjemley/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache
     cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
     /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -o /Users/peterjemley/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache
 
-CreateBuildDirectory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    builtin-create-build-directory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products
-
-CreateBuildDirectory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    builtin-create-build-directory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex
-
-CreateBuildDirectory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    builtin-create-build-directory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator
-
-CreateBuildDirectory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    builtin-create-build-directory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget-8db4b7ce324d0ccb8b542e85f60fec93-VFS-iphonesimulator/all-product-headers.yaml
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget-8db4b7ce324d0ccb8b542e85f60fec93-VFS-iphonesimulator/all-product-headers.yaml
-
-CreateBuildDirectory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    builtin-create-build-directory /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.modulemap (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.modulemap (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.DependencyMetadataFileList (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.DependencyStaticMetadataFileList (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.DependencyStaticMetadataFileList (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.LinkFileList (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI_const_extract_protocols.json (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI-OutputFileMap.json (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.SwiftFileList (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.SwiftConstValuesFileList (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics_const_extract_protocols.json (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.SwiftConstValuesFileList (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.SwiftFileList (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.LinkFileList (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-OutputFileMap.json (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.DependencyMetadataFileList (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.DependencyMetadataFileList
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetStatistics.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.modulemap (in target 'BridgetStatistics' from project 'BridgetStatistics')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetStatistics.build/Debug-iphonesimulator/BridgetStatistics.build/BridgetStatistics.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings_const_extract_protocols.json (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings_const_extract_protocols.json
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetSharedUI.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.modulemap (in target 'BridgetSharedUI' from project 'BridgetSharedUI')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSharedUI.build/Debug-iphonesimulator/BridgetSharedUI.build/BridgetSharedUI.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.SwiftFileList (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.SwiftConstValuesFileList (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.LinkFileList (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-OutputFileMap.json (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.modulemap (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.DependencyStaticMetadataFileList (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.DependencyMetadataFileList (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting-OutputFileMap.json (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.LinkFileList (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting_const_extract_protocols.json (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.SwiftConstValuesFileList (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.SwiftFileList (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.modulemap (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.DependencyStaticMetadataFileList (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.DependencyMetadataFileList (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.SwiftFileList (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking_const_extract_protocols.json (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking_const_extract_protocols.json
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetSettings.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.modulemap (in target 'BridgetSettings' from project 'BridgetSettings')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetSettings.build/Debug-iphonesimulator/BridgetSettings.build/BridgetSettings.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.LinkFileList (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.SwiftConstValuesFileList (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-OutputFileMap.json (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.modulemap (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.DependencyStaticMetadataFileList (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.DependencyMetadataFileList (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory_const_extract_protocols.json (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.LinkFileList (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.SwiftFileList (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.SwiftConstValuesFileList (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.SwiftConstValuesFileList
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetRouting.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.modulemap (in target 'BridgetRouting' from project 'BridgetRouting')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetRouting.build/Debug-iphonesimulator/BridgetRouting.build/BridgetRouting.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-OutputFileMap.json (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.modulemap (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.DependencyStaticMetadataFileList (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.DependencyMetadataFileList (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard_const_extract_protocols.json (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.SwiftFileList (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.SwiftConstValuesFileList (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.LinkFileList (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.LinkFileList
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetNetworking.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.modulemap (in target 'BridgetNetworking' from project 'BridgetNetworking')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetNetworking.build/Debug-iphonesimulator/BridgetNetworking.build/BridgetNetworking.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-OutputFileMap.json (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.modulemap (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.DependencyStaticMetadataFileList (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.DependencyMetadataFileList (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore_const_extract_protocols.json (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.SwiftFileList (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.SwiftConstValuesFileList (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.SwiftConstValuesFileList
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetHistory.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.modulemap (in target 'BridgetHistory' from project 'BridgetHistory')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetHistory.build/Debug-iphonesimulator/BridgetHistory.build/BridgetHistory.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.LinkFileList (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-OutputFileMap.json (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.modulemap (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.DependencyStaticMetadataFileList (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.DependencyMetadataFileList (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList_const_extract_protocols.json (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.SwiftFileList (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.SwiftConstValuesFileList (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.SwiftConstValuesFileList
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetDashboard.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.modulemap (in target 'BridgetDashboard' from project 'BridgetDashboard')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetDashboard.build/Debug-iphonesimulator/BridgetDashboard.build/BridgetDashboard.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.LinkFileList (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.LinkFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-OutputFileMap.json (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.modulemap (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.DependencyStaticMetadataFileList (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.DependencyMetadataFileList (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail_const_extract_protocols.json (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail_const_extract_protocols.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.SwiftFileList (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.SwiftFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.SwiftConstValuesFileList (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.LinkFileList (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.LinkFileList
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetCore.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.modulemap (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/BridgetCore.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-OutputFileMap.json (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail-OutputFileMap.json
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.modulemap (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.modulemap
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.DependencyStaticMetadataFileList (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.DependencyMetadataFileList (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/empty-Bridget.plist (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/empty-Bridget.plist
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget_const_extract_protocols.json (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget_const_extract_protocols.json
-
 WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget.SwiftFileList (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
     write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget.SwiftFileList
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetBridgesList.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.modulemap (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
 
 WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget.SwiftConstValuesFileList (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
@@ -533,156 +135,143 @@ WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridge
     cd /Users/peterjemley/Documents/Developer/Bridget
     write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget.LinkFileList
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-OutputFileMap.json (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-OutputFileMap.json
+RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetStatistics.o (in target 'BridgetStatistics' from project 'BridgetStatistics')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics
+    builtin-RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetStatistics.o
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources/Entitlements-Simulated.plist (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources/Entitlements-Simulated.plist
+RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetRouting.o (in target 'BridgetRouting' from project 'BridgetRouting')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting
+    builtin-RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetRouting.o
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.hmap (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.hmap
+RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetSettings.o (in target 'BridgetSettings' from project 'BridgetSettings')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings
+    builtin-RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetSettings.o
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.DependencyStaticMetadataFileList (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.DependencyStaticMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.DependencyMetadataFileList (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.DependencyMetadataFileList
-
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-project-headers.hmap (in target 'Bridget' from project 'Bridget')
-    cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-project-headers.hmap
-
-Copy /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/BridgetBridgeDetail.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.modulemap (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
+ExtractAppIntentsMetadata (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
     cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.modulemap /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name BridgetBridgeDetail --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 18.5 --bundle-identifier bridgetbridgedetail.BridgetBridgeDetail --output /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgeDetail.appintents --target-triple arm64-apple-ios18.5-simulator --binary-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgeDetail.o --dependency-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail_dependency_info.dat --stringsdata-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.SwiftFileList --metadata-file-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.DependencyMetadataFileList --static-metadata-file-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/BridgetBridgeDetail.DependencyStaticMetadataFileList --swift-const-vals-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgeDetail.build/Debug-iphonesimulator/BridgetBridgeDetail.build/Objects-normal/arm64/BridgetBridgeDetail.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2025-07-15 11:24:02.663 appintentsmetadataprocessor[7920:150640] Starting appintentsmetadataprocessor export
+2025-07-15 11:24:02.690 appintentsmetadataprocessor[7920:150640] Extracted no relevant App Intents symbols, skipping writing output
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-own-target-headers.hmap (in target 'Bridget' from project 'Bridget')
+ExtractAppIntentsMetadata (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name BridgetBridgesList --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 18.5 --bundle-identifier bridgetbridgeslist.BridgetBridgesList --output /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgesList.appintents --target-triple arm64-apple-ios18.5-simulator --binary-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgesList.o --dependency-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList_dependency_info.dat --stringsdata-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.SwiftFileList --metadata-file-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.DependencyMetadataFileList --static-metadata-file-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/BridgetBridgesList.DependencyStaticMetadataFileList --swift-const-vals-list /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetBridgesList.build/Debug-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2025-07-15 11:24:02.663 appintentsmetadataprocessor[7921:150641] Starting appintentsmetadataprocessor export
+2025-07-15 11:24:02.690 appintentsmetadataprocessor[7921:150641] Extracted no relevant App Intents symbols, skipping writing output
+
+RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetHistory.o (in target 'BridgetHistory' from project 'BridgetHistory')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory
+    builtin-RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetHistory.o
+
+RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetDashboard.o (in target 'BridgetDashboard' from project 'BridgetDashboard')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard
+    builtin-RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetDashboard.o
+
+ProcessProductPackaging "" /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-own-target-headers.hmap
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "A826T32EQ3.com.peterjemley.Bridget";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-generated-files.hmap (in target 'Bridget' from project 'Bridget')
+ProcessProductPackagingDER /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent.der (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-generated-files.hmap
+    /usr/bin/derq query -f xml -i /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent -o /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent.der --raw
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-all-target-headers.hmap (in target 'Bridget' from project 'Bridget')
+SwiftDriver Bridget normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-all-target-headers.hmap
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Bridget -Onone -enforce-exclusivity\=checked @/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target arm64-apple-ios18.5-simulator -g -module-cache-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Index.noindex/DataStore -swift-version 5 -I /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64 -c -j16 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget_const_extract_protocols.json -Xcc -iquote -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-generated-files.hmap -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-own-target-headers.hmap -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget-8db4b7ce324d0ccb8b542e85f60fec93-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-project-headers.hmap -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources-normal/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-Swift.h -working-directory /Users/peterjemley/Documents/Developer/Bridget -experimental-emit-module-separately -disable-cmo
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-all-non-framework-target-headers.hmap (in target 'Bridget' from project 'Bridget')
+RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgesList.o (in target 'BridgetBridgesList' from project 'BridgetBridgesList')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList
+    builtin-RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgesList.o
+
+RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgeDetail.o (in target 'BridgetBridgeDetail' from project 'BridgetBridgeDetail')
+    cd /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail
+    builtin-RegisterExecutionPolicyException /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/BridgetBridgeDetail.o
+
+Ld /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/Bridget.app/__preview.dylib normal (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-all-non-framework-target-headers.hmap
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.5-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -O0 -L/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -install_name @rpath/Bridget.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget.app-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/Bridget.app/__preview.dylib
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-DebugDylibPath-normal-arm64.txt (in target 'Bridget' from project 'Bridget')
+ProcessInfoPlistFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/Bridget.app/Info.plist /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/empty-Bridget.plist (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-DebugDylibPath-normal-arm64.txt
+    builtin-infoPlistUtility /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/empty-Bridget.plist -producttype com.apple.product-type.application -genpkginfo /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/Bridget.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/assetcatalog_generated_info.plist -o /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/Bridget.app/Info.plist
 
-WriteAuxiliaryFile /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-DebugDylibInstallName-normal-arm64.txt (in target 'Bridget' from project 'Bridget')
+SwiftCompile normal arm64 Compiling\ BridgesListView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgesListView.swift (in target 'Bridget' from project 'Bridget')
+
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgesListView.swift (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
-    write-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-DebugDylibInstallName-normal-arm64.txt
+    
 
-MkDir /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/Bridget.app (in target 'Bridget' from project 'Bridget')
+SwiftCompile normal arm64 Compiling\ ContentView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/ContentView.swift (in target 'Bridget' from project 'Bridget')
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/ContentView.swift (in target 'Bridget' from project 'Bridget')
     cd /Users/peterjemley/Documents/Developer/Bridget
-    /bin/mkdir -p /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/Bridget.app
-
-SwiftDriver BridgetCore normal arm64 com.apple.xcode.tools.swift.compiler (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name BridgetCore -Onone -enforce-exclusivity\=checked @/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -suppress-warnings -index-store-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Index.noindex/DataStore -swift-version 6 -I /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/Developer/Library/Frameworks -c -j16 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name bridgetcore -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore_const_extract_protocols.json -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/DerivedSources-normal/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/DerivedSources/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-Swift.h -working-directory /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj -experimental-emit-module-separately -disable-cmo
-
-SwiftCompile normal arm64 Compiling\ BridgetCore.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/BridgetCore.swift (in target 'BridgetCore' from project 'BridgetCore')
-
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/BridgetCore.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
     
 
-SwiftCompile normal arm64 Compiling\ BridgetDataError.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Errors/BridgetDataError.swift (in target 'BridgetCore' from project 'BridgetCore')
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Errors/BridgetDataError.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
+SwiftCompile normal arm64 Compiling\ BridgetApp.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgetApp.swift (in target 'Bridget' from project 'Bridget')
+
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgetApp.swift (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
     
 
-SwiftCompile normal arm64 Compiling\ DrawbridgeEvent.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeEvent.swift (in target 'BridgetCore' from project 'BridgetCore')
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeEvent.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
+SwiftCompile normal arm64 Compiling\ EventsListView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/EventsListView.swift (in target 'Bridget' from project 'Bridget')
+
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/EventsListView.swift (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
     
 
-SwiftCompile normal arm64 Compiling\ TrafficFlow.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/TrafficFlow.swift (in target 'BridgetCore' from project 'BridgetCore')
+SwiftCompile normal arm64 Compiling\ RoutesView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/RoutesView.swift (in target 'Bridget' from project 'Bridget')
 
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/TrafficFlow.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/RoutesView.swift (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
     
 
-SwiftCompile normal arm64 Compiling\ DrawbridgeInfo.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeInfo.swift (in target 'BridgetCore' from project 'BridgetCore')
+SwiftCompile normal arm64 Compiling\ TrafficFlowView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/TrafficFlowView.swift (in target 'Bridget' from project 'Bridget')
 
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeInfo.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/TrafficFlowView.swift (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
     
 
-SwiftCompile normal arm64 Compiling\ DrawbridgeEventService.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeEventService.swift (in target 'BridgetCore' from project 'BridgetCore')
+SwiftCompile normal arm64 Compiling\ Item.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/Item.swift (in target 'Bridget' from project 'Bridget')
 
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeEventService.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/Item.swift (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
     
 
-SwiftCompile normal arm64 Compiling\ DrawbridgeInfoService.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeInfoService.swift (in target 'BridgetCore' from project 'BridgetCore')
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Bridget (in target 'Bridget' from project 'Bridget')
 
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeInfoService.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
+EmitSwiftModule normal arm64 (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
     
 
-SwiftEmitModule normal arm64 Emitting\ module\ for\ BridgetCore (in target 'BridgetCore' from project 'BridgetCore')
-EmitSwiftModule normal arm64 (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    
-
-SwiftCompile normal arm64 Compiling\ Route.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/Route.swift (in target 'BridgetCore' from project 'BridgetCore')
-
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/Route.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    
-
-SwiftCompile normal arm64 Compiling\ TrafficFlowService.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/TrafficFlowService.swift (in target 'BridgetCore' from project 'BridgetCore')
-
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/TrafficFlowService.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    
-
-SwiftCompile normal arm64 Compiling\ RouteService.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/RouteService.swift (in target 'BridgetCore' from project 'BridgetCore')
-
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/RouteService.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
-    
-
-SwiftCompile normal arm64 Compiling\ DataManager.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift (in target 'BridgetCore' from project 'BridgetCore')
+SwiftCompile normal arm64 Compiling\ OpenSeattleAPIService.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/OpenSeattleAPIService.swift (in target 'Bridget' from project 'Bridget')
 Failed frontend command:
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/BridgetCore.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Errors/BridgetDataError.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeEvent.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeInfo.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/Route.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/TrafficFlow.swift -primary-file /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeEventService.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeInfoService.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/RouteService.swift /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/TrafficFlowService.swift -emit-dependencies-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.d -emit-const-values-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.swiftconstvalues -emit-reference-dependencies-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.swiftdeps -serialize-diagnostics-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.dia -target arm64-apple-ios17.0-simulator -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -I /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/Developer/Library/Frameworks -no-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -suppress-warnings -profile-generate -profile-coverage-mapping -swift-version 6 -enforce-exclusivity\=checked -Onone -D SWIFT_PACKAGE -D DEBUG -D Xcode -serialize-debugging-options -const-gather-protocols-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -empty-abi-descriptor -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -validate-clang-modules-once -clang-build-session-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -enable-anonymous-context-mangled-names -file-compilation-dir /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj -Xcc -ivfsstatcache -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/swift-overrides.hmap -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/DerivedSources-normal/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/DerivedSources/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -module-name BridgetCore -package-name bridgetcore -frontend-parseable-output -disable-clang-spi -target-sdk-version 18.5 -target-sdk-name iphonesimulator18.5 -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -o /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.o -index-unit-output-path /BridgetCore.build/Debug-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.o -index-store-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Index.noindex/DataStore -index-system-modules
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/peterjemley/Documents/Developer/Bridget/Bridget/RoutesView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/SettingsView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/SharedModelSchema.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/TrafficFlowView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgesListView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgetApp.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/APIDTOs.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/ContentView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/EventsListView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/Item.swift -primary-file /Users/peterjemley/Documents/Developer/Bridget/Bridget/OpenSeattleAPIService.swift /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources/GeneratedAssetSymbols.swift -emit-dependencies-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.d -emit-const-values-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.swiftconstvalues -emit-reference-dependencies-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.swiftdeps -serialize-diagnostics-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.dia -emit-localized-strings -emit-localized-strings-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64 -target arm64-apple-ios18.5-simulator -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -I /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator -no-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=5 -module-cache-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -profile-generate -profile-coverage-mapping -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/peterjemley/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/peterjemley/Documents/Developer/Bridget -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -enable-anonymous-context-mangled-names -file-compilation-dir /Users/peterjemley/Documents/Developer/Bridget -Xcc -ivfsstatcache -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-generated-files.hmap -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-own-target-headers.hmap -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget-8db4b7ce324d0ccb8b542e85f60fec93-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Bridget-project-headers.hmap -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources-normal/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources/arm64 -Xcc -I/Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/DerivedSources -Xcc -DDEBUG\=1 -module-name Bridget -frontend-parseable-output -disable-clang-spi -target-sdk-version 18.5 -target-sdk-name iphonesimulator18.5 -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -o /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Build/Intermediates.noindex/Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.o -index-unit-output-path /Bridget.build/Debug-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.o -index-store-path /Users/peterjemley/Library/Developer/Xcode/DerivedData/Bridget-avftoqyhbqkugxekjoistukcuxwh/Index.noindex/DataStore -index-system-modules
 
-SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift (in target 'BridgetCore' from project 'BridgetCore')
-    cd /Users/peterjemley/Documents/Developer/Bridget/Bridget.xcodeproj
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/OpenSeattleAPIService.swift (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
     
-/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift:149:46: error: value of type 'DrawbridgeEvent' has no member 'entityID'
-                if !bridgeIDs.contains(event.entityID) {
-                                       ~~~~~ ^~~~~~~~
-/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift:150:80: error: value of type 'DrawbridgeEvent' has no member 'entityID'
-                    issues.append("Orphaned event found for bridge ID: \(event.entityID)")
-                                                                         ~~~~~ ^~~~~~~~
-/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift:196:43: error: value of type 'DrawbridgeEvent' has no member 'entityID'
-                        "entityID": event.entityID,
-                                    ~~~~~ ^~~~~~~~
-/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift:197:45: error: value of type 'DrawbridgeEvent' has no member 'entityName'
-                        "entityName": event.entityName,
-                                      ~~~~~ ^~~~~~~~~~
-/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift:201:43: error: value of type 'DrawbridgeEvent' has no member 'latitude'
-                        "latitude": event.latitude,
-                                    ~~~~~ ^~~~~~~~
-/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift:202:44: error: value of type 'DrawbridgeEvent' has no member 'longitude'
-                        "longitude": event.longitude
-                                     ~~~~~ ^~~~~~~~~
+/Users/peterjemley/Documents/Developer/Bridget/Bridget/OpenSeattleAPIService.swift:41:38: error: cannot pass function of type '() async throws -> Void' to parameter expecting synchronous function type
+        try modelContext.transaction {
+                                     ^
+/Users/peterjemley/Documents/Developer/Bridget/Bridget/OpenSeattleAPIService.swift:47:33: note: 'async' inferred from asynchronous operation used here
+                let batch = try await fetchBatch(offset: offset, limit: batchSize)
+                                ^
 
-SwiftDriverJobDiscovery normal arm64 Compiling BridgetCore.swift (in target 'BridgetCore' from project 'BridgetCore')
+SwiftCompile normal arm64 Compiling\ SettingsView.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/SettingsView.swift (in target 'Bridget' from project 'Bridget')
 
-SwiftDriverJobDiscovery normal arm64 Compiling BridgetDataError.swift (in target 'BridgetCore' from project 'BridgetCore')
+SwiftCompile normal arm64 /Users/peterjemley/Documents/Developer/Bridget/Bridget/SettingsView.swift (in target 'Bridget' from project 'Bridget')
+    cd /Users/peterjemley/Documents/Developer/Bridget
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Item.swift (in target 'Bridget' from project 'Bridget')
+
+SwiftDriverJobDiscovery normal arm64 Compiling BridgetApp.swift (in target 'Bridget' from project 'Bridget')
+
+SwiftCompile normal arm64 Compiling\ SharedModelSchema.swift /Users/peterjemley/Documents/Developer/Bridget/Bridget/SharedModelSchema.swift (in target 'Bridget' from project 'Bridget')
 

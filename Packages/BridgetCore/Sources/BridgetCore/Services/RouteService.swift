@@ -82,12 +82,17 @@ public final class RouteService {
     /// Save multiple routes in a batch
     /// - Parameter routes: Array of routes to save
     public func saveRoutes(_ routes: [Route]) async throws {
+        // Transactional block is preferred for atomicity, but if unavailable, fallback to single save after all inserts.
+        // If any error occurs, no partial save is committed (SwiftData will throw before committing changes).
+        // If transactional APIs become available, replace this with a transactional closure for true rollback.
         do {
             for route in routes {
                 modelContext.insert(route)
             }
             try modelContext.save()
         } catch {
+            // At this point, if save fails, none of the routes are persisted.
+            // Recovery: The caller should retry or report the error to the user.
             throw BridgetDataError.saveFailed(error)
         }
     }
@@ -175,15 +180,9 @@ public final class RouteService {
     
     /// Delete all routes
     public func deleteAllRoutes() async throws {
-        do {
-            let routes = try await fetchRoutes()
-            for route in routes {
-                modelContext.delete(route)
-            }
-            try modelContext.save()
-        } catch {
-            throw BridgetDataError.deleteFailed(error)
-        }
+        // Use SwiftData batch delete for efficiency (see documentation)
+        try modelContext.delete(model: Route.self)
+        try modelContext.save()
     }
     
     // MARK: - Analytics Operations

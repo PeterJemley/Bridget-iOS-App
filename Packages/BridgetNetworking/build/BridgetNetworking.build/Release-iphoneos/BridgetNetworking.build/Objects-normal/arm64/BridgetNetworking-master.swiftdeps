@@ -1,0 +1,6 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "a30f86dd19f59895fe9c9588aaa3e0358f98d9f687eb95682611e0b7caf69ad1"
+build_start_time: [1752587777, 237543000]
+build_end_time: [1752587777, 371806000]
+inputs:
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/Sources/BridgetNetworking/BridgetNetworking.swift": [1752452089, 815813454]
