@@ -7,18 +7,22 @@ public final class DataManager {
     
     // MARK: - Services
     public let eventService: DrawbridgeEventService
-    public let infoService: DrawbridgeInfoService
+    public let infoService: DrawbridgeInfoServiceProtocol
     public let routeService: RouteService
     public let trafficService: TrafficFlowService
     
-    public init(modelContext: ModelContext) {
+    public init(
+        modelContext: ModelContext,
+        eventService: DrawbridgeEventService? = nil,
+        infoService: DrawbridgeInfoServiceProtocol? = nil,
+        routeService: RouteService? = nil,
+        trafficService: TrafficFlowService? = nil
+    ) {
         self.modelContext = modelContext
-        
-        // Initialize all services
-        self.eventService = DrawbridgeEventService(modelContext: modelContext)
-        self.infoService = DrawbridgeInfoService(modelContext: modelContext)
-        self.routeService = RouteService(modelContext: modelContext)
-        self.trafficService = TrafficFlowService(modelContext: modelContext)
+        self.eventService = eventService ?? DrawbridgeEventService(modelContext: modelContext)
+        self.infoService = infoService ?? DrawbridgeInfoService(modelContext: modelContext)
+        self.routeService = routeService ?? RouteService(modelContext: modelContext)
+        self.trafficService = trafficService ?? TrafficFlowService(modelContext: modelContext)
     }
     
     // MARK: - Data Synchronization

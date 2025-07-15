@@ -1,8 +1,25 @@
 import Foundation
 import SwiftData
 
+public protocol DrawbridgeInfoServiceProtocol {
+    func fetchAllBridges() async throws -> [DrawbridgeInfo]
+    func fetchBridge(entityID: String) async throws -> DrawbridgeInfo?
+    func fetchBridges(type entityType: String) async throws -> [DrawbridgeInfo]
+    func searchBridges(name searchTerm: String) async throws -> [DrawbridgeInfo]
+    func fetchBridgesNearby(latitude centerLatitude: Double, longitude centerLongitude: Double, radiusKm: Double) async throws -> [DrawbridgeInfo]
+    func saveBridge(_ bridgeInfo: DrawbridgeInfo) async throws
+    func saveBridges(_ bridges: [DrawbridgeInfo]) async throws
+    func updateBridge(_ bridgeInfo: DrawbridgeInfo) async throws
+    func updateBridgeLocation(_ bridgeInfo: DrawbridgeInfo, latitude: Double, longitude: Double) async throws
+    func deleteBridge(_ bridgeInfo: DrawbridgeInfo) async throws
+    func deleteBridge(entityID: String) async throws
+    func deleteAllBridges() async throws
+    func getBridgeStatistics() async throws -> [String: Any]
+    func getBridgesByType() async throws -> [String: Int]
+}
+
 @Observable
-public final class DrawbridgeInfoService {
+public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
     private let modelContext: ModelContext
     
     public init(modelContext: ModelContext) {
@@ -125,8 +142,15 @@ public final class DrawbridgeInfoService {
     /// - Parameter bridgeInfo: The bridge information to save
     public func saveBridge(_ bridgeInfo: DrawbridgeInfo) async throws {
         do {
-            modelContext.insert(bridgeInfo)
-            try modelContext.save()
+            // Set metadata inside the transaction
+            try modelContext.transaction {
+                if bridgeInfo.createdAt.timeIntervalSince1970 == 0 {
+                    bridgeInfo.createdAt = Date()
+                }
+                bridgeInfo.updatedAt = Date()
+                modelContext.insert(bridgeInfo)
+                try modelContext.save()
+            }
         } catch {
             throw BridgetDataError.saveFailed(error)
         }
@@ -139,10 +163,16 @@ public final class DrawbridgeInfoService {
         // If any error occurs, no partial save is committed (SwiftData will throw before committing changes).
         // If transactional APIs become available, replace this with a transactional closure for true rollback.
         do {
-            for bridge in bridges {
-                modelContext.insert(bridge)
+            try modelContext.transaction {
+                for bridge in bridges {
+                    if bridge.createdAt.timeIntervalSince1970 == 0 {
+                        bridge.createdAt = Date()
+                    }
+                    bridge.updatedAt = Date()
+                    modelContext.insert(bridge)
+                }
+                try modelContext.save()
             }
-            try modelContext.save()
         } catch {
             // At this point, if save fails, none of the bridges are persisted.
             // Recovery: The caller should retry or report the error to the user.
@@ -196,10 +226,8 @@ public final class DrawbridgeInfoService {
     /// - Parameter entityID: The bridge ID to delete
     public func deleteBridge(entityID: String) async throws {
         do {
-            if let bridge = try await fetchBridge(entityID: entityID) {
-                modelContext.delete(bridge)
-                try modelContext.save()
-            }
+            try modelContext.delete(model: DrawbridgeInfo.self, where: #Predicate { $0.entityID == entityID })
+            try modelContext.save()
         } catch {
             throw BridgetDataError.deleteFailed(error)
         }

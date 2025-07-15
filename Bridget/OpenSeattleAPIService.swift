@@ -14,6 +14,17 @@ private struct DrawbridgeEventResponse: Codable {
     let minutesopen: String?
 }
 
+// Protocol abstraction for dependency injection
+protocol NetworkSession {
+    func data(from url: URL) async throws -> (Data, URLResponse)
+}
+
+extension URLSession: NetworkSession {
+    func data(from url: URL) async throws -> (Data, URLResponse) {
+        try await self.data(from: url, delegate: nil)
+    }
+}
+
 @MainActor
 class OpenSeattleAPIService: ObservableObject {
     @Published var isLoading = false
@@ -22,11 +33,19 @@ class OpenSeattleAPIService: ObservableObject {
     private let baseURL = "https://data.seattle.gov/resource/gm8h-9449.json"
     private let batchSize = 1000
     private let maxRetries = 3
-    private let decoder: JSONDecoder = {
-        let d = JSONDecoder()
-        d.dateDecodingStrategy = .iso8601
-        return d
-    }()
+    private let networkSession: NetworkSession
+    private let decoder: JSONDecoder
+
+    init(networkSession: NetworkSession = URLSession.shared, decoder: JSONDecoder? = nil) {
+        self.networkSession = networkSession
+        if let decoder = decoder {
+            self.decoder = decoder
+        } else {
+            let d = JSONDecoder()
+            d.dateDecodingStrategy = .iso8601
+            self.decoder = d
+        }
+    }
     
     // MARK: - Event & Bridge Data Fetching (Batch)
     /// Refactored: All async network fetches are performed before entering the transaction block.
@@ -117,7 +136,7 @@ class OpenSeattleAPIService: ObservableObject {
         guard let url = URL(string: "\(baseURL)?$limit=\(limit)&$offset=\(offset)") else {
             throw BridgetDataError.invalidData("Invalid URL for event data")
         }
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await networkSession.data(from: url)
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw BridgetDataError.networkError(NSError(domain: "API", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch event data"]))
         }
