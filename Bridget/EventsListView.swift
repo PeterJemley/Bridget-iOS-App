@@ -5,7 +5,7 @@ import BridgetCore
 struct EventsListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \DrawbridgeEvent.openDateTime, order: .reverse) private var events: [DrawbridgeEvent]
-    @StateObject private var apiService = OpenSeattleAPIService()
+    @EnvironmentObject private var apiService: OpenSeattleAPIService
     @State private var showingErrorAlert = false
     @State private var errorMessage = ""
     

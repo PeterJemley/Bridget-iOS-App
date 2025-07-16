@@ -5,7 +5,7 @@ import BridgetCore
 struct BridgesListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var bridges: [DrawbridgeInfo]
-    @StateObject private var apiService = OpenSeattleAPIService()
+    @EnvironmentObject private var apiService: OpenSeattleAPIService
     @State private var showingErrorAlert = false
     @State private var errorMessage = ""
     

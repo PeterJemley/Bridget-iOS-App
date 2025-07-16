@@ -4,7 +4,7 @@ import BridgetCore
 
 struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
-    @StateObject private var apiService = OpenSeattleAPIService()
+    @EnvironmentObject private var apiService: OpenSeattleAPIService
     @State private var showingDeleteAlert = false
     @State private var showingErrorAlert = false
     @State private var errorMessage = ""
