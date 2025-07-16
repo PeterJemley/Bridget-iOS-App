@@ -60,6 +60,7 @@ struct EventRowView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
+            // Bridge is non-optional in our domain model, so we can access it directly
             Text("Bridge Name: \(event.bridge.entityName)")
                 .font(.headline)
             Text("Bridge ID: \(event.entityID)")

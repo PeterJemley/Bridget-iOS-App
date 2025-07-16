@@ -15,7 +15,7 @@ struct BridgesListView: View {
                 if bridges.isEmpty {
                     ContentUnavailableView(
                         "No Bridges",
-                        systemImage: "bridge.fill",
+                        systemImage: "puzzlepiece.fill",
                         description: Text("No bridge data available. Pull to refresh.")
                     )
                 } else {

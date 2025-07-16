@@ -7,7 +7,10 @@ public final class DrawbridgeEvent {
     public var entityID: String
     public var entityName: String
     public var entityType: String
-    @Relationship public var bridge: DrawbridgeInfo
+    /// The bridge this event is associated with.
+    /// Uses nullify delete rule: when this event is deleted, the bridge relationship is set to nil.
+    /// The bridge property is non-optional as events should always have a valid bridge reference.
+    @Relationship(deleteRule: .nullify) public var bridge: DrawbridgeInfo
     public var openDateTime: Date
     public var closeDateTime: Date?
     public var minutesOpen: Double

@@ -24,6 +24,13 @@ final class ComprehensiveViewTests: XCTestCase {
     }
     
     override func tearDown() async throws {
+        // With cascade delete rules, deleting bridges will automatically delete their events
+        if let modelContext = modelContext {
+            let bridges = try modelContext.fetch(FetchDescriptor<DrawbridgeInfo>())
+            for bridge in bridges {
+                modelContext.delete(bridge)
+            }
+        }
         modelContainer = nil
         modelContext = nil
         try await super.tearDown()
@@ -400,15 +407,20 @@ final class ComprehensiveViewTests: XCTestCase {
         
         // Simulate multiple refreshes
         try await mockService.fetchAndStoreAllData(in: modelContext)
+        print("After first call: fetchCallCount = \(mockService.fetchCallCount)")
+        
         try await mockService.fetchAndStoreAllData(in: modelContext)
+        print("After second call: fetchCallCount = \(mockService.fetchCallCount)")
+        
         try await mockService.fetchAndStoreAllData(in: modelContext)
+        print("After third call: fetchCallCount = \(mockService.fetchCallCount)")
         
         // Then
-        XCTAssertEqual(mockService.fetchCallCount, 3)
-        XCTAssertNotNil(mockService.lastFetchDate)
+        XCTAssertEqual(mockService.fetchCallCount, 3, "fetchCallCount was \(mockService.fetchCallCount), expected 3")
+        XCTAssertNotNil(mockService.lastFetchDate, "lastFetchDate was \(String(describing: mockService.lastFetchDate))")
         
         // Verify data is still consistent
         let bridges = try modelContext.fetch(FetchDescriptor<DrawbridgeInfo>())
-        XCTAssertEqual(bridges.count, 1) // Should have the latest data
+        XCTAssertEqual(bridges.count, 1, "bridges.count was \(bridges.count), expected 1") // Should have the latest data
     }
 } 
