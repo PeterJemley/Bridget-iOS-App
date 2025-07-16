@@ -1,0 +1,29 @@
+diff --git a/BridgetTests/ComprehensiveViewTests.swift b/BridgetTests/ComprehensiveViewTests.swift
+index 0f3aac1..d084633 100644
+--- a/BridgetTests/ComprehensiveViewTests.swift
++++ b/BridgetTests/ComprehensiveViewTests.swift
+@@ -400,15 +400,20 @@ final class ComprehensiveViewTests: XCTestCase {
+         
+         // Simulate multiple refreshes
+         try await mockService.fetchAndStoreAllData(in: modelContext)
++        print("After first call: fetchCallCount = \(mockService.fetchCallCount)")
++        
+         try await mockService.fetchAndStoreAllData(in: modelContext)
++        print("After second call: fetchCallCount = \(mockService.fetchCallCount)")
++        
+         try await mockService.fetchAndStoreAllData(in: modelContext)
++        print("After third call: fetchCallCount = \(mockService.fetchCallCount)")
+         
+         // Then
+-        XCTAssertEqual(mockService.fetchCallCount, 3)
+-        XCTAssertNotNil(mockService.lastFetchDate)
++        XCTAssertEqual(mockService.fetchCallCount, 3, "fetchCallCount was \(mockService.fetchCallCount), expected 3")
++        XCTAssertNotNil(mockService.lastFetchDate, "lastFetchDate was \(String(describing: mockService.lastFetchDate))")
+         
+         // Verify data is still consistent
+         let bridges = try modelContext.fetch(FetchDescriptor<DrawbridgeInfo>())
+-        XCTAssertEqual(bridges.count, 1) // Should have the latest data
++        XCTAssertEqual(bridges.count, 1, "bridges.count was \(bridges.count), expected 1") // Should have the latest data
+     }
+ } 
+\ No newline at end of file

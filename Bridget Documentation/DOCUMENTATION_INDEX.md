@@ -4,6 +4,9 @@
 
 This index provides organized access to all Bridget project documentation in the new proactive, stepwise structure, optimized for  tagging and cross-referencing.
 
+**Recent UX/Architecture Change:**
+- Pull-to-refresh functionality has been removed from the Bridget app. Data is now loaded automatically when views appear and can be refreshed only through explicit user actions (such as tapping a refresh button). This change was made to improve accessibility, reliability, and user experience consistency. All documentation and features now reflect this new approach.
+
 **Last Updated:** January 2025
 **Organization:** Updated-Documentation folder with proactive, stepwise approach
 **Total Documents:** 7 consolidated files (new structure)

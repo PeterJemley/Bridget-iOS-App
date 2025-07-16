@@ -275,7 +275,7 @@ This plan provides a systematic approach to rebuilding Bridget from scratch, inc
 
 #### **Tasks**
 - [ ] **Bridge Status Overview**
-  - [ ] Real-time bridge status cards
+  - [ ] Bridge status cards (status inferred from Apple Maps traffic data)
   - [ ] Historical status tracking
   - [ ] Recent activity monitoring
   - [ ] Status change notifications
@@ -293,7 +293,7 @@ This plan provides a systematic approach to rebuilding Bridget from scratch, inc
   - [ ] Quick actions and shortcuts
 
 #### **Success Criteria**
-- [ ] Dashboard displays real-time bridge data
+- [ ] Dashboard displays bridge obstruction status inferred from Apple Maps traffic data
 - [ ] Traffic indicators working correctly
 - [ ] All interactive features functional
 - [ ] Performance optimized for smooth scrolling
@@ -579,7 +579,7 @@ This plan provides a systematic approach to rebuilding Bridget from scratch, inc
 - **Crash Rate**: <0.1% in production
 
 ### **Feature Metrics**
-- **Bridge Data Accuracy**: 99%+ real-time data accuracy
+- **Bridge Data Accuracy**: Status accuracy based on inference from Apple Maps traffic data
 - **Route Predictions**: 85%+ prediction accuracy
 - **Traffic Analysis**: 90%+ correlation accuracy
 - **User Engagement**: >70% daily active users

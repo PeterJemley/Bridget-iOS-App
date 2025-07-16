@@ -3,10 +3,10 @@ import SwiftUI
 import SwiftData
 import BridgetCore
 
-/// Mock implementation of SeattleAPIProviding for unit and UI testing
-/// Provides configurable behavior to test different scenarios
+/// In-memory implementation of SeattleAPIProviding for unit and UI testing
+/// Provides deterministic, API-driven behavior to test app logic as dictated by the API contract
 @MainActor
-class MockSeattleAPIService: ObservableObject {
+class InMemorySeattleAPIService: ObservableObject {
     @Published var isLoading = false
     @Published var lastFetchDate: Date?
     
@@ -16,7 +16,7 @@ class MockSeattleAPIService: ObservableObject {
     var shouldSimulateError = false
     
     /// The error to throw when shouldSimulateError is true
-    var errorToThrow: Error = BridgetDataError.networkError(NSError(domain: "Mock", code: 0, userInfo: [NSLocalizedDescriptionKey: "Mock network error"]))
+    var errorToThrow: Error = BridgetDataError.networkError(NSError(domain: "InMemory", code: 0, userInfo: [NSLocalizedDescriptionKey: "InMemory network error"]))
     
     /// Whether to simulate a delay during fetch (useful for testing loading states)
     var shouldSimulateDelay = false
@@ -24,9 +24,9 @@ class MockSeattleAPIService: ObservableObject {
     /// Delay duration in seconds when shouldSimulateDelay is true
     var delayDuration: TimeInterval = 1.0
     
-    /// Mock data to return when fetch succeeds
-    var mockBridges: [DrawbridgeInfo] = []
-    var mockEvents: [DrawbridgeEvent] = []
+    /// In-memory data to return when fetch succeeds
+    var inMemoryBridges: [DrawbridgeInfo] = []
+    var inMemoryEvents: [DrawbridgeEvent] = []
     
     // MARK: - Call Tracking
     
@@ -70,22 +70,22 @@ class MockSeattleAPIService: ObservableObject {
         // Clear existing data
         try await clearExistingData(in: modelContext)
         
-        // Insert mock bridges if provided
-        if !mockBridges.isEmpty {
-            for bridge in mockBridges {
+        // Insert in-memory bridges if provided
+        if !inMemoryBridges.isEmpty {
+            for bridge in inMemoryBridges {
                 modelContext.insert(bridge)
             }
         }
         
-        // Insert mock events if provided
-        if !mockEvents.isEmpty {
-            for event in mockEvents {
+        // Insert in-memory events if provided
+        if !inMemoryEvents.isEmpty {
+            for event in inMemoryEvents {
                 modelContext.insert(event)
             }
         }
         
-        // If no mock data provided, insert some default test data
-        if mockBridges.isEmpty && mockEvents.isEmpty {
+        // If no in-memory data provided, insert some default test data
+        if inMemoryBridges.isEmpty && inMemoryEvents.isEmpty {
             try await insertDefaultTestData(in: modelContext)
         }
         
@@ -137,39 +137,35 @@ class MockSeattleAPIService: ObservableObject {
 
 // MARK: - Convenience Initializers for Common Test Scenarios
 
-extension MockSeattleAPIService {
-    
-    /// Create a mock service that always succeeds
-    static func successMock() -> MockSeattleAPIService {
-        let mock = MockSeattleAPIService()
-        mock.shouldSimulateError = false
-        mock.shouldSimulateDelay = false
-        return mock
+extension InMemorySeattleAPIService {
+    /// Create a service that always succeeds
+    static func successService() -> InMemorySeattleAPIService {
+        let service = InMemorySeattleAPIService()
+        service.shouldSimulateError = false
+        service.shouldSimulateDelay = false
+        return service
     }
-    
-    /// Create a mock service that always fails with the specified error
-    static func failureMock(error: Error = BridgetDataError.networkError(NSError(domain: "Test", code: 0, userInfo: [NSLocalizedDescriptionKey: "Test error"]))) -> MockSeattleAPIService {
-        let mock = MockSeattleAPIService()
-        mock.shouldSimulateError = true
-        mock.errorToThrow = error
-        mock.shouldSimulateDelay = false
-        return mock
+    /// Create a service that always fails with the specified error
+    static func failureService(error: Error = BridgetDataError.networkError(NSError(domain: "Test", code: 0, userInfo: [NSLocalizedDescriptionKey: "Test error"]))) -> InMemorySeattleAPIService {
+        let service = InMemorySeattleAPIService()
+        service.shouldSimulateError = true
+        service.errorToThrow = error
+        service.shouldSimulateDelay = false
+        return service
     }
-    
-    /// Create a mock service that simulates a slow network
-    static func slowMock(delay: TimeInterval = 2.0) -> MockSeattleAPIService {
-        let mock = MockSeattleAPIService()
-        mock.shouldSimulateError = false
-        mock.shouldSimulateDelay = true
-        mock.delayDuration = delay
-        return mock
+    /// Create a service that simulates a slow network
+    static func slowService(delay: TimeInterval = 2.0) -> InMemorySeattleAPIService {
+        let service = InMemorySeattleAPIService()
+        service.shouldSimulateError = false
+        service.shouldSimulateDelay = true
+        service.delayDuration = delay
+        return service
     }
-    
-    /// Create a mock service with custom test data
-    static func withCustomData(bridges: [DrawbridgeInfo], events: [DrawbridgeEvent]) -> MockSeattleAPIService {
-        let mock = MockSeattleAPIService()
-        mock.mockBridges = bridges
-        mock.mockEvents = events
-        return mock
+    /// Create a service with custom test data
+    static func withCustomData(bridges: [DrawbridgeInfo], events: [DrawbridgeEvent]) -> InMemorySeattleAPIService {
+        let service = InMemorySeattleAPIService()
+        service.inMemoryBridges = bridges
+        service.inMemoryEvents = events
+        return service
     }
 } 

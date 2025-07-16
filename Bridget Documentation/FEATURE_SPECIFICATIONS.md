@@ -8,10 +8,10 @@
 
 ## 📋 **Executive Summary**
 
-Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings and providing intelligent traffic predictions. The app features a modular architecture with 10+ Swift Package Manager modules, real-time bridge data integration, and AI-powered analytics for traffic optimization.
+Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings and providing intelligent traffic predictions. The app features a modular architecture with 10+ Swift Package Manager modules, bridge obstruction inference from Apple Maps traffic data, and AI-powered analytics for traffic optimization.
 
 ### **Core Value Proposition**
-- **Real-time Bridge Monitoring**: Live status updates for Seattle drawbridges
+- **Bridge Obstruction Inference:** Status is inferred from Apple Maps traffic data; no direct real-time bridge feed is available.
 - **Intelligent Traffic Prediction**: AI-powered route optimization based on bridge patterns
 - **Proactive User Experience**: Predictive alerts and alternative route suggestions
 - **Comprehensive Analytics**: Historical data analysis and trend prediction
@@ -44,7 +44,7 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 **Status**: Core feature for rebuild
 
 #### **Functional Requirements**
-- **Real-time Bridge Status**: Live updates for all Seattle drawbridges
+- **Bridge Obstruction Inference:** Status is inferred from Apple Maps traffic data
 - **Historical Status Tracking**: Past 24 hours of bridge activity
 - **Recent Activity Monitoring**: Latest bridge opening/closing events
 - **Status Overview Cards**: Visual indicators for each bridge
@@ -53,7 +53,8 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 
 #### **Technical Requirements**
 - SwiftData integration for local caching
-- Real-time API polling with configurable intervals
+- Periodic background data refresh from Apple Maps traffic data
+- *Note: Specific requirements for the refresh interval (how often background data is refreshed) are to be determined and will be planned in a future phase.*
 - Background refresh capabilities
 - Offline data support
 - Push notification integration for status changes
@@ -72,7 +73,7 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 
 #### **Functional Requirements**
 - **Comprehensive Bridge Information**: Complete details for each bridge
-- **Dynamic Analysis Sections**: Real-time analytics and insights
+- **Dynamic Analysis Sections**: Analytics and insights based on inferred traffic data
 - **Bridge Header and Info Sections**: Key information display
 - **Analysis Filter Functionality**: Time-based and event-based filtering
 - **Bridge Statistics and Metrics**: Performance and usage data
@@ -112,7 +113,8 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 
 #### **UI/UX Requirements**
 - List and grid view options
-- Pull-to-refresh functionality
+- ~~Pull-to-refresh functionality~~
+- **Automatic Data Loading**: Data is loaded automatically when the view appears and updated in response to explicit user actions (e.g., tapping a refresh button or performing a specific action). There is no pull-to-refresh gesture; this change improves accessibility, reliability, and predictability.
 - Search bar with suggestions
 - Quick actions and shortcuts
 
@@ -123,7 +125,7 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 
 #### **Functional Requirements**
 - **Intelligent Route Planning**: AI-powered route optimization
-- **Risk Level Assessment**: Real-time risk calculation using result builders
+- **Risk Level Assessment**: Risk calculation using inferred bridge obstruction data
 - **Route Details and Optimization**: Comprehensive route information
 - **Traffic-aware Routing Logic**: Integration with traffic data
 - **Risk Builder with Contextual Messaging**: Clear risk communication
@@ -131,7 +133,7 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 
 #### **Technical Requirements**
 - Apple Maps integration
-- Real-time traffic data correlation
+- Traffic data correlation using Apple Maps
 - Machine learning for route optimization
 - Background location services
 - Geofencing for bridge proximity alerts
@@ -174,7 +176,7 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 **Status**: Foundation for rebuild
 
 #### **Functional Requirements**
-- **Enhanced Drawbridge API Integration**: Real-time data fetching
+- **Enhanced Drawbridge API Integration**: Data fetching from available sources
 - **Data Fetching**: Updated as available with intelligent polling
 - **API Error Handling and Retry Logic**: Robust error management
 - **Data Synchronization**: Background sync capabilities
@@ -266,7 +268,7 @@ Bridget is a comprehensive iOS app for monitoring Seattle drawbridge openings an
 #### **Functional Requirements**
 - **User Preferences Management**: Comprehensive settings interface
 - **Notification Preferences**: Granular notification control
-- **Data Management**: Export, import, and cleanup options
+- **Data Management**: Users can delete all bridge and event data from Settings. After deletion, the app verifies the store is empty and automatically refreshes data from the API. If deletion fails, an error is shown.
 - **Privacy Controls**: User privacy and data control
 - **Performance Settings**: App performance configuration
 

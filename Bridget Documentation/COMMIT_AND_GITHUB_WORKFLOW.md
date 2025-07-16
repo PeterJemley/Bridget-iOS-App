@@ -245,7 +245,7 @@ gh pr create --title "feat: add dashboard UI" \
 
   ## Changes
   - Added DashboardView with bridge status cards
-  - Implemented real-time data updates
+  - Implemented updates based on inference from Apple Maps traffic data (no real-time bridge feed)
   - Added accessibility support
 
   ## Testing

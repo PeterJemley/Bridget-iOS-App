@@ -208,7 +208,7 @@ This document outlines the implementation phases for rebuilding Bridget from scr
 
 #### **Tasks**
 - [ ] **Bridge Status Overview**
-  - [ ] Real-time bridge status cards
+  - [ ] Bridge status cards (status inferred from Apple Maps traffic data)
   - [ ] Historical status tracking
   - [ ] Recent activity monitoring
   - [ ] Status change notifications
@@ -226,7 +226,7 @@ This document outlines the implementation phases for rebuilding Bridget from scr
   - [ ] Quick actions and shortcuts
 
 #### **Success Criteria**
-- [ ] Dashboard displays real-time bridge data
+- [ ] Dashboard displays bridge obstruction status inferred from Apple Maps traffic data
 - [ ] Traffic indicators working correctly
 - [ ] All interactive features functional
 - [ ] Performance optimized for smooth scrolling
@@ -254,7 +254,7 @@ This document outlines the implementation phases for rebuilding Bridget from scr
 
 - [ ] **Apple Maps Integration**
   - [ ] MapKit integration for route display
-  - [ ] Real-time traffic data correlation
+  - [ ] Real-time traffic data correlation using Apple Maps
   - [ ] Turn-by-turn navigation support
   - [ ] Route preview and simulation
 
@@ -531,7 +531,7 @@ This document outlines the implementation phases for rebuilding Bridget from scr
 - **Crash Rate**: <0.1% in production
 
 ### **Feature Metrics**
-- **Bridge Data Accuracy**: 99%+ real-time data accuracy
+- **Bridge Data Accuracy**: Status accuracy based on inference from Apple Maps traffic data
 - **Route Predictions**: 85%+ prediction accuracy
 - **Traffic Analysis**: 90%+ correlation accuracy
 - **User Engagement**: >70% daily active users

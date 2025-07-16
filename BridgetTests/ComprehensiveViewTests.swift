@@ -24,6 +24,13 @@ final class ComprehensiveViewTests: XCTestCase {
     }
     
     override func tearDown() async throws {
+        // With cascade delete rules, deleting bridges will automatically delete their events
+        if let modelContext = modelContext {
+            let bridges = try modelContext.fetch(FetchDescriptor<DrawbridgeInfo>())
+            for bridge in bridges {
+                modelContext.delete(bridge)
+            }
+        }
         modelContainer = nil
         modelContext = nil
         try await super.tearDown()
@@ -41,7 +48,7 @@ final class ComprehensiveViewTests: XCTestCase {
             longitude: -122.3470
         )
         
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [customBridge],
             events: []
         )
@@ -63,7 +70,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testBridgesListView_ShouldShowEmptyStateWhenNoData() async throws {
         // Given
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [],
             events: []
         )
@@ -81,7 +88,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testBridgesListView_ShouldHandleRefreshSuccessfully() async throws {
         // Given
-        let mockService = MockSeattleAPIService.successMock()
+        let mockService = InMemorySeattleAPIService.successService()
         
         // When
         let _ = BridgesListView()
@@ -102,7 +109,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testBridgesListView_ShouldHandleRefreshFailure() async throws {
         // Given
-        let mockService = MockSeattleAPIService.failureMock()
+        let mockService = InMemorySeattleAPIService.failureService()
         
         // When
         let _ = BridgesListView()
@@ -147,7 +154,7 @@ final class ComprehensiveViewTests: XCTestCase {
             longitude: -122.3470
         )
         
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [customBridge],
             events: [customEvent]
         )
@@ -169,7 +176,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testEventsListView_ShouldShowEmptyStateWhenNoEvents() async throws {
         // Given
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [],
             events: []
         )
@@ -187,7 +194,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testEventsListView_ShouldHandleRefreshSuccessfully() async throws {
         // Given
-        let mockService = MockSeattleAPIService.successMock()
+        let mockService = InMemorySeattleAPIService.successService()
         
         // When
         let _ = EventsListView()
@@ -208,9 +215,9 @@ final class ComprehensiveViewTests: XCTestCase {
     
     // MARK: - SettingsView Tests
     
-    func testSettingsView_ShouldDisplayLastFetchDate() async throws {
+    func testSettingsView_ShouldShowLastFetchDate() async throws {
         // Given
-        let mockService = MockSeattleAPIService.successMock()
+        let mockService = InMemorySeattleAPIService.successService()
         
         // When
         let _ = SettingsView()
@@ -224,52 +231,11 @@ final class ComprehensiveViewTests: XCTestCase {
         XCTAssertNotNil(mockService.lastFetchDate)
     }
     
-    func testSettingsView_ShouldHandleRefreshDataSuccessfully() async throws {
-        // Given
-        let mockService = MockSeattleAPIService.successMock()
-        
-        // When
-        let _ = SettingsView()
-            .modelContainer(modelContainer)
-            .environmentObject(mockService)
-        
-        // Simulate refresh data action
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        
-        // Then
-        XCTAssertEqual(mockService.fetchCallCount, 1)
-        XCTAssertNotNil(mockService.lastFetchDate)
-    }
-    
-    func testSettingsView_ShouldHandleRefreshDataFailure() async throws {
-        // Given
-        let mockService = MockSeattleAPIService.failureMock()
-        
-        // When
-        let _ = SettingsView()
-            .modelContainer(modelContainer)
-            .environmentObject(mockService)
-        
-        // Then
-        XCTAssertNil(mockService.lastFetchDate, "lastFetchDate should be nil initially")
-        
-        // Simulate failed refresh
-        do {
-            try await mockService.fetchAndStoreAllData(in: modelContext)
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertTrue(error is BridgetDataError)
-        }
-        
-        XCTAssertEqual(mockService.fetchCallCount, 1)
-        XCTAssertNil(mockService.lastFetchDate, "lastFetchDate should remain nil after failed fetch")
-    }
-    
     // MARK: - Loading State Tests
     
     func testViews_ShouldHandleLoadingState() async throws {
         // Given
-        let slowMock = MockSeattleAPIService.slowMock(delay: 0.1)
+        let slowMock = InMemorySeattleAPIService.slowService(delay: 0.1)
         
         // When
         let _ = BridgesListView()
@@ -307,7 +273,7 @@ final class ComprehensiveViewTests: XCTestCase {
     func testViews_ShouldHandleNetworkErrors() async throws {
         // Given
         let networkError = BridgetDataError.networkError(NSError(domain: "Test", code: 0, userInfo: [NSLocalizedDescriptionKey: "Network unavailable"]))
-        let errorMock = MockSeattleAPIService.failureMock(error: networkError)
+        let errorMock = InMemorySeattleAPIService.failureService(error: networkError)
         
         // When
         let _ = BridgesListView()
@@ -356,7 +322,7 @@ final class ComprehensiveViewTests: XCTestCase {
             longitude: -122.3321
         )
         
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [customBridge],
             events: [customEvent]
         )
@@ -385,30 +351,5 @@ final class ComprehensiveViewTests: XCTestCase {
         XCTAssertEqual(bridges.first?.entityName, "Consistency Test Bridge")
         XCTAssertEqual(events.first?.entityName, "Consistency Test Bridge")
         XCTAssertEqual(events.first?.bridge.entityID, bridges.first?.entityID)
-    }
-    
-    // MARK: - Multiple Refresh Tests
-    
-    func testViews_ShouldHandleMultipleRefreshes() async throws {
-        // Given
-        let mockService = MockSeattleAPIService.successMock()
-        
-        // When
-        let _ = BridgesListView()
-            .modelContainer(modelContainer)
-            .environmentObject(mockService)
-        
-        // Simulate multiple refreshes
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        
-        // Then
-        XCTAssertEqual(mockService.fetchCallCount, 3)
-        XCTAssertNotNil(mockService.lastFetchDate)
-        
-        // Verify data is still consistent
-        let bridges = try modelContext.fetch(FetchDescriptor<DrawbridgeInfo>())
-        XCTAssertEqual(bridges.count, 1) // Should have the latest data
     }
 } 

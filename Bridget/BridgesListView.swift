@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import BridgetCore
+import BridgetSharedUI
 
 struct BridgesListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -11,34 +12,37 @@ struct BridgesListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                if bridges.isEmpty {
-                    ContentUnavailableView(
-                        "No Bridges",
-                        systemImage: "bridge.fill",
-                        description: Text("No bridge data available. Pull to refresh.")
-                    )
-                } else {
-                    ForEach(bridges) { bridge in
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Bridge Name: \(bridge.entityName)")
-                                .font(.headline)
-                            Text("Bridge ID: \(bridge.entityID)")
-                                .font(.caption)
-                            Text("Type: \(bridge.entityType)")
-                                .font(.caption)
-                            Text("Location: \(bridge.latitude), \(bridge.longitude)")
-                                .font(.caption)
-                            Text("Events: \(bridge.events.count)")
-                                .font(.caption)
+            ZStack {
+                List {
+                    if bridges.isEmpty {
+                        ContentUnavailableView(
+                            "No Bridges",
+                            systemImage: "puzzlepiece.fill",
+                            description: Text("No bridge data available.")
+                        )
+                    } else {
+                        ForEach(bridges) { bridge in
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Bridge Name: \(bridge.entityName)")
+                                    .font(.headline)
+                                Text("Bridge ID: \(bridge.entityID)")
+                                    .font(.caption)
+                                Text("Type: \(bridge.entityType)")
+                                    .font(.caption)
+                                Text("Location: \(bridge.latitude), \(bridge.longitude)")
+                                    .font(.caption)
+                                Text("Events: \(bridge.events.count)")
+                                    .font(.caption)
+                            }
                         }
                     }
                 }
+                if apiService.isLoading && bridges.isEmpty {
+                    LoadingOverlayView(label: "Loading bridge data…")
+                        .zIndex(1)
+                }
             }
             .navigationTitle("Bridges")
-            .refreshable {
-                await refreshData()
-            }
             .alert("Error", isPresented: $showingErrorAlert) {
                 Button("OK") { }
             } message: {
@@ -59,10 +63,6 @@ struct BridgesListView: View {
             errorMessage = error.localizedDescription
             showingErrorAlert = true
         }
-    }
-    
-    private func refreshData() async {
-        await loadInitialData()
     }
 }
 

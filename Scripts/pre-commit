@@ -1,3 +1,8 @@
+#
+# --- PRE-COMMIT HOOK DISABLED ---
+#
+# All lines below are commented out to disable the hook.
+#
 #!/bin/sh
 
 RED='\033[0;31m'

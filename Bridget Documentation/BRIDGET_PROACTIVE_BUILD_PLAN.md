@@ -665,6 +665,8 @@ struct DashboardView: View {
         }
     }
     
+    // NOTE: Pull-to-refresh is no longer present. Data is loaded automatically on view appearance and can be refreshed only by explicit user actions (such as this button). This change improves accessibility, reliability, and user experience consistency.
+    
     private var filteredEvents: [DrawbridgeEvent] {
         // Filter events based on selectedTimeFilter
         events.filter { event in
@@ -684,7 +686,7 @@ struct DashboardView: View {
 ```
 
 #### **Success Criteria**
-- [ ] Dashboard displays real-time bridge data
+- [ ] Dashboard displays bridge obstruction status inferred from Apple Maps traffic data
 - [ ] Traffic indicators working correctly
 - [ ] All interactive features functional
 - [ ] Performance optimized for smooth scrolling
@@ -1152,7 +1154,7 @@ struct BridgeStatusCard: View {
 - **Crash Rate**: <0.1% in production
 
 ### **Feature Metrics**
-- **Bridge Data Accuracy**: 99%+ real-time data accuracy
+- **Bridge Data Accuracy**: Status accuracy based on inference from Apple Maps traffic data
 - **Route Predictions**: 85%+ prediction accuracy
 - **Traffic Analysis**: 90%+ correlation accuracy
 - **User Engagement**: >70% daily active users
@@ -1173,7 +1175,7 @@ struct BridgeStatusCard: View {
 1. **Motion Detection**: Requires real device testing
 2. **Background Processing**: iOS background app refresh limitations
 3. **API Integration**: External API reliability and rate limiting
-4. **Performance**: Complex data processing and real-time updates
+4. **Performance**: Complex data processing and periodic updates based on Apple Maps traffic data
 
 ### **Mitigation Strategies**
 - **Early Testing**: Continuous testing throughout all phases

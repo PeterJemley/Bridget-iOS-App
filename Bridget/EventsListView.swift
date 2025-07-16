@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import BridgetCore
+import BridgetSharedUI
 
 struct EventsListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -11,23 +12,26 @@ struct EventsListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                if events.isEmpty {
-                    ContentUnavailableView(
-                        "No Events",
-                        systemImage: "clock.fill",
-                        description: Text("No event data available. Pull to refresh.")
-                    )
-                } else {
-                    ForEach(events) { event in
-                        EventRowView(event: event)
+            ZStack {
+                List {
+                    if events.isEmpty {
+                        ContentUnavailableView(
+                            "No Events",
+                            systemImage: "clock.fill",
+                            description: Text("No event data available.")
+                        )
+                    } else {
+                        ForEach(events) { event in
+                            EventRowView(event: event)
+                        }
                     }
+                }
+                if apiService.isLoading && events.isEmpty {
+                    LoadingOverlayView(label: "Loading event data…")
+                        .zIndex(1)
                 }
             }
             .navigationTitle("Bridge Events")
-            .refreshable {
-                await refreshData()
-            }
             .alert("Error", isPresented: $showingErrorAlert) {
                 Button("OK") { }
             } message: {
@@ -49,10 +53,6 @@ struct EventsListView: View {
             showingErrorAlert = true
         }
     }
-    
-    private func refreshData() async {
-        await loadInitialData()
-    }
 }
 
 struct EventRowView: View {
@@ -60,6 +60,7 @@ struct EventRowView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
+            // Bridge is non-optional in our domain model, so we can access it directly
             Text("Bridge Name: \(event.bridge.entityName)")
                 .font(.headline)
             Text("Bridge ID: \(event.entityID)")

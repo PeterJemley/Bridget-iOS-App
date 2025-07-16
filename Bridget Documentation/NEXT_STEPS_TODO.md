@@ -51,6 +51,7 @@
   - [ ] Analyze memory usage and SwiftData performance
   - [ ] Profile network operations and caching efficiency
   - [ ] Test app launch time and responsiveness
+    - **Note:** App launch time and responsiveness are partially dependent on API response times. For accurate profiling, measure both UI readiness (when the app is usable) and data freshness (when live data is loaded). The app design should prioritize fast UI readiness, with data loading in the background where possible.
 
 - [ ] **Performance optimization**
   - [ ] Identify and resolve any performance bottlenecks
@@ -83,7 +84,7 @@
   - [ ] Background location updates
 
 - [ ] **Enhanced UI features**
-  - [ ] Interactive maps with real-time bridge data
+  - [ ] Interactive maps with bridge obstruction status inferred from Apple Maps traffic data (no real-time bridge feed)
   - [ ] Charts and graphs for historical data visualization
   - [ ] Custom animations and smooth transitions
   - [ ] Accessibility improvements and VoiceOver support

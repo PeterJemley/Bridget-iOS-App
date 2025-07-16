@@ -5,11 +5,11 @@ import BridgetCore
 @testable import Bridget
 
 @MainActor
-final class MockSeattleAPIServiceTests: XCTestCase {
+final class InMemorySeattleAPIServiceTests: XCTestCase {
     
     var modelContainer: ModelContainer!
     var modelContext: ModelContext!
-    var mockService: MockSeattleAPIService!
+    var mockService: InMemorySeattleAPIService!
     
     override func setUp() async throws {
         try await super.setUp()
@@ -24,7 +24,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
         modelContext = ModelContext(modelContainer)
         
         // Create a fresh mock service for each test
-        mockService = MockSeattleAPIService()
+        mockService = InMemorySeattleAPIService()
     }
     
     override func tearDown() async throws {
@@ -38,7 +38,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
     
     func testSuccessMock_ShouldCompleteWithoutError() async throws {
         // Given
-        let successMock = MockSeattleAPIService.successMock()
+        let successMock = InMemorySeattleAPIService.successService()
         
         // When
         try await successMock.fetchAndStoreAllData(in: modelContext)
@@ -51,7 +51,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
     
     func testSuccessMock_ShouldInsertDefaultTestData() async throws {
         // Given
-        let successMock = MockSeattleAPIService.successMock()
+        let successMock = InMemorySeattleAPIService.successService()
         
         // When
         try await successMock.fetchAndStoreAllData(in: modelContext)
@@ -71,7 +71,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
     func testFailureMock_ShouldThrowConfiguredError() async throws {
         // Given
         let customError = BridgetDataError.networkError(NSError(domain: "Test", code: 0, userInfo: [NSLocalizedDescriptionKey: "Custom test error"]))
-        let failureMock = MockSeattleAPIService.failureMock(error: customError)
+        let failureMock = InMemorySeattleAPIService.failureService(error: customError)
         
         // When & Then
         do {
@@ -91,7 +91,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
     func testSlowMock_ShouldSimulateDelay() async throws {
         // Given
         let delayDuration: TimeInterval = 0.1 // Short delay for testing
-        let slowMock = MockSeattleAPIService.slowMock(delay: delayDuration)
+        let slowMock = InMemorySeattleAPIService.slowService(delay: delayDuration)
         
         // When
         let startTime = Date()
@@ -129,7 +129,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
             longitude: -122.3321
         )
         
-        let customDataMock = MockSeattleAPIService.withCustomData(
+        let customDataMock = InMemorySeattleAPIService.withCustomData(
             bridges: [customBridge],
             events: [customEvent]
         )
@@ -151,7 +151,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
     
     func testLoadingState_ShouldBeTrueDuringFetch() async throws {
         // Given
-        let slowMock = MockSeattleAPIService.slowMock(delay: 0.1)
+        let slowMock = InMemorySeattleAPIService.slowService(delay: 0.1)
         
         // When
         let fetchTask = Task {
@@ -173,7 +173,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
     
     func testCallTracking_ShouldIncrementOnEachCall() async throws {
         // Given
-        let mock = MockSeattleAPIService.successMock()
+        let mock = InMemorySeattleAPIService.successService()
         
         // When
         try await mock.fetchAndStoreAllData(in: modelContext)
@@ -186,7 +186,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
     
     func testResetCallTracking_ShouldResetToZero() async throws {
         // Given
-        let mock = MockSeattleAPIService.successMock()
+        let mock = InMemorySeattleAPIService.successService()
         try await mock.fetchAndStoreAllData(in: modelContext)
         XCTAssertEqual(mock.fetchCallCount, 1)
         
@@ -211,7 +211,7 @@ final class MockSeattleAPIServiceTests: XCTestCase {
         modelContext.insert(existingBridge)
         try modelContext.save()
         
-        let mock = MockSeattleAPIService.successMock()
+        let mock = InMemorySeattleAPIService.successService()
         
         // When
         try await mock.fetchAndStoreAllData(in: modelContext)
