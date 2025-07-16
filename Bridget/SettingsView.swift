@@ -123,8 +123,21 @@ struct SettingsView: View {
     private func deleteAllBridgeData() {
         Task {
             do {
+                // Step 1: Delete all bridge and event data
                 try await deleteAllBridgeData()
+                // Step 2: Check that the store is empty
+                let eventCount = try modelContext.fetchCount(FetchDescriptor<DrawbridgeEvent>())
+                let bridgeCount = try modelContext.fetchCount(FetchDescriptor<DrawbridgeInfo>())
+                if eventCount == 0 && bridgeCount == 0 {
+                    // Step 3: Refresh data from API if deletion succeeded
+                    try await apiService.fetchAndStoreAllData(modelContext: modelContext)
+                } else {
+                    // Step 4: Show error if deletion did not fully succeed
+                    errorMessage = "Failed to erase all bridge data. Please try again."
+                    showingErrorAlert = true
+                }
             } catch {
+                // Handle any errors during deletion or refresh
                 errorMessage = error.localizedDescription
                 showingErrorAlert = true
             }

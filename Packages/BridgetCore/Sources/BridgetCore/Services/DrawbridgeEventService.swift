@@ -114,7 +114,6 @@ public final class DrawbridgeEventService {
     /// - Parameter event: The drawbridge event to update
     public func updateEvent(_ event: DrawbridgeEvent) async throws {
         do {
-            event.updatedAt = Date()
             try modelContext.save()
         } catch {
             throw BridgetDataError.saveFailed(error)
@@ -129,7 +128,6 @@ public final class DrawbridgeEventService {
         do {
             event.closeDateTime = closeDate
             event.minutesOpen = closeDate.timeIntervalSince(event.openDateTime) / 60.0
-            event.updatedAt = Date()
             try modelContext.save()
         } catch {
             throw BridgetDataError.saveFailed(error)

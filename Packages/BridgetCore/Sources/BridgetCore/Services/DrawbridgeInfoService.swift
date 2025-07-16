@@ -144,10 +144,6 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
         do {
             // Set metadata inside the transaction
             try modelContext.transaction {
-                if bridgeInfo.createdAt.timeIntervalSince1970 == 0 {
-                    bridgeInfo.createdAt = Date()
-                }
-                bridgeInfo.updatedAt = Date()
                 modelContext.insert(bridgeInfo)
                 try modelContext.save()
             }
@@ -165,10 +161,6 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
         do {
             try modelContext.transaction {
                 for bridge in bridges {
-                    if bridge.createdAt.timeIntervalSince1970 == 0 {
-                        bridge.createdAt = Date()
-                    }
-                    bridge.updatedAt = Date()
                     modelContext.insert(bridge)
                 }
                 try modelContext.save()
@@ -186,7 +178,6 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
     /// - Parameter bridgeInfo: The bridge information to update
     public func updateBridge(_ bridgeInfo: DrawbridgeInfo) async throws {
         do {
-            bridgeInfo.updatedAt = Date()
             try modelContext.save()
         } catch {
             throw BridgetDataError.saveFailed(error)
@@ -202,7 +193,6 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
         do {
             bridgeInfo.latitude = latitude
             bridgeInfo.longitude = longitude
-            bridgeInfo.updatedAt = Date()
             try modelContext.save()
         } catch {
             throw BridgetDataError.saveFailed(error)
@@ -271,7 +261,7 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
                     "minLongitude": minLon,
                     "maxLongitude": maxLon
                 ],
-                "lastUpdated": allBridges.first?.updatedAt as Any
+                // "lastUpdated" field removed; no updatedAt available
             ]
         } catch {
             throw BridgetDataError.fetchFailed(error)

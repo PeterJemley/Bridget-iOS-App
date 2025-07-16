@@ -16,8 +16,6 @@ public final class DrawbridgeEvent {
     public var minutesOpen: Double
     public var latitude: Double
     public var longitude: Double
-    public var createdAt: Date
-    public var updatedAt: Date
     
     public init(
         id: UUID = UUID(),
@@ -41,7 +39,5 @@ public final class DrawbridgeEvent {
         self.minutesOpen = minutesOpen
         self.latitude = latitude
         self.longitude = longitude
-        self.createdAt = Date()
-        self.updatedAt = Date()
     }
 } 

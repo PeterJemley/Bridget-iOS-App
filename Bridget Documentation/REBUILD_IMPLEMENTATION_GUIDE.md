@@ -769,9 +769,7 @@ public struct DashboardTabView: View {
                 .padding()
             }
             .navigationTitle("Bridge Status")
-            .refreshable {
-                // Refresh bridge data
-            }
+            // NOTE: As of the latest update, pull-to-refresh functionality has been removed from the Bridget app. Data is now loaded automatically when views appear and can be refreshed only through explicit user actions (such as tapping a refresh button or performing a specific action). This change was made to improve accessibility (especially for users with motor impairments), increase reliability, and simplify the user experience. All references to pull-to-refresh should be considered legacy and are no longer part of the supported UX.
         }
     }
 }

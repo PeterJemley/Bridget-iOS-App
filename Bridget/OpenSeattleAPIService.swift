@@ -54,6 +54,11 @@ class OpenSeattleAPIService: ObservableObject {
     func fetchAndStoreAllData(modelContext: ModelContext) async throws {
         isLoading = true
         defer { isLoading = false }
+        // Erase all local bridge and event data before fetching new data
+        try modelContext.transaction {
+            try modelContext.delete(model: DrawbridgeEvent.self)
+            try modelContext.delete(model: DrawbridgeInfo.self)
+        }
         var offset = 0
         var allResponses: [DrawbridgeEventResponse] = []
         // 1. Fetch all batches from the network (async)
@@ -66,8 +71,6 @@ class OpenSeattleAPIService: ObservableObject {
         }
         // 2. Perform all SwiftData mutations in a single transaction (sync)
         try modelContext.transaction {
-            // Remove all existing events before import using SwiftData batch delete for efficiency
-            try modelContext.delete(model: DrawbridgeEvent.self)
             var bridgeMap: [String: DrawbridgeInfo] = [:]
             // Deduplicate and insert/update bridges for all responses
             for response in allResponses {
@@ -79,21 +82,14 @@ class OpenSeattleAPIService: ObservableObject {
                       let longitudeString = response.longitude,
                       let longitude = Double(longitudeString) else { continue }
                 if bridgeMap[entityID] == nil {
-                    let fetchDescriptor = FetchDescriptor<DrawbridgeInfo>(predicate: #Predicate { $0.entityID == entityID })
-                    let existing = try? modelContext.fetch(fetchDescriptor).first
-                    let bridge = existing ?? DrawbridgeInfo(
+                    let bridge = DrawbridgeInfo(
                         entityID: entityID,
                         entityName: entityName,
                         entityType: entityType,
                         latitude: latitude,
                         longitude: longitude
                     )
-                    bridge.entityName = entityName
-                    bridge.entityType = entityType
-                    bridge.latitude = latitude
-                    bridge.longitude = longitude
-                    bridge.updatedAt = Date()
-                    if existing == nil { modelContext.insert(bridge) }
+                    modelContext.insert(bridge)
                     bridgeMap[entityID] = bridge
                 }
             }
@@ -128,7 +124,6 @@ class OpenSeattleAPIService: ObservableObject {
                 )
                 modelContext.insert(event)
             }
-            lastFetchDate = Date()
         }
     }
     

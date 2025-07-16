@@ -9,8 +9,6 @@ public final class DrawbridgeInfo {
     public var entityType: String
     public var latitude: Double
     public var longitude: Double
-    public var createdAt: Date
-    public var updatedAt: Date
     
     /// Events associated with this bridge.
     /// Uses cascade delete rule: when this bridge is deleted, all its events are automatically deleted.
@@ -31,7 +29,5 @@ public final class DrawbridgeInfo {
         self.entityType = entityType
         self.latitude = latitude
         self.longitude = longitude
-        self.createdAt = Date()
-        self.updatedAt = Date()
     }
 } 

@@ -187,7 +187,7 @@ This comprehensive guide catalogs all current Apple technologies as of July 2025
 - **iCloud Drive:** File storage and sync
 - **CloudKit Database:** Structured data storage
 - **CloudKit Sharing:** Collaborative data sharing
-- **Push Notifications:** Real-time updates
+- **Push Notifications:** Updates based on inferred bridge obstruction status from Apple Maps traffic data
 - **Background Sync:** Automatic data synchronization
 
 ### **Networking**
@@ -195,13 +195,13 @@ This comprehensive guide catalogs all current Apple technologies as of July 2025
 - **Network Framework:** Low-level networking
 - **Combine:** Reactive networking with publishers
 - **Async/await:** Modern async networking
-- **WebSocket:** Real-time communication
+- **WebSocket:** (Not used for bridge data; no real-time bridge feed available)
 
 ### **APIs & Services**
 - **REST APIs:** HTTP-based APIs
 - **GraphQL:** Query-based APIs
 - **gRPC:** High-performance RPC
-- **WebSockets:** Real-time communication
+- **WebSockets:** (Not used for bridge data; no real-time bridge feed available)
 - **Push Notifications:** Remote notifications
 
 ---
