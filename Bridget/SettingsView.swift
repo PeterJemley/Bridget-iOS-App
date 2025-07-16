@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import BridgetCore
+import BridgetSharedUI
 
 struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
@@ -12,105 +13,111 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section("Data Management") {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Last Updated")
-                                .font(.headline)
-                            if let lastFetch = apiService.lastFetchDate {
-                                Text(lastFetch, style: .relative)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            } else {
-                                Text("Never")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
+            ZStack {
+                List {
+                    Section("Data Management") {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Last Updated")
+                                    .font(.headline)
+                                if let lastFetch = apiService.lastFetchDate {
+                                    Text(Self.formattedDate(lastFetch))
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                } else {
+                                    Text("Never")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            if apiService.isLoading {
+                                ProgressView()
+                                    .scaleEffect(0.8)
                             }
                         }
                         
-                        Spacer()
-                        
-                        if apiService.isLoading {
-                            ProgressView()
-                                .scaleEffect(0.8)
+                        Button(action: { showingDeleteAlert = true }) {
+                            HStack {
+                                Image(systemName: "trash")
+                                Text("Delete and Refresh All Bridge Data")
+                            }
+                            .foregroundColor(.red)
                         }
+                        .disabled(apiService.isLoading)
                     }
                     
-                    Button(action: { showingDeleteAlert = true }) {
+                    Section("App Information") {
                         HStack {
-                            Image(systemName: "trash")
-                            Text("Delete All Bridge Data")
+                            Text("Version")
+                            Spacer()
+                            Text(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")
+                                .foregroundColor(.secondary)
                         }
-                        .foregroundColor(.red)
-                    }
-                    .disabled(apiService.isLoading)
-                }
-                
-                Section("App Information") {
-                    HStack {
-                        Text("Version")
-                        Spacer()
-                        Text(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")
-                            .foregroundColor(.secondary)
+                        
+                        HStack {
+                            Text("Build")
+                            Spacer()
+                            Text(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1")
+                                .foregroundColor(.secondary)
+                        }
                     }
                     
-                    HStack {
-                        Text("Build")
-                        Spacer()
-                        Text(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1")
-                            .foregroundColor(.secondary)
-                    }
-                }
-                
-                Section("About") {
-                    Text("Bridget helps you stay informed about Seattle's drawbridges and their operations.")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
-                
-                Section("Developer Info") {
-                    if events.isEmpty {
-                        Text("No drawbridge events in database.")
+                    Section("About") {
+                        Text("Bridget helps you stay informed about Seattle's drawbridges and their operations.")
                             .font(.caption)
                             .foregroundColor(.secondary)
-                    } else {
-                        ForEach(events) { event in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Event ID: \(event.id.uuidString)")
-                                    .font(.caption)
-                                Text("Bridge ID: \(event.entityID)")
-                                    .font(.caption)
-                                Text("Bridge Name: \(event.entityName)")
-                                    .font(.caption)
-                                Text("Type: \(event.entityType)")
-                                    .font(.caption)
-                                Text("Latitude: \(event.latitude)")
-                                    .font(.caption)
-                                Text("Longitude: \(event.longitude)")
-                                    .font(.caption)
-                                Text("Open: \(event.openDateTime, style: .date) \(event.openDateTime, style: .time)")
-                                    .font(.caption)
-                                if let close = event.closeDateTime {
-                                    Text("Close: \(close, style: .date) \(close, style: .time)")
+                    }
+                    
+                    Section("Developer Info") {
+                        if events.isEmpty {
+                            Text("No drawbridge events in database.")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        } else {
+                            ForEach(events) { event in
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Event ID: \(event.id.uuidString)")
+                                        .font(.caption)
+                                    Text("Bridge ID: \(event.entityID)")
+                                        .font(.caption)
+                                    Text("Bridge Name: \(event.entityName)")
+                                        .font(.caption)
+                                    Text("Type: \(event.entityType)")
+                                        .font(.caption)
+                                    Text("Latitude: \(event.latitude)")
+                                        .font(.caption)
+                                    Text("Longitude: \(event.longitude)")
+                                        .font(.caption)
+                                    Text("Open: \(event.openDateTime, style: .date) \(event.openDateTime, style: .time)")
+                                        .font(.caption)
+                                    if let close = event.closeDateTime {
+                                        Text("Close: \(close, style: .date) \(close, style: .time)")
+                                            .font(.caption)
+                                    }
+                                    Text("Minutes Open: \(event.minutesOpen, specifier: "%.1f")")
                                         .font(.caption)
                                 }
-                                Text("Minutes Open: \(event.minutesOpen, specifier: "%.1f")")
-                                    .font(.caption)
+                                .padding(.vertical, 4)
                             }
-                            .padding(.vertical, 4)
                         }
                     }
+                }
+                if apiService.isLoading && events.isEmpty {
+                    LoadingOverlayView(label: "Loading bridge data…")
+                        .zIndex(1)
                 }
             }
             .navigationTitle("Settings")
-            .alert("Delete All Bridge Data", isPresented: $showingDeleteAlert) {
+            .alert("Delete and Refresh All Bridge Data", isPresented: $showingDeleteAlert) {
                 Button("Cancel", role: .cancel) { }
                 Button("Delete", role: .destructive) {
                     deleteAllBridgeData()
                 }
             } message: {
-                Text("This will permanently delete all bridge and event data. This action cannot be undone.")
+                Text("This will permanently delete all bridge and event data, then immediately refresh from the API. This action cannot be undone.")
             }
             .alert("Error", isPresented: $showingErrorAlert) {
                 Button("OK") { }
@@ -162,5 +169,12 @@ struct SettingsView: View {
             modelContext.delete(bridge)
         }
         try modelContext.save() // Save after deleting bridges to finalize changes.
+    }
+
+    private static func formattedDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
     }
 } 

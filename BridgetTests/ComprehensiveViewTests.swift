@@ -48,7 +48,7 @@ final class ComprehensiveViewTests: XCTestCase {
             longitude: -122.3470
         )
         
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [customBridge],
             events: []
         )
@@ -70,7 +70,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testBridgesListView_ShouldShowEmptyStateWhenNoData() async throws {
         // Given
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [],
             events: []
         )
@@ -88,7 +88,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testBridgesListView_ShouldHandleRefreshSuccessfully() async throws {
         // Given
-        let mockService = MockSeattleAPIService.successMock()
+        let mockService = InMemorySeattleAPIService.successService()
         
         // When
         let _ = BridgesListView()
@@ -109,7 +109,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testBridgesListView_ShouldHandleRefreshFailure() async throws {
         // Given
-        let mockService = MockSeattleAPIService.failureMock()
+        let mockService = InMemorySeattleAPIService.failureService()
         
         // When
         let _ = BridgesListView()
@@ -154,7 +154,7 @@ final class ComprehensiveViewTests: XCTestCase {
             longitude: -122.3470
         )
         
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [customBridge],
             events: [customEvent]
         )
@@ -176,7 +176,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testEventsListView_ShouldShowEmptyStateWhenNoEvents() async throws {
         // Given
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [],
             events: []
         )
@@ -194,7 +194,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testEventsListView_ShouldHandleRefreshSuccessfully() async throws {
         // Given
-        let mockService = MockSeattleAPIService.successMock()
+        let mockService = InMemorySeattleAPIService.successService()
         
         // When
         let _ = EventsListView()
@@ -217,7 +217,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testSettingsView_ShouldShowLastFetchDate() async throws {
         // Given
-        let mockService = MockSeattleAPIService.successMock()
+        let mockService = InMemorySeattleAPIService.successService()
         
         // When
         let _ = SettingsView()
@@ -235,7 +235,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     func testViews_ShouldHandleLoadingState() async throws {
         // Given
-        let slowMock = MockSeattleAPIService.slowMock(delay: 0.1)
+        let slowMock = InMemorySeattleAPIService.slowService(delay: 0.1)
         
         // When
         let _ = BridgesListView()
@@ -273,7 +273,7 @@ final class ComprehensiveViewTests: XCTestCase {
     func testViews_ShouldHandleNetworkErrors() async throws {
         // Given
         let networkError = BridgetDataError.networkError(NSError(domain: "Test", code: 0, userInfo: [NSLocalizedDescriptionKey: "Network unavailable"]))
-        let errorMock = MockSeattleAPIService.failureMock(error: networkError)
+        let errorMock = InMemorySeattleAPIService.failureService(error: networkError)
         
         // When
         let _ = BridgesListView()
@@ -322,7 +322,7 @@ final class ComprehensiveViewTests: XCTestCase {
             longitude: -122.3321
         )
         
-        let mockService = MockSeattleAPIService.withCustomData(
+        let mockService = InMemorySeattleAPIService.withCustomData(
             bridges: [customBridge],
             events: [customEvent]
         )

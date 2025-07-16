@@ -125,6 +125,7 @@ class OpenSeattleAPIService: ObservableObject {
                 modelContext.insert(event)
             }
         }
+        lastFetchDate = Date()
     }
     
     private func fetchBatch(offset: Int, limit: Int) async throws -> [DrawbridgeEventResponse] {

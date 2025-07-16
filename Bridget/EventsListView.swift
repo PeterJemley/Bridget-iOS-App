@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import BridgetCore
+import BridgetSharedUI
 
 struct EventsListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -11,17 +12,23 @@ struct EventsListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                if events.isEmpty {
-                    ContentUnavailableView(
-                        "No Events",
-                        systemImage: "clock.fill",
-                        description: Text("No event data available.")
-                    )
-                } else {
-                    ForEach(events) { event in
-                        EventRowView(event: event)
+            ZStack {
+                List {
+                    if events.isEmpty {
+                        ContentUnavailableView(
+                            "No Events",
+                            systemImage: "clock.fill",
+                            description: Text("No event data available.")
+                        )
+                    } else {
+                        ForEach(events) { event in
+                            EventRowView(event: event)
+                        }
                     }
+                }
+                if apiService.isLoading && events.isEmpty {
+                    LoadingOverlayView(label: "Loading event data…")
+                        .zIndex(1)
                 }
             }
             .navigationTitle("Bridge Events")
