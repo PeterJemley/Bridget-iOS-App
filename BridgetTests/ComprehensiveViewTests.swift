@@ -215,7 +215,7 @@ final class ComprehensiveViewTests: XCTestCase {
     
     // MARK: - SettingsView Tests
     
-    func testSettingsView_ShouldDisplayLastFetchDate() async throws {
+    func testSettingsView_ShouldShowLastFetchDate() async throws {
         // Given
         let mockService = MockSeattleAPIService.successMock()
         
@@ -229,47 +229,6 @@ final class ComprehensiveViewTests: XCTestCase {
         
         // Then
         XCTAssertNotNil(mockService.lastFetchDate)
-    }
-    
-    func testSettingsView_ShouldHandleRefreshDataSuccessfully() async throws {
-        // Given
-        let mockService = MockSeattleAPIService.successMock()
-        
-        // When
-        let _ = SettingsView()
-            .modelContainer(modelContainer)
-            .environmentObject(mockService)
-        
-        // Simulate refresh data action
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        
-        // Then
-        XCTAssertEqual(mockService.fetchCallCount, 1)
-        XCTAssertNotNil(mockService.lastFetchDate)
-    }
-    
-    func testSettingsView_ShouldHandleRefreshDataFailure() async throws {
-        // Given
-        let mockService = MockSeattleAPIService.failureMock()
-        
-        // When
-        let _ = SettingsView()
-            .modelContainer(modelContainer)
-            .environmentObject(mockService)
-        
-        // Then
-        XCTAssertNil(mockService.lastFetchDate, "lastFetchDate should be nil initially")
-        
-        // Simulate failed refresh
-        do {
-            try await mockService.fetchAndStoreAllData(in: modelContext)
-            XCTFail("Expected error to be thrown")
-        } catch {
-            XCTAssertTrue(error is BridgetDataError)
-        }
-        
-        XCTAssertEqual(mockService.fetchCallCount, 1)
-        XCTAssertNil(mockService.lastFetchDate, "lastFetchDate should remain nil after failed fetch")
     }
     
     // MARK: - Loading State Tests
@@ -392,35 +351,5 @@ final class ComprehensiveViewTests: XCTestCase {
         XCTAssertEqual(bridges.first?.entityName, "Consistency Test Bridge")
         XCTAssertEqual(events.first?.entityName, "Consistency Test Bridge")
         XCTAssertEqual(events.first?.bridge.entityID, bridges.first?.entityID)
-    }
-    
-    // MARK: - Multiple Refresh Tests
-    
-    func testViews_ShouldHandleMultipleRefreshes() async throws {
-        // Given
-        let mockService = MockSeattleAPIService.successMock()
-        
-        // When
-        let _ = BridgesListView()
-            .modelContainer(modelContainer)
-            .environmentObject(mockService)
-        
-        // Simulate multiple refreshes
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        print("After first call: fetchCallCount = \(mockService.fetchCallCount)")
-        
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        print("After second call: fetchCallCount = \(mockService.fetchCallCount)")
-        
-        try await mockService.fetchAndStoreAllData(in: modelContext)
-        print("After third call: fetchCallCount = \(mockService.fetchCallCount)")
-        
-        // Then
-        XCTAssertEqual(mockService.fetchCallCount, 3, "fetchCallCount was \(mockService.fetchCallCount), expected 3")
-        XCTAssertNotNil(mockService.lastFetchDate, "lastFetchDate was \(String(describing: mockService.lastFetchDate))")
-        
-        // Verify data is still consistent
-        let bridges = try modelContext.fetch(FetchDescriptor<DrawbridgeInfo>())
-        XCTAssertEqual(bridges.count, 1, "bridges.count was \(bridges.count), expected 1") // Should have the latest data
     }
 } 

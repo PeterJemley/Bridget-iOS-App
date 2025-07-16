@@ -16,7 +16,7 @@ struct BridgesListView: View {
                     ContentUnavailableView(
                         "No Bridges",
                         systemImage: "puzzlepiece.fill",
-                        description: Text("No bridge data available. Pull to refresh.")
+                        description: Text("No bridge data available.")
                     )
                 } else {
                     ForEach(bridges) { bridge in
@@ -36,9 +36,6 @@ struct BridgesListView: View {
                 }
             }
             .navigationTitle("Bridges")
-            .refreshable {
-                await refreshData()
-            }
             .alert("Error", isPresented: $showingErrorAlert) {
                 Button("OK") { }
             } message: {
@@ -59,10 +56,6 @@ struct BridgesListView: View {
             errorMessage = error.localizedDescription
             showingErrorAlert = true
         }
-    }
-    
-    private func refreshData() async {
-        await loadInitialData()
     }
 }
 

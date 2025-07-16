@@ -37,14 +37,6 @@ struct SettingsView: View {
                         }
                     }
                     
-                    Button(action: refreshData) {
-                        HStack {
-                            Image(systemName: "arrow.clockwise")
-                            Text("Refresh Bridge Data")
-                        }
-                    }
-                    .disabled(apiService.isLoading)
-                    
                     Button(action: { showingDeleteAlert = true }) {
                         HStack {
                             Image(systemName: "trash")
@@ -124,24 +116,6 @@ struct SettingsView: View {
                 Button("OK") { }
             } message: {
                 Text(errorMessage)
-            }
-        }
-    }
-    
-    private func refreshData() {
-        Task {
-            do {
-                // Clear existing data
-                try await deleteAllBridgeData()
-                
-                // Fetch and store all data from API
-                try await apiService.fetchAndStoreAllData(modelContext: modelContext)
-                
-                // No need to manually insert events; service handles it
-                
-            } catch {
-                errorMessage = error.localizedDescription
-                showingErrorAlert = true
             }
         }
     }

@@ -16,7 +16,7 @@ struct EventsListView: View {
                     ContentUnavailableView(
                         "No Events",
                         systemImage: "clock.fill",
-                        description: Text("No event data available. Pull to refresh.")
+                        description: Text("No event data available.")
                     )
                 } else {
                     ForEach(events) { event in
@@ -25,9 +25,6 @@ struct EventsListView: View {
                 }
             }
             .navigationTitle("Bridge Events")
-            .refreshable {
-                await refreshData()
-            }
             .alert("Error", isPresented: $showingErrorAlert) {
                 Button("OK") { }
             } message: {
@@ -48,10 +45,6 @@ struct EventsListView: View {
             errorMessage = error.localizedDescription
             showingErrorAlert = true
         }
-    }
-    
-    private func refreshData() async {
-        await loadInitialData()
     }
 }
 

@@ -213,31 +213,6 @@ final class ViewTests: XCTestCase {
         XCTAssertNotNil(settingsView)
     }
     
-    // MARK: - Refresh Functionality Tests
-    
-    func testViews_ShouldSupportRefreshOperations() async throws {
-        // Given
-        let successMock = MockSeattleAPIService.successMock()
-        
-        // When
-        let bridgesView = BridgesListView()
-            .modelContainer(modelContainer)
-            .environmentObject(successMock)
-        
-        let eventsView = EventsListView()
-            .modelContainer(modelContainer)
-            .environmentObject(successMock)
-        
-        let settingsView = SettingsView()
-            .modelContainer(modelContainer)
-            .environmentObject(successMock)
-        
-        // Then - Verify views can be created with refreshable service
-        XCTAssertNotNil(bridgesView)
-        XCTAssertNotNil(eventsView)
-        XCTAssertNotNil(settingsView)
-    }
-    
     // MARK: - Environment Object Integration Tests
     
     func testViews_ShouldProperlyReceiveEnvironmentObject() async throws {
