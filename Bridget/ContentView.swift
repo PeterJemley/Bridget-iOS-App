@@ -40,6 +40,11 @@ struct ContentView: View {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
+            TestView()
+                .tabItem {
+                    Image(systemName: "testtube.2")
+                    Text("Test")
+                }
         }
     }
 }

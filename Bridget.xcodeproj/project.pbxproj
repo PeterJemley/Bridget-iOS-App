@@ -48,16 +48,6 @@
 			path = Bridget;
 			sourceTree = "<group>";
 		};
-		48FF94812E247C5A000DDE6E /* BridgetTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BridgetTests;
-			sourceTree = "<group>";
-		};
-		48FF948B2E247C5A000DDE6E /* BridgetUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BridgetUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				48FF94712E247C59000DDE6E /* Bridget */,
-				48FF94812E247C5A000DDE6E /* BridgetTests */,
-				48FF948B2E247C5A000DDE6E /* BridgetUITests */,
 				48FF94702E247C59000DDE6E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,9 +151,6 @@
 			dependencies = (
 				48FF94802E247C5A000DDE6E /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				48FF94812E247C5A000DDE6E /* BridgetTests */,
-			);
 			name = BridgetTests;
 			packageProductDependencies = (
 			);
@@ -185,9 +170,6 @@
 			);
 			dependencies = (
 				48FF948A2E247C5A000DDE6E /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				48FF948B2E247C5A000DDE6E /* BridgetUITests */,
 			);
 			name = BridgetUITests;
 			packageProductDependencies = (
