@@ -1,3 +1,6 @@
+// NOTE: Loading experience section and TODOs updated to reflect HIG-aligned plans and current app state as of this commit.
+// See below for details on launch, loading, and planned improvements.
+
 // NOTE: LaunchScreen.storyboard has been removed as of this commit. A HIG-compliant launch screen matching the bridge list layout will be restored in a future update. See TODOs below for details.
 
 # UI_ELEMENT_MANIFEST.md
@@ -12,6 +15,27 @@
   - Add 2–3 light gray placeholder rows for bridge cards
   - Set background to system background color
   - Ensure no spinners, taglines, or logos unless present in the main UI
+
+---
+
+## Loading Experience (Post-Launch)
+
+- **Current:**
+  - After launch, the first SwiftUI screen may show a blank or static state while bridge data is fetched.
+  - Logo/catchphrase overlays and global loading screens have been removed.
+  - No in-content loading indicator is currently shown.
+- **Planned Improvements:**
+  - Show cached bridge data instantly if available (never show a blank or static screen).
+  - Overlay a small ProgressView (spinner) near the bridge list content during async fetch, not as a global modal.
+  - If fetch may take >1s, show skeleton rows or a friendly "Loading bridges…" label to reassure/entertain users.
+  - Replace placeholders with real data and remove the indicator as soon as loading completes.
+  - Respect Low Power Mode: pause non-essential animations if `ProcessInfo.processInfo.isLowPowerModeEnabled` is true.
+- **TODO:**
+  - [ ] Implement instant display of cached bridge data on first SwiftUI screen
+  - [ ] Add in-content ProgressView (spinner) during data fetch
+  - [ ] Add skeleton rows or "Loading bridges…" label for long fetches
+  - [ ] Remove loading indicators as soon as data is ready
+  - [ ] Pause non-essential animations in Low Power Mode
 
 ---
 
