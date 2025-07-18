@@ -1,0 +1,11 @@
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/BridgetCore.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Errors/BridgetDataError.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeEvent.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeInfo.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/Route.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/TrafficFlow.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeEventService.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeInfoService.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/RouteService.swift
+/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/TrafficFlowService.swift

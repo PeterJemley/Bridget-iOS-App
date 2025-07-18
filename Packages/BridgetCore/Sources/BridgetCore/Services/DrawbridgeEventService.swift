@@ -187,4 +187,89 @@ public final class DrawbridgeEventService {
             throw BridgetDataError.fetchFailed(error)
         }
     }
+    
+    // MARK: - Dashboard Insight Data Queries
+
+    /// Returns a dictionary of event counts by hour for a given date window and optional bridge.
+    /// - Parameters:
+    ///   - from: Start date (inclusive)
+    ///   - to: End date (inclusive)
+    ///   - entityID: Optional bridge ID to filter events
+    /// - Returns: [hour: count] for the specified window
+    /// - Note: Always specify the time window in the UI (e.g., "last 30 days").
+    public func eventCountsByHour(from: Date, to: Date, entityID: String? = nil) async throws -> [Int: Int] {
+        // Fetch events in the date window, optionally filtered by bridge
+        let events = try await fetchEvents(for: entityID)
+        let filtered = events.filter { $0.openDateTime >= from && $0.openDateTime <= to }
+        
+        // Group by hour (0-23)
+        var counts: [Int: Int] = [:]
+        let calendar = Calendar.current
+        for event in filtered {
+            let hour = calendar.component(.hour, from: event.openDateTime)
+            counts[hour, default: 0] += 1
+        }
+        // Ensure all 24 hours are present for UI consistency
+        for hour in 0..<24 {
+            counts[hour] = counts[hour, default: 0]
+        }
+        return counts
+    }
+
+    /// Returns a dictionary of event counts by day for a given date window and optional bridge.
+    /// - Parameters:
+    ///   - from: Start date (inclusive)
+    ///   - to: End date (inclusive)
+    ///   - entityID: Optional bridge ID to filter events
+    /// - Returns: [Date: count] for the specified window
+    public func eventCountsByDay(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: Int] {
+        // TODO: Implement grouping by day, counting events, and returning a dictionary
+        // Use Calendar to extract day from openDateTime
+        return [:]
+    }
+
+    /// Returns average, median, and percentile range of event durations by day for a given window and optional bridge.
+    /// - Parameters:
+    ///   - from: Start date (inclusive)
+    ///   - to: End date (inclusive)
+    ///   - entityID: Optional bridge ID to filter events
+    /// - Returns: [Date: (average, median, p25, p75, tailRisk)]
+    /// - Note: Use ranges and percentiles for user-facing stats.
+    public func averageDurationByDay(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: (average: Double, median: Double, p25: Double, p75: Double, tailRisk: Double)] {
+        // TODO: Implement grouping by day, compute stats for completed events
+        return [:]
+    }
+
+    /// Returns average, median, and percentile range of event durations by week for a given window and optional bridge.
+    /// - Parameters:
+    ///   - from: Start date (inclusive)
+    ///   - to: End date (inclusive)
+    ///   - entityID: Optional bridge ID to filter events
+    /// - Returns: [weekStartDate: (average, median, p25, p75, tailRisk)]
+    public func averageDurationByWeek(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: (average: Double, median: Double, p25: Double, p75: Double, tailRisk: Double)] {
+        // TODO: Implement grouping by week, compute stats for completed events
+        return [:]
+    }
+
+    /// Returns a dictionary of event counts by month for a given window and optional bridge, with annotation for low-N months.
+    /// - Parameters:
+    ///   - from: Start date (inclusive)
+    ///   - to: End date (inclusive)
+    ///   - entityID: Optional bridge ID to filter events
+    /// - Returns: [monthStartDate: (count, isLowN: Bool)]
+    public func monthlyEventCounts(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: (count: Int, isLowN: Bool)] {
+        // TODO: Implement grouping by month, count events, flag low-N months
+        return [:]
+    }
+
+    /// Returns per-bridge stats (frequency, average/median duration, impact label) for a given window.
+    /// - Parameters:
+    ///   - from: Start date (inclusive)
+    ///   - to: End date (inclusive)
+    /// - Returns: [bridgeID: (frequency: Double, average: Double, median: Double, impactLabel: String, eventCount: Int)]
+    /// - Note: Suppress or annotate stats for bridges with very few events.
+    public func perBridgeStats(from: Date, to: Date) async throws -> [String: (frequency: Double, average: Double, median: Double, impactLabel: String, eventCount: Int)] {
+        // TODO: Implement per-bridge aggregation, label impact, handle small-N
+        return [:]
+    }
 } 

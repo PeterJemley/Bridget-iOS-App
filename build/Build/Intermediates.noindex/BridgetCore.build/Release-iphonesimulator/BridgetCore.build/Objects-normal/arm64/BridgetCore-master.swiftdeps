@@ -1,0 +1,16 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "8f2c420986a8a60b9ca2b1bb95f2ac3a620e37851eb90486db6424c282012e8b"
+build_start_time: [1752801497, 475653000]
+build_end_time: [1752801499, 981138000]
+inputs:
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/BridgetCore.swift": [1752452087, 229910021]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Errors/BridgetDataError.swift": [1752628097, 300416297]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeEvent.swift": [1752801223, 615478605]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeInfo.swift": [1752720975, 915477473]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/Route.swift": [1752628097, 300812130]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/TrafficFlow.swift": [1752628097, 301019005]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift": [1752628097, 301254296]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeEventService.swift": [1752772146, 244637571]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeInfoService.swift": [1752692197, 331373929]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/RouteService.swift": [1752628097, 301734962]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/TrafficFlowService.swift": [1752628097, 301864420]

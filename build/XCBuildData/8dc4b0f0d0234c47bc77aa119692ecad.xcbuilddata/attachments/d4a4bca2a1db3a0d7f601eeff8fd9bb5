@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/Sources/BridgetNetworking/BridgetNetworking.swift" : {
+    "index-unit-output-path" : "/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking/build/BridgetNetworking.build/Release-iphoneos/BridgetNetworking.build/Objects-normal/arm64/BridgetNetworking.o"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/Sources/BridgetDashboard/BridgetDashboard.swift" : {
+    "index-unit-output-path" : "/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetDashboard.build/Release-iphonesimulator/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.o"
+  }
+}

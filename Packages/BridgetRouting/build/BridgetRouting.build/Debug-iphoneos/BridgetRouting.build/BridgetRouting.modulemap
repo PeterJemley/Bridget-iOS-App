@@ -1,0 +1,4 @@
+module BridgetRouting {
+header "BridgetRouting-Swift.h"
+export *
+}

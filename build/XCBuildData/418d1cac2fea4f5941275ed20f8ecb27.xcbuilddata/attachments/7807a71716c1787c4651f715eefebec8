@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/Sources/BridgetStatistics/BridgetStatistics.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.dia",
+    "index-unit-output-path" : "/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/build/BridgetStatistics.build/Debug-iphoneos/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics~partial.swiftmodule"
+  }
+}

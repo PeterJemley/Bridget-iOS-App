@@ -1,0 +1,160 @@
+{
+  "source": "/Users/peterjemley/Documents/Developer/Bridget/Bridget/SettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete and Refresh All Bridge Data",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 112
+        }
+      },
+      {
+        "comment": "",
+        "key": "Error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Data Management",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "App Information",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 51
+        }
+      },
+      {
+        "comment": "",
+        "key": "About",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": "Last Updated",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "Never",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete and Refresh All Bridge Data",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Version",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 53
+        }
+      },
+      {
+        "comment": "",
+        "key": "Build",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 60
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bridget helps you stay informed about Seattle's drawbridges and their operations.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 87
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bridget",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 76
+        }
+      },
+      {
+        "comment": "",
+        "key": "Your Seattle Bridge Companion",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "Seattle Open Data API",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 96
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 113
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "This will permanently delete all bridge and event data, then immediately refresh from the API. This action cannot be undone.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 121
+        }
+      }
+    ]
+  },
+  "version": 1
+}

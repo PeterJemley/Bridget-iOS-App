@@ -1,0 +1,6 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "5d82a63080daad2a77c65adad58368213cccafdaf5dc97e635c954b94dcaa998"
+build_start_time: [1752801499, 918356000]
+build_end_time: [1752801502, 257494000]
+inputs:
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/Sources/BridgetSharedUI/BridgetSharedUI.swift": [1752801446, 190320205]

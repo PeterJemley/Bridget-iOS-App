@@ -1,0 +1,118 @@
+{
+  "" : {
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/BridgetCore.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetCore~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Errors/BridgetDataError.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/BridgetDataError~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeEvent.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeInfo.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/Route.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/Route~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/TrafficFlow.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlow~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DataManager~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeEventService.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeInfoService.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/RouteService.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/RouteService~partial.swiftmodule"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/TrafficFlowService.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.dia",
+    "index-unit-output-path" : "/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/build/BridgetCore.build/Debug-iphoneos/BridgetCore.build/Objects-normal/arm64/TrafficFlowService~partial.swiftmodule"
+  }
+}

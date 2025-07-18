@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/Sources/BridgetHistory/BridgetHistory.swift" : {
+    "index-unit-output-path" : "/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Release-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.o"
+  }
+}

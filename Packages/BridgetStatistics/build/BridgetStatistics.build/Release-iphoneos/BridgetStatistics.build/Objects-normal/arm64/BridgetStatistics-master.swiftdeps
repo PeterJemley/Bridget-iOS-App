@@ -1,6 +1,6 @@
 version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
-options: "49168e0bf2efc2c5e54f69e9cb9d204b700cb85aabc65b754b08bd26f510fe38"
-build_start_time: [1752587777, 312523000]
-build_end_time: [1752587777, 451402000]
+options: "ec36e33a43448c36d502a902487295192dd6268906f40e9c78695e423022f10a"
+build_start_time: [1752798760, 346505000]
+build_end_time: [1752798760, 650410000]
 inputs:
-  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/Sources/BridgetStatistics/BridgetStatistics.swift": [1752452108, 877860267]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/Sources/BridgetStatistics/BridgetStatistics.swift": [1752776137, 176125403]

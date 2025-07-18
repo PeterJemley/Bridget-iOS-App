@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/Sources/BridgetHistory/BridgetHistory.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.dia",
+    "index-unit-output-path" : "/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/build/BridgetHistory.build/Debug-iphoneos/BridgetHistory.build/Objects-normal/arm64/BridgetHistory~partial.swiftmodule"
+  }
+}

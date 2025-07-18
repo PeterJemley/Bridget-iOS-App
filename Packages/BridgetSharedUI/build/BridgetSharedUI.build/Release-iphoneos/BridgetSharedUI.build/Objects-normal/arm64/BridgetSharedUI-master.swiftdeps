@@ -1,6 +1,6 @@
 version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
-options: "7cc602db5852fe1b6831c7f2480f9b32d6579bb3cfcb8e786ae2d2925e5ef24b"
-build_start_time: [1752587777, 237651000]
-build_end_time: [1752587777, 376851000]
+options: "41ce40f8894e1f1962dd6550966d3ab81b43dd685018e4d0963582d4d1915800"
+build_start_time: [1752798760, 167272000]
+build_end_time: [1752798760, 344539000]
 inputs:
-  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/Sources/BridgetSharedUI/BridgetSharedUI.swift": [1752452092, 136736250]
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/Sources/BridgetSharedUI/BridgetSharedUI.swift": [1752795291, 229587140]

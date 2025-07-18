@@ -1,6 +1,4 @@
-import Testing
+import XCTest
 @testable import BridgetCore
 
-@Test func example() async throws {
-    // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-}
+// Write new XCTest-based tests for SwiftData methods here, following Apple's guidelines and a proactive stepwise plan.

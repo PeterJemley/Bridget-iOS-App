@@ -29,6 +29,7 @@ extension URLSession: NetworkSession {
 class OpenSeattleAPIService: ObservableObject {
     @Published var isLoading = false
     @Published var lastFetchDate: Date?
+    @Published var error: Error?
     
     private let baseURL = "https://data.seattle.gov/resource/gm8h-9449.json"
     private let batchSize = 1000
@@ -51,26 +52,25 @@ class OpenSeattleAPIService: ObservableObject {
     /// Refactored: All async network fetches are performed before entering the transaction block.
     /// Accumulate all DrawbridgeEventResponse objects first, then perform a single transaction for all SwiftData mutations (deletes/inserts/updates).
     /// Rationale: SwiftData's transaction block is synchronous and must not contain any await calls. See technical documentation for details.
-    func fetchAndStoreAllData(modelContext: ModelContext) async throws {
+    func fetchAndStoreAllData(modelContext: ModelContext) async {
         isLoading = true
         defer { isLoading = false }
         // Erase all local bridge and event data before fetching new data
-        try modelContext.transaction {
-            try modelContext.delete(model: DrawbridgeEvent.self)
-            try modelContext.delete(model: DrawbridgeInfo.self)
+        try? modelContext.transaction {
+            try? modelContext.delete(model: DrawbridgeInfo.self)
         }
         var offset = 0
         var allResponses: [DrawbridgeEventResponse] = []
         // 1. Fetch all batches from the network (async)
         while true {
-            let batch = try await fetchBatch(offset: offset, limit: batchSize)
+            guard let batch = try? await fetchBatch(offset: offset, limit: batchSize) else { break }
             if batch.isEmpty { break }
             allResponses.append(contentsOf: batch)
             if batch.count < batchSize { break }
             offset += batchSize
         }
         // 2. Perform all SwiftData mutations in a single transaction (sync)
-        try modelContext.transaction {
+        try? modelContext.transaction {
             var bridgeMap: [String: DrawbridgeInfo] = [:]
             // Deduplicate and insert/update bridges for all responses
             for response in allResponses {
@@ -126,6 +126,7 @@ class OpenSeattleAPIService: ObservableObject {
             }
         }
         lastFetchDate = Date()
+        error = nil // clear error on success
     }
     
     private func fetchBatch(offset: Int, limit: Int) async throws -> [DrawbridgeEventResponse] {

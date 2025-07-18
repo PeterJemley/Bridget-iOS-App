@@ -1,0 +1,65 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Bridget-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/APIDTOs.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/APIDTOs.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/APIDTOs.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/APIDTOs.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgesListView.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/BridgesListView.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/BridgesListView.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/BridgesListView.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgetApp.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/BridgetApp.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/BridgetApp.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/BridgetApp.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/ContentView.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/Item.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Item.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Item.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/Item.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/OpenSeattleAPIService.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/OpenSeattleAPIService.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/RoutesView.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/RoutesView.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/RoutesView.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/RoutesView.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/SettingsView.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/SettingsView.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/SharedModelSchema.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/SharedModelSchema.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/SharedModelSchema.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/SharedModelSchema.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/TrafficFlowView.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/TrafficFlowView.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/TrafficFlowView.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/TrafficFlowView.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}

@@ -17,12 +17,6 @@ struct ContentView: View {
                     Text("Bridges")
                 }
             
-            EventsListView()
-                .tabItem {
-                    Image(systemName: "clock.fill")
-                    Text("Events")
-                }
-            
             TrafficFlowView()
                 .tabItem {
                     Image(systemName: "car.fill")
@@ -39,11 +33,6 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
-                }
-            TestView()
-                .tabItem {
-                    Image(systemName: "testtube.2")
-                    Text("Test")
                 }
         }
     }

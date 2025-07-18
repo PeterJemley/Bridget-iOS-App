@@ -1,0 +1,153 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetbridgedetail",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail",
+          "name" : "BridgetBridgeDetail"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgeDetail"
+        },
+        "subpath" : "bridgetbridgedetail"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetbridgeslist",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList",
+          "name" : "BridgetBridgesList"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList"
+        },
+        "subpath" : "bridgetbridgeslist"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetcore",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore",
+          "name" : "BridgetCore"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore"
+        },
+        "subpath" : "bridgetcore"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetdashboard",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard",
+          "name" : "BridgetDashboard"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard"
+        },
+        "subpath" : "bridgetdashboard"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgethistory",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory",
+          "name" : "BridgetHistory"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory"
+        },
+        "subpath" : "bridgethistory"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetnetworking",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking",
+          "name" : "BridgetNetworking"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetNetworking"
+        },
+        "subpath" : "bridgetnetworking"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetrouting",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting",
+          "name" : "BridgetRouting"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting"
+        },
+        "subpath" : "bridgetrouting"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetsettings",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings",
+          "name" : "BridgetSettings"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings"
+        },
+        "subpath" : "bridgetsettings"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetsharedui",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI",
+          "name" : "BridgetSharedUI"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI"
+        },
+        "subpath" : "bridgetsharedui"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "bridgetstatistics",
+          "kind" : "fileSystem",
+          "location" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics",
+          "name" : "BridgetStatistics"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics"
+        },
+        "subpath" : "bridgetstatistics"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

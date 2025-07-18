@@ -1,0 +1,152 @@
+{
+  "source": "/Users/peterjemley/Documents/Developer/Bridget/Bridget/RoutesView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Routes",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add some routes to get started",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Routes",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 15
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "ID: %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bridges: %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start: %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "End: %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld bridges",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Route",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "Route Information",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 112
+        }
+      },
+      {
+        "comment": "",
+        "key": "Route Details",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "Route Name",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 113
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start Location",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "End Location",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 115
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bridges (comma-separated)",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 119
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 133
+        }
+      }
+    ]
+  },
+  "version": 1
+}

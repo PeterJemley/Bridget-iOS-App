@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetStatistics/Sources/BridgetStatistics/BridgetStatistics.swift" : {
+    "index-unit-output-path" : "/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetStatistics.build/Release-iphonesimulator/BridgetStatistics.build/Objects-normal/arm64/BridgetStatistics.o"
+  }
+}

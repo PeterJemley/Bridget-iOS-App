@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/Sources/BridgetSharedUI/BridgetSharedUI.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.dia",
+    "index-unit-output-path" : "/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSharedUI/build/BridgetSharedUI.build/Debug-iphoneos/BridgetSharedUI.build/Objects-normal/arm64/BridgetSharedUI~partial.swiftmodule"
+  }
+}

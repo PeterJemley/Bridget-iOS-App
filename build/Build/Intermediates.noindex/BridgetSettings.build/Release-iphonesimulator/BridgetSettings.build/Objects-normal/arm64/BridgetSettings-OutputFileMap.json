@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/Sources/BridgetSettings/BridgetSettings.swift" : {
+    "index-unit-output-path" : "/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetSettings.build/Release-iphonesimulator/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.o"
+  }
+}

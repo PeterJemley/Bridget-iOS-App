@@ -1,6 +1,6 @@
 version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
 options: "a0e70b202b968c5a498d48d44b3a44b47f242244802ac546a06410c575d4c9ec"
-build_start_time: [1752587777, 311793000]
-build_end_time: [1752587777, 477995000]
+build_start_time: [1752798760, 346996000]
+build_end_time: [1752798760, 403764000]
 inputs:
   "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetHistory/Sources/BridgetHistory/BridgetHistory.swift": [1752452111, 15582350]

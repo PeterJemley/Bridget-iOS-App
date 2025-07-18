@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/Sources/BridgetRouting/BridgetRouting.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.dia",
+    "index-unit-output-path" : "/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetRouting/build/BridgetRouting.build/Debug-iphoneos/BridgetRouting.build/Objects-normal/arm64/BridgetRouting~partial.swiftmodule"
+  }
+}

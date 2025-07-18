@@ -1,0 +1,17 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "4f7f2fc497d4bcd3681c4adf0067fd38c788c03df394f3f8ac0fd39713890fa6"
+build_start_time: [1752801503, 567350000]
+build_end_time: [1752801507, 812393000]
+inputs:
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/APIDTOs.swift": [1752628097, 290983856]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgesListView.swift": [1752801459, 809122593]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgetApp.swift": [1752721840, 831898149]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/ContentView.swift": [1752724674, 487285306]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/Item.swift": [1752450265, 398369700]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/OpenSeattleAPIService.swift": [1752764182, 337344403]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/RoutesView.swift": [1752628097, 291995312]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/SettingsView.swift": [1752725066, 939593784]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/SharedModelSchema.swift": [1752628097, 292436687]
+  "/Users/peterjemley/Documents/Developer/Bridget/Bridget/TrafficFlowView.swift": [1752628097, 292536978]
+  ? "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/Bridget.build/Release-iphonesimulator/Bridget.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1752801503, 562443215]

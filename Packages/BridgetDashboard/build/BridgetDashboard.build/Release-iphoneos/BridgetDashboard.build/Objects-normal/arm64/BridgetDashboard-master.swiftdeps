@@ -1,6 +1,6 @@
 version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
 options: "5c4fe268460eb38d5ab3c7c651482830f4eb3bfba140824d989a3cc1a0ce6ee2"
-build_start_time: [1752587777, 313190000]
-build_end_time: [1752587777, 484578000]
+build_start_time: [1752798760, 347773000]
+build_end_time: [1752798760, 404451000]
 inputs:
   "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/Sources/BridgetDashboard/BridgetDashboard.swift": [1752452094, 841186639]

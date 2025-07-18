@@ -1,0 +1,65 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/BridgetCore.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetCore.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Errors/BridgetDataError.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetDataError.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetDataError.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/BridgetDataError.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeEvent.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeEvent.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/DrawbridgeInfo.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfo.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/Route.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/Route.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/Route.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/Route.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Models/TrafficFlow.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/TrafficFlow.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/TrafficFlow.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/TrafficFlow.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DataManager.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DataManager.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeEventService.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeEventService.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/DrawbridgeInfoService.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/DrawbridgeInfoService.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/RouteService.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/RouteService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/RouteService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/RouteService.o"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetCore/Sources/BridgetCore/Services/TrafficFlowService.swift" : {
+    "index-unit-output-path" : "/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetCore.build/Release-iphonesimulator/BridgetCore.build/Objects-normal/arm64/TrafficFlowService.o"
+  }
+}

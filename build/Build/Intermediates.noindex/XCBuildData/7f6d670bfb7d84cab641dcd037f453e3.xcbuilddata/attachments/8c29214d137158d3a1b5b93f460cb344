@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-master.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-master.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetBridgesList/Sources/BridgetBridgesList/BridgetBridgesList.swift" : {
+    "index-unit-output-path" : "/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/build/Build/Intermediates.noindex/BridgetBridgesList.build/Release-iphonesimulator/BridgetBridgesList.build/Objects-normal/arm64/BridgetBridgesList.o"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/Sources/BridgetSettings/BridgetSettings.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.dia",
+    "index-unit-output-path" : "/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetSettings/build/BridgetSettings.build/Debug-iphoneos/BridgetSettings.build/Objects-normal/arm64/BridgetSettings~partial.swiftmodule"
+  }
+}

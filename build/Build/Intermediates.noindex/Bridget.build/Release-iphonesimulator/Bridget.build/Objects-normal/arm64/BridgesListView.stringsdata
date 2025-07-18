@@ -1,0 +1,48 @@
+{
+  "source": "/Users/peterjemley/Documents/Developer/Bridget/Bridget/BridgesListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Bridges",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "Error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "No bridge data available.",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld min",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 241
+        }
+      }
+    ]
+  },
+  "version": 1
+}

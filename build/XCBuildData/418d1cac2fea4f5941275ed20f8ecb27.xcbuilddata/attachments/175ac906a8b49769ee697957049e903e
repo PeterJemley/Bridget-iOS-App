@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master.dia",
+    "emit-module-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master-emit-module.dia",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard-master.swiftdeps"
+  },
+  "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/Sources/BridgetDashboard/BridgetDashboard.swift" : {
+    "const-values" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.swiftconstvalues",
+    "dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.d",
+    "diagnostics" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.dia",
+    "index-unit-output-path" : "/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.o",
+    "llvm-bc" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.bc",
+    "object" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.o",
+    "swift-dependencies" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard.swiftdeps",
+    "swiftmodule" : "/Users/peterjemley/Documents/Developer/Bridget/Packages/BridgetDashboard/build/BridgetDashboard.build/Debug-iphoneos/BridgetDashboard.build/Objects-normal/arm64/BridgetDashboard~partial.swiftmodule"
+  }
+}
