@@ -13,6 +13,7 @@ public enum BridgetDataError: Error, LocalizedError {
     case invalidCoordinateFormat
     case bridgeNotFound(String)
     case duplicateBridge(String)
+    case invalidModelContext
     case unknown(Error)
     
     public var errorDescription: String? {
@@ -41,6 +42,8 @@ public enum BridgetDataError: Error, LocalizedError {
             return "Bridge not found: \(bridgeID)"
         case .duplicateBridge(let bridgeID):
             return "Duplicate bridge: \(bridgeID)"
+        case .invalidModelContext:
+            return "Invalid ModelContext configuration"
         case .unknown(let error):
             return "Unknown error: \(error.localizedDescription)"
         }

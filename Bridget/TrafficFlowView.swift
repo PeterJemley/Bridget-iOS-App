@@ -198,5 +198,5 @@ struct AddTrafficFlowView: View {
 
 #Preview {
     TrafficFlowView()
-        .modelContainer(for: [TrafficFlow.self], inMemory: true)
+        // Use shared ModelContainer from BridgetApp
 } 

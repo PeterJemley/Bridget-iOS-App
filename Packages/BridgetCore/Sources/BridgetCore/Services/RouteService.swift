@@ -17,7 +17,7 @@ public final class RouteService {
     public func fetchRoutes(favoritesOnly: Bool = false) async throws -> [Route] {
         do {
             let descriptor = FetchDescriptor<Route>(
-                predicate: favoritesOnly ? #Predicate<Route> { route in
+                predicate: favoritesOnly ? #Predicate { route in
                     route.isFavorite == true
                 } : nil,
                 sortBy: [SortDescriptor(\.createdAt, order: .reverse)]
@@ -35,7 +35,7 @@ public final class RouteService {
     public func fetchRoute(id: UUID) async throws -> Route? {
         do {
             var descriptor = FetchDescriptor<Route>(
-                predicate: #Predicate<Route> { route in
+                predicate: #Predicate { route in
                     route.id == id
                 }
             )
@@ -54,7 +54,7 @@ public final class RouteService {
     public func fetchRoutesContaining(bridgeID: String) async throws -> [Route] {
         do {
             let descriptor = FetchDescriptor<Route>(
-                predicate: #Predicate<Route> { route in
+                predicate: #Predicate { route in
                     route.bridges.contains(bridgeID)
                 },
                 sortBy: [SortDescriptor(\.createdAt, order: .reverse)]

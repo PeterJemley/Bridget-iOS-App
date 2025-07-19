@@ -1,160 +1,290 @@
-// NOTE: Loading experience section and TODOs updated to reflect HIG-aligned plans and current app state as of this commit.
-// See below for details on launch, loading, and planned improvements.
+# UI Element Manifest - Bridget Bridge Events App
 
-// NOTE: LaunchScreen.storyboard has been removed as of this commit. A HIG-compliant launch screen matching the bridge list layout will be restored in a future update. See TODOs below for details.
+## Overview
+This document tracks the UI elements and their behaviors in the Bridget bridge events app, focusing on loading states, transitions, user experience, and the data-driven statistical analysis system.
 
-# UI_ELEMENT_MANIFEST.md
+## Core UI Components
 
-## Launch Screen
+### BridgesListView
+**File:** `Bridget/BridgesListView.swift`
 
-- **Status:** Temporarily removed (LaunchScreen.storyboard deleted)
-- **Planned:** Will be re-implemented in a future update to match HIG guidance and visually mirror the initial bridge list layout (static, minimal, no logo or catchphrase).
-- **TODO:**
-  - Recreate LaunchScreen.storyboard
-  - Add navigation bar with "Bridges" title
-  - Add 2–3 light gray placeholder rows for bridge cards
-  - Set background to system background color
-  - Ensure no spinners, taglines, or logos unless present in the main UI
+#### State Management
+- **Atomic State System:** Uses `LoadingState` enum with `Equatable` conformance for synchronized UI updates
+- **States:** `initial`, `loading`, `loaded`, `error(String)`
+- **State Properties:**
+  - `isFetching`: Returns `true` only when in `.loading` state
+  - `shouldShowSkeletons`: Returns `true` only when in `.loading` state
+  - `shouldShowRealData`: Returns `true` only when in `.loaded` state
 
----
+#### Loading Experience
+- **Skeleton Loading:** 5 placeholder bridge cards with `.redacted(reason: .placeholder)`
+- **Progress Indicator:** Shows in navigation bar area during loading with fade transitions
+- **Fade Animations:** `.transition(.opacity)` and `.animation(.easeInOut)` for smooth state changes
+- **Automatic Data Loading:** Data loads automatically on app launch if no cached data exists
 
-## Loading Experience (Post-Launch)
+#### Layout and Safe Areas
+- **Navigation View Style:** `StackNavigationViewStyle()` for proper navigation behavior
+- **Safe Area Handling:** `.safeAreaInset(edge: .top)` to prevent content under Dynamic Island
+- **Bottom Padding:** 20pt padding at bottom of scroll view for safe area clearance
+- **Dynamic Island Compatibility:** Content properly respects top safe area boundaries
 
-- **Current:**
-  - After launch, the first SwiftUI screen may show a blank or static state while bridge data is fetched.
-  - Logo/catchphrase overlays and global loading screens have been removed.
-  - No in-content loading indicator is currently shown.
-- **Planned Improvements:**
-  - Show cached bridge data instantly if available (never show a blank or static screen).
-  - Overlay a small ProgressView (spinner) near the bridge list content during async fetch, not as a global modal.
-  - If fetch may take >1s, show skeleton rows or a friendly "Loading bridges…" label to reassure/entertain users.
-  - Replace placeholders with real data and remove the indicator as soon as loading completes.
-  - Respect Low Power Mode: pause non-essential animations if `ProcessInfo.processInfo.isLowPowerModeEnabled` is true.
-- **TODO:**
-  - [ ] Implement instant display of cached bridge data on first SwiftUI screen
-  - [ ] Add in-content ProgressView (spinner) during data fetch
-  - [ ] Add skeleton rows or "Loading bridges…" label for long fetches
-  - [ ] Remove loading indicators as soon as data is ready
-  - [ ] Pause non-essential animations in Low Power Mode
+#### Error Handling
+- **Error State Display:** Shows error message without retry button (data loads automatically)
+- **Empty State:** Shows when no data is available with automatic loading message
+- **Graceful Degradation:** Maintains UI responsiveness during network issues
 
----
+#### Data Display
+- **Lazy Loading:** `LazyVStack` for efficient rendering of bridge cards
+- **Conditional Rendering:** Shows skeletons during loading, real data when loaded
+- **Enhanced Bridge Cards:** Uses `EnhancedBridgeCardView` from BridgetSharedUI package
+- **Smooth Transitions:** Fade animations between loading and loaded states
 
-## Atoms
-*Smallest, indivisible UI building blocks.*
+## Statistical Analysis System
 
-| Name                | Description                                 | HIG/Design Token | Accessibility | Test Coverage |
-|---------------------|---------------------------------------------|------------------|---------------|--------------|
-| `ProgressView`      | System indeterminate loading spinner         | HIG-compliant    | Yes           | Snapshot/UI  |
-| `Text`              | Typography, labels, captions                 | HIG, tokens      | Yes           | Snapshot     |
-| `Button`            | Basic interactive button                     | HIG, tokens      | Yes           | Snapshot     |
-| `Color`             | Color tokens (system, accent, etc.)          | HIG, tokens      | N/A           | N/A          |
-| `Image`             | Icon glyphs, system images                   | HIG, tokens      | Yes           | Snapshot     |
+### BridgeDataAnalyzer
+**File:** `Packages/BridgetStatistics/Sources/BridgetStatistics/BridgetStatistics.swift`
 
----
+#### Core Analysis Engine
+- **Poisson Process Modeling:** Models bridge openings as stochastic events with exponential inter-arrival times
+- **Change Point Detection:** Uses CUSUM and EWMA algorithms to detect pattern changes
+- **Seasonal Pattern Analysis:** Identifies hourly, daily, and monthly patterns in bridge activity
+- **Trend Analysis:** Linear regression to detect increasing/decreasing activity trends
+- **Goodness of Fit Testing:** Kolmogorov-Smirnov tests to compare current vs historical patterns
+- **Adaptive Thresholds:** Data-driven percentile-based refresh interval recommendations
 
-## Molecules
-*Combinations of atoms forming small, reusable components.*
+#### Statistical Methods
+- **Inter-arrival Time Analysis:** Calculates time between consecutive bridge openings
+- **Exponential Distribution Fitting:** Maximum likelihood estimation for Poisson process parameters
+- **Percentile Calculations:** 25th, 50th, 75th, and 95th percentiles for interval recommendations
+- **Variance Analysis:** Measures pattern stability and seasonal variations
+- **Confidence Intervals:** Statistical confidence in recommendations based on data quality
 
-| Name                | Description                                 | Atoms Used           | HIG/Design Token | Accessibility | Test Coverage |
-|---------------------|---------------------------------------------|----------------------|------------------|---------------|--------------|
-| `LoadingOverlayView`| Full-screen loading overlay with label      | ProgressView, Text   | HIG-compliant    | Yes           | Snapshot/UI  |
-| `ContentUnavailableView` | Empty state for lists                   | Text, Image          | HIG, tokens      | Yes           | Snapshot     |
-| `BridgeCardView`    | Card-style bridge info with statistics      | Text, Color, VStack, HStack | HIG, tokens      | Yes           | Snapshot     |
-| `StatItem`          | Statistics display component                | Text, VStack         | HIG, tokens      | Yes           | Snapshot     |
-| `StatisticsCard`    | Advanced statistics with data-driven thresholds | Text, VStack, Color | HIG, tokens      | Yes           | Snapshot     |
-| `EnhancedStatisticsCard` | Advanced statistics with drill-down capabilities | Text, VStack, Color, Button | HIG, tokens      | Yes           | Snapshot     |
-| `SparklineView`     | Daily activity trend visualization              | Rectangle, Color    | HIG, tokens      | Yes           | Snapshot     |
-| `DrillDownView`     | Expandable detailed statistics view            | Text, VStack, Color | HIG, tokens      | Yes           | Snapshot     |
-| `FrequencyBadge`    | Color-coded frequency indicator (Low/Medium/High) | Text, Color      | HIG, tokens      | Yes           | Snapshot     |
-| `TrafficFlowRowView`| Row for traffic flow info                   | Text, Color, VStack  | HIG, tokens      | Yes           | Snapshot     |
-| `RouteRowView`      | Row for route info in list                  | Text, Color, VStack  | HIG, tokens      | Yes           | Snapshot     |
+#### Analysis Results
+- **RefreshIntervalRecommendation:** Optimal refresh interval with confidence and reasoning
+- **Pattern Stability Classification:** Very stable, stable, unstable, very unstable
+- **Seasonal Pattern Detection:** Hourly, daily, monthly, or no patterns
+- **Trend Direction:** Increasing, decreasing, or stable activity trends
+- **Data Freshness:** Very fresh, fresh, stale, very stale based on last event age
 
----
+### BridgeDataAnalysisService
+**File:** `Packages/BridgetStatistics/Sources/BridgetStatistics/BridgetStatistics.swift`
 
-## Organisms
-*Complex UI sections composed of molecules and atoms.*
+#### Service Integration
+- **Real-time Analysis:** Performs comprehensive analysis with current bridge status
+- **Urgency Scoring:** Calculates urgency based on open bridges, recent activity, and pattern stability
+- **Detailed Insights:** Provides comprehensive bridge activity statistics and patterns
+- **Optimal Interval Suggestions:** Conservative, moderate, and aggressive refresh options
 
-| Name                | Description                                 | Molecules/Atoms Used         | HIG/Design Token | Accessibility | Test Coverage |
-|---------------------|---------------------------------------------|------------------------------|------------------|---------------|--------------|
-| `BridgesListView`   | List of all bridges with card-style statistics | BridgeCardView, StatItem, ContentUnavailableView, LoadingOverlayView | HIG, tokens | Yes | UI/Integration |
-| `DashboardView`     | Main dashboard with statistical insights     | StatisticsCard, BridgeCardView, StatItem, ContentUnavailableView | HIG, tokens | Yes | UI/Integration |
-| `TrafficFlowView`   | List of all traffic flows                   | TrafficFlowRowView, ContentUnavailableView               | HIG, tokens | Yes | UI/Integration |
-| `RoutesView`        | List of all user routes                     | RouteRowView, ContentUnavailableView                     | HIG, tokens | Yes | UI/Integration |
-| `SettingsView`      | App settings, data management, info with logo and API link | Button, Text, ProgressView, LoadingOverlayView, Image, Link | HIG, tokens | Yes | UI/Integration |
-| `AppBrandingView`   | Logo with laurel decorations, catchphrase, and API link | Text, Image, Link, HStack, VStack | HIG, tokens | Yes | UI/Integration |
-| `AboutSectionView`  | Reusable about section with logo, catchphrase, and API link | Text, Image, Link, HStack, VStack | HIG, tokens | Yes | UI/Integration |
+#### Analysis Features
+- **Peak Hour Detection:** Identifies hours with above-average bridge activity
+- **Busy Day Analysis:** Finds weekdays with higher bridge opening frequency
+- **Bridge Activity Tracking:** Per-bridge statistics including event count and average duration
+- **Conditional Adjustments:** Adjusts intervals based on current activity levels and pattern stability
 
----
+### StatisticalAnalysisIntegration
+**File:** `Bridget/StatisticalAnalysisIntegration.swift`
 
-## Templates & Pages (for future expansion)
-*Layouts arranging organisms into full screens.*
+#### UI Integration Layer
+- **Published Properties:** Observable state for SwiftUI integration
+- **Comprehensive Analysis:** Coordinates all statistical analysis components
+- **Urgency Adjustments:** Real-time interval adjustments based on current conditions
+- **Human-readable Outputs:** Formatted strings for UI display
 
-| Name                | Description                                 | Organisms Used               | HIG/Design Token | Accessibility | Test Coverage |
-|---------------------|---------------------------------------------|------------------------------|------------------|---------------|--------------|
-| `ContentView`       | Main app tab view                           | BridgesListView, EventsListView, TrafficFlowView, RoutesView, SettingsView | HIG, tokens | Yes | UI/Integration |
+#### User Experience Features
+- **Current Conditions:** Peak hour and busy day detection for current time
+- **Urgency Scoring:** Real-time urgency calculation based on multiple factors
+- **Formatted Intervals:** Human-readable refresh interval strings (e.g., "15 minutes", "2h 30m")
+- **Status Summaries:** Concise status information for UI display
+- **Detailed Debugging:** Comprehensive analysis status for development
 
----
+### StatisticalAnalysisView
+**File:** `Bridget/StatisticalAnalysisIntegration.swift`
 
-## Branding & Identity Elements
-*Core branding components for app identity and user experience.*
+#### SwiftUI Interface
+- **Analysis Header:** Title with manual analysis trigger button
+- **Loading States:** Progress indicator during analysis with descriptive text
+- **Error Handling:** Error display with retry capabilities
+- **Results Display:** Comprehensive analysis results with confidence indicators
 
-| Element              | Description                                 | Implementation Status | Design Tokens |
-|----------------------|---------------------------------------------|----------------------|---------------|
-| `App Logo`           | "Bridget" with laurel.leading/laurel.trailing decorations | ✅ Complete (2025-07-17) | Green laurels, bold title |
-| `Catchphrase`        | "Ditch the spanxiety: Bridge the gap between *you* and on time" | ✅ Complete (2025-07-17) | Italic "you", secondary color |
-| `API Attribution`    | Seattle Open Data API link with info.circle and arrow.up.right | ✅ Complete (2025-07-17) | Blue link, caption font |
-| `Color Palette`      | Green laurels, blue links, system colors    | ✅ Complete (2025-07-17) | HIG-compliant |
+#### Visual Components
+- **Recommendation Card:** Shows optimal refresh interval with confidence percentage
+- **Activity Summary:** Bridge event statistics with currently open count
+- **Condition Indicators:** Peak hour and busy day status badges
+- **Urgency Display:** Real-time urgency score with color coding
+- **Explanation Text:** Human-readable reasoning for recommendations
 
-**Branding Features:**
-- **Laurel Decorations**: Green laurel.leading and laurel.trailing icons flanking the app name
-- **Memorable Catchphrase**: Emphasizes the app's value proposition with italicized "you"
-- **Data Attribution**: Clear attribution to Seattle Open Data API with external link indicators
-- **HIG Compliance**: Uses system colors and typography for accessibility and consistency
+#### Interactive Features
+- **Manual Analysis:** "Analyze" button to trigger comprehensive analysis
+- **Detailed View:** Sheet presentation with comprehensive analysis details
+- **Auto-refresh:** Automatic analysis on view appearance
+- **Confidence Colors:** Green (high), orange (medium), red (low) confidence indicators
 
----
+## Network and Data Management
 
-## Statistical Capabilities (BridgetStatistics Package)
-*Advanced statistical methods for data-driven insights.*
+### OpenSeattleAPIService
+**File:** `Bridget/OpenSeattleAPIService.swift`
 
-| Capability                    | Description                                 | Implementation Status | Test Coverage |
-|-------------------------------|---------------------------------------------|----------------------|---------------|
-| `DataDrivenThresholds`        | Adaptive thresholds based on data percentiles | ✅ Complete         | 22/22 tests   |
-| `ConfidenceIntervals`         | Statistical confidence intervals for estimates | ✅ Complete         | 22/22 tests   |
-| `OutlierDetection`            | IQR-based outlier detection and handling    | ✅ Complete         | 22/22 tests   |
-| `SeasonalThresholds`          | Time-based seasonal threshold adjustments   | ✅ Complete         | 22/22 tests   |
-| `CascadeStatisticsService`    | User-facing cascade strength statistics     | ✅ Complete         | 22/22 tests   |
-| `FrequencyLabels`             | User-friendly frequency categorization (Low/Medium/High) | ✅ Complete         | 22/22 tests   |
-| `DurationRangeCalculation`    | Fixed: Uses actual duration values for "Typical Duration" display | ✅ Fixed (2025-07-17) | 22/22 tests   |
-| `DetailedTimeWindowStrings`   | Context-aware time window descriptions     | ✅ Complete         | 22/22 tests   |
-| `SparklineDataGeneration`     | Daily activity data for visualization       | ✅ Complete         | 22/22 tests   |
-| `WeekdayWeekendDistribution`  | Activity distribution analysis              | ✅ Complete         | 22/22 tests   |
-| `TypicalWaitTimeCalculation`  | Median wait time with confidence intervals  | ✅ Complete         | 22/22 tests   |
+#### Fetch Operations
+- **Batch Processing:** Fetches data in 1000-item batches for efficiency
+- **Error Handling:** Retries on network cancellations with data preservation
+- **Progress Tracking:** Console logging for fetch progress and completion
+- **Data Persistence:** Stores fetched data in SwiftData ModelContext
 
-**Key Features:**
-- **Robust Statistical Methods**: Unbiased estimators, proper percentile calculations, trimmed means
-- **User-Focused Output**: "Low", "Medium", "High" labels instead of technical terms
-- **Adaptive Thresholds**: Data-driven thresholds that adjust to actual data distribution
-- **Confidence Intervals**: Statistical uncertainty quantification for all estimates
-- **Outlier Handling**: Automatic detection and handling of statistical outliers
-- **Seasonal Analysis**: Support for monthly, weekly, and daily seasonal patterns
-- **Duration Range Display**: Fixed "0-0" issue by using actual duration values instead of normalized cascade strengths
-- **Enhanced Time Context**: Detailed time window descriptions for better user understanding
-- **Sparkline Visualization**: Daily activity trends for quick pattern recognition
-- **Weekday/Weekend Analysis**: Activity distribution insights for planning
-- **Wait Time Insights**: Typical wait times with confidence intervals for better expectations
+#### Error Recovery
+- **Network Cancellation:** Handles `URLError.cancelled` gracefully
+- **Retry Logic:** Attempts retry on cancellations without showing user errors
+- **Data Preservation:** Maintains cached data during retry attempts
+- **User Feedback:** Shows error messages only after max retry attempts
 
----
+## UI State Synchronization
 
-## Manifest Usage & Automation
-- **Scalability:** Add new atoms/molecules/organisms as they are created.
-- **Clarity:** Each entry should link to its source file and design spec (future).
-- **Automation:**
-  - Lint rules for design tokens and spacing at atom/molecule level
-  - Snapshot tests for molecules
-  - Accessibility and integration tests for organisms
-- **HIG Compliance:** All components must meet Apple’s Human Interface Guidelines for iOS.
-- **Accessibility:** All interactive and visible elements must be accessible via VoiceOver and support Dynamic Type.
+### Atomic State Transitions
+- **Single Source of Truth:** `LoadingState` enum prevents state conflicts
+- **Synchronized Updates:** All UI elements respond to single state change
+- **No Mixed Content:** Prevents skeletons and real data from showing simultaneously
+- **Predictable Behavior:** Clear state machine with defined transitions
 
----
+### Statistical Analysis State
+- **Analysis State Management:** Observable properties for real-time updates
+- **Confidence Tracking:** Real-time confidence level updates
+- **Pattern Stability Monitoring:** Continuous pattern stability assessment
+- **Urgency Scoring:** Dynamic urgency calculation based on current conditions
 
-*This manifest is a living document. Update as new UI elements are added or refactored.* 
+### Debug and Monitoring
+- **Console Logging:** Comprehensive state change tracking
+- **Network Operation Logging:** Monitors fetch progress and completion
+- **UI State Logging:** Tracks when UI elements should show/hide
+- **Statistical Analysis Logging:** Detailed analysis progress and results
+
+## Accessibility and Polish
+
+### VoiceOver Support
+- **Loading Indicators:** Properly labeled for screen readers
+- **Skeleton Content:** Not read as real content by VoiceOver
+- **Error Messages:** Clear, descriptive error text for accessibility
+- **Statistical Results:** Descriptive labels for analysis results and confidence levels
+
+### Animation and Transitions
+- **Fade Animations:** Smooth opacity transitions for state changes
+- **Loading Transitions:** Progress indicators fade in/out appropriately
+- **Content Transitions:** Bridge cards animate between skeleton and real states
+- **Performance:** Efficient animations that don't impact scrolling
+
+## User Experience Design
+
+### Simplified Interaction Model
+- **No Manual Refresh:** Removed pull-to-refresh functionality for non-live data
+- **Automatic Loading:** Data loads automatically on app launch and when needed
+- **Cached Data Priority:** Shows cached data immediately while loading fresh data
+- **Minimal User Actions:** Users don't need to manually refresh bridge status data
+
+### Data-Driven Refresh Strategy
+- **Statistical Analysis:** Comprehensive analysis of bridge opening patterns
+- **Adaptive Intervals:** Refresh intervals adjust based on data patterns and current conditions
+- **Confidence-Based Decisions:** Recommendations include confidence levels and reasoning
+- **Real-time Adjustments:** Intervals adjust based on current urgency and activity levels
+
+### Data Update Strategy
+- **Background Updates:** Data updates happen automatically without user intervention
+- **Cached Data Display:** Shows last known good data while fetching updates
+- **Non-Intrusive:** No loading spinners or manual refresh prompts
+- **Bridge Status Focus:** Emphasizes current bridge status over data freshness
+
+## Statistical Analysis Features
+
+### Data-Driven Decision Making
+- **Poisson Process Modeling:** Mathematical modeling of bridge opening patterns
+- **Pattern Recognition:** Automatic detection of seasonal and trend patterns
+- **Change Detection:** Real-time detection of pattern changes using statistical methods
+- **Confidence Assessment:** Statistical confidence in all recommendations
+
+### Adaptive Refresh Intervals
+- **Conservative Option:** Longer intervals for stable patterns with high confidence
+- **Moderate Option:** Balanced intervals based on current data analysis
+- **Aggressive Option:** Shorter intervals for unstable patterns or high urgency
+- **Real-time Adjustment:** Dynamic adjustment based on current conditions
+
+### Comprehensive Insights
+- **Peak Activity Hours:** Identification of hours with highest bridge activity
+- **Busy Days:** Detection of weekdays with increased bridge openings
+- **Bridge-Specific Statistics:** Per-bridge activity levels and patterns
+- **Trend Analysis:** Long-term activity trend detection and forecasting
+
+## Performance Measurement System
+
+### PerformanceMeasurement Utility
+**File:** `Bridget/PerformanceMeasurement.swift`
+
+#### Core Measurement Features
+- **Timing Methods:** Start/end measurement with automatic duration calculation
+- **Statistics Tracking:** Average, min, max times for each measurement
+- **Memory Usage Tracking:** Real-time memory consumption monitoring
+- **Console Logging:** Detailed performance metrics with emoji indicators
+
+#### Measurement Categories
+- **SwiftData Performance:** Query, save, and relationship loading times
+- **Network Performance:** API response times and data transfer sizes
+- **UI Performance:** Rendering and view loading times
+- **App Launch Performance:** Cold, warm, and hot launch measurements
+
+#### Usage Patterns
+- **Automatic Measurement:** Defer-based timing for accurate results
+- **Contextual Logging:** Memory usage tracking with context labels
+- **Summary Reporting:** Comprehensive performance summary with statistics
+- **Baseline Establishment:** Clear targets for optimization efforts
+
+## Known Issues and Resolutions
+
+### Resolved Issues
+1. **Mixed Content Display:** Fixed with atomic state management
+2. **UI Under Dynamic Island:** Fixed with proper safe area handling
+3. **Unnecessary Pull-to-Refresh:** Removed for non-live data type
+4. **Network Cancellation Errors:** Fixed with retry logic and data preservation
+5. **Arbitrary Refresh Intervals:** Replaced with data-driven statistical analysis
+
+### Current Status
+- **Build Success:** App compiles and launches without errors
+- **Layout Fixes:** Content properly respects safe areas
+- **State Management:** Atomic state transitions prevent UI conflicts
+- **Error Handling:** Graceful handling of network issues
+- **Simplified UX:** No manual refresh needed for bridge status data
+- **Statistical Analysis:** TEMPORARILY DISABLED for stability (Phase 1 of proactive fix plan)
+- **Real-time Adjustments:** Dynamic interval adjustments based on current conditions
+- **Performance Profiling:** Phase 1.1 implemented with comprehensive measurement utilities, ready for simulator testing
+- **Crash Prevention:** SwiftData operations temporarily disabled to prevent memory management crashes
+
+## Testing Scenarios
+
+### Loading Scenarios
+1. **App Launch with Cached Data:** No loading indicators, immediate content display
+2. **App Launch without Cached Data:** 5 skeletons + progress indicator, fade out on load
+3. **Background Data Update:** Seamless data refresh without user interaction
+
+### Error Scenarios
+1. **Network Offline:** Shows error state with automatic retry
+2. **Network Cancellation:** Retries automatically without user error
+3. **Fetch Failure:** Shows descriptive error message
+
+### Statistical Analysis Scenarios
+1. **Insufficient Data:** Shows appropriate message when < 50 data points available
+2. **Stable Patterns:** Recommends longer intervals for stable bridge patterns
+3. **Unstable Patterns:** Recommends shorter intervals for changing patterns
+4. **Peak Hours:** Adjusts intervals during high-activity periods
+5. **Seasonal Patterns:** Detects and adjusts for daily/weekly/monthly patterns
+
+### User Experience Scenarios
+1. **First Launch:** Automatic data loading with skeleton placeholders
+2. **Subsequent Launches:** Immediate display of cached data
+3. **Data Staleness:** Background refresh without interrupting user
+4. **Statistical Analysis:** Automatic analysis with confidence-based recommendations
+
+## Future Enhancements
+- **Reduce Motion Support:** Respect user's motion preferences
+- **Offline Mode:** Enhanced offline experience with cached data
+- **Background Refresh:** Automatic data updates in background
+- **Push Notifications:** Real-time bridge status updates
+- **Data Freshness Indicators:** Subtle indicators for data age without manual refresh
+- **Advanced Statistical Models:** Machine learning models for pattern prediction
+- **Personalized Recommendations:** User-specific refresh interval preferences
+- **Historical Analysis:** Long-term trend analysis and forecasting
+- **Multi-bridge Correlation:** Analysis of relationships between different bridges 

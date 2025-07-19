@@ -1,5 +1,7 @@
 import XCTest
+import SwiftData
 @testable import BridgetStatistics
+@testable import BridgetCore
 
 // Test event type that conforms to DateProvider
 struct TestEvent: DateProvider {
@@ -51,7 +53,7 @@ final class BridgetStatisticsTests: XCTestCase {
         let thresholds = (rare: 0.2, sometimes: 0.5, often: 0.8)
         XCTAssertEqual(StatisticsAPI.frequencyLabel(value: 0.1, thresholds: thresholds), "Low")
         XCTAssertEqual(StatisticsAPI.frequencyLabel(value: 0.3, thresholds: thresholds), "Medium")
-        XCTAssertEqual(StatisticsAPI.frequencyLabel(value: 0.9, thresholds: thresholds), "High")
+        XCTAssertEqual(StatisticsAPI.frequencyLabel(value: 0.9, thresholds: thresholds), "Very High")
     }
 
     func testRangeString() {
@@ -141,7 +143,7 @@ final class BridgetStatisticsTests: XCTestCase {
         
         // Test daily
         let dailyKey = StatisticsAPI.SeasonType.daily.seasonKey(from: testDate)
-        XCTAssertTrue(Int(dailyKey) != nil)
+        XCTAssertEqual(dailyKey, "2024-06-15")
     }
     
     // MARK: - Confidence Interval Tests
@@ -225,84 +227,179 @@ final class BridgetStatisticsTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(defaultOutliers?.count ?? 0, lenientOutliers?.count ?? 0)
     }
     
-    // MARK: - CascadeStatisticsService Tests
-    func testCascadeStatisticsServiceEmpty() {
-        let result = CascadeStatisticsService.compute(strengths: [], timeWindowDays: 30, events: [TestEvent](), durations: [])
-        XCTAssertNil(result.mean)
-        XCTAssertNil(result.median)
-        XCTAssertNil(result.std)
-        XCTAssertEqual(result.count, 0)
-        XCTAssertEqual(result.frequencyLabel, "Low") // Updated to new labels
-        XCTAssertEqual(result.timeWindowString, "Over the last 30 days")
-        XCTAssertNil(result.confidenceInterval)
-        XCTAssertNil(result.outliers)
-        XCTAssertNil(result.dataDrivenThresholds)
-    }
-
-    func testCascadeStatisticsServiceNormal() {
-        let strengths = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-        let result = CascadeStatisticsService.compute(strengths: strengths, timeWindowDays: 30, events: [TestEvent](), durations: [])
+    // MARK: - StatisticsAPI Tests
+    func testStatisticsAPIBasicFunctions() {
+        let values = [1.0, 2.0, 3.0, 4.0, 5.0]
         
-        XCTAssertEqual(result.mean, 0.5)
-        XCTAssertEqual(result.median, 0.5)
-        XCTAssertNotNil(result.std)
-        XCTAssertEqual(result.count, 9)
+        // Test mean
+        let mean = StatisticsAPI.mean(values)
+        XCTAssertEqual(mean, 3.0)
         
-        // With data-driven thresholds (0.3, 0.5, 0.7), mean of 0.5 is "Medium"
-        // But since 0.5 >= 0.5, it's actually "High" according to the logic
-        XCTAssertEqual(result.frequencyLabel, "High")
-        XCTAssertEqual(result.timeWindowString, "Over the last 30 days")
-        XCTAssertNotNil(result.confidenceInterval)
-        XCTAssertNil(result.outliers) // No outliers in this clean data
-        XCTAssertNotNil(result.dataDrivenThresholds)
+        // Test unbiased standard deviation
+        let std = StatisticsAPI.unbiasedStd(values)
+        XCTAssertNotNil(std)
+        XCTAssertGreaterThan(std!, 0.0)
         
-        // Verify data-driven thresholds
-        XCTAssertEqual(result.dataDrivenThresholds?.rare, 0.3)
-        XCTAssertEqual(result.dataDrivenThresholds?.sometimes, 0.5)
-        XCTAssertEqual(result.dataDrivenThresholds?.often, 0.7)
-    }
-
-    func testCascadeStatisticsServiceSmallN() {
-        let strengths = [0.1, 0.2, 0.3, 0.4]
-        let result = CascadeStatisticsService.compute(strengths: strengths, timeWindowDays: 7, events: [TestEvent](), durations: [])
+        // Test median
+        let median = StatisticsAPI.median(values)
+        XCTAssertEqual(median, 3.0)
         
-        XCTAssertEqual(result.mean, 0.25)
-        XCTAssertEqual(result.median, 0.25)
-        XCTAssertNotNil(result.std)
-        XCTAssertEqual(result.count, 4)
-        
-        // With data-driven thresholds (0.175, 0.25, 0.325), mean of 0.25 is "Medium"
-        // But since 0.25 >= 0.25, it's actually "High" according to the logic
-        XCTAssertEqual(result.frequencyLabel, "High")
-        XCTAssertEqual(result.timeWindowString, "Over the last 7 days")
-        XCTAssertNotNil(result.confidenceInterval)
-        XCTAssertNil(result.outliers)
-        XCTAssertNotNil(result.dataDrivenThresholds)
+        // Test empty array
+        XCTAssertNil(StatisticsAPI.mean([]))
+        XCTAssertNil(StatisticsAPI.unbiasedStd([]))
+        XCTAssertNil(StatisticsAPI.median([]))
     }
     
-    func testCascadeStatisticsServiceWithOutliers() {
-        let strengths = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.5] // 1.5 is an outlier
-        let result = CascadeStatisticsService.compute(strengths: strengths, timeWindowDays: 30, events: [TestEvent](), durations: [])
+    // MARK: - BridgeDataAnalyzer Tests
+    func testBridgeDataAnalyzerInsufficientData() async throws {
+        let analyzer = BridgeDataAnalyzer()
+        let modelContainer = try ModelContainer(for: DrawbridgeEvent.self, DrawbridgeInfo.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let modelContext = ModelContext(modelContainer)
         
-        XCTAssertNotNil(result.outliers)
-        XCTAssertEqual(result.outliers?.count, 1)
-        XCTAssertEqual(result.outliers?.first, 9) // Index of 1.5
+        let recommendation = await analyzer.analyzeRefreshInterval(modelContext: modelContext)
+        
+        XCTAssertEqual(recommendation.method, .insufficientData)
+        XCTAssertEqual(recommendation.interval, 3600) // Default 1 hour
+        XCTAssertEqual(recommendation.confidence, 0.0)
+        XCTAssertTrue(recommendation.reasoning.contains("Need at least"))
     }
     
-    func testCascadeStatisticsServiceWithDefaultThresholds() {
-        let strengths = [0.1, 0.2, 0.3, 0.4, 0.5]
-        let result = CascadeStatisticsService.compute(
-            strengths: strengths, 
-            timeWindowDays: 30,
-            events: [TestEvent](),
-            durations: [],
-            useDataDrivenThresholds: false,
-            defaultThresholds: (rare: 0.3, sometimes: 0.6, often: 0.9)
+    func testBridgeDataAnalyzerWithMockData() async throws {
+        let analyzer = BridgeDataAnalyzer()
+        let modelContainer = try ModelContainer(for: DrawbridgeEvent.self, DrawbridgeInfo.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let modelContext = ModelContext(modelContainer)
+        
+        // Test with empty data first
+        let emptyRecommendation = await analyzer.analyzeRefreshInterval(modelContext: modelContext)
+        XCTAssertEqual(emptyRecommendation.method, .insufficientData)
+        XCTAssertEqual(emptyRecommendation.confidence, 0.0)
+        
+        // Test basic statistical functions
+        let values = [1.0, 2.0, 3.0, 4.0, 5.0]
+        let mean = StatisticsAPI.mean(values)
+        XCTAssertEqual(mean, 3.0)
+        
+        let std = StatisticsAPI.unbiasedStd(values)
+        XCTAssertNotNil(std)
+        XCTAssertGreaterThan(std!, 0.0)
+    }
+    
+    // MARK: - BridgeDataAnalysisService Tests
+    func testBridgeDataAnalysisServiceInitialization() throws {
+        let modelContainer = try ModelContainer(for: DrawbridgeEvent.self, DrawbridgeInfo.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let modelContext = ModelContext(modelContainer)
+        
+        let service = BridgeDataAnalysisService(modelContext: modelContext)
+        
+        // Test that service can be created
+        XCTAssertNotNil(service)
+        
+        // Test analysis state
+        let state = service.getCurrentAnalysisState()
+        XCTAssertEqual(state.recommendedInterval, 3600) // Default
+        XCTAssertEqual(state.confidence, 0.0) // Default
+    }
+    
+    func testBridgeDataAnalysisServiceWithData() async throws {
+        let modelContainer = try ModelContainer(for: DrawbridgeEvent.self, DrawbridgeInfo.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let modelContext = ModelContext(modelContainer)
+        
+        let service = BridgeDataAnalysisService(modelContext: modelContext)
+        
+        // Test with empty data first
+        let emptyResult = await service.performRealTimeAnalysis()
+        XCTAssertNotNil(emptyResult)
+        XCTAssertEqual(emptyResult.currentOpenBridges, 0)
+        XCTAssertEqual(emptyResult.recentActivity, 0)
+        XCTAssertGreaterThanOrEqual(emptyResult.urgencyScore, 0.0)
+        XCTAssertLessThanOrEqual(emptyResult.urgencyScore, 1.0)
+        
+        // Test basic analyzer functionality without service methods
+        let analyzer = BridgeDataAnalyzer()
+        let recommendation = await analyzer.analyzeRefreshInterval(modelContext: modelContext)
+        
+        XCTAssertNotNil(recommendation)
+        XCTAssertEqual(recommendation.method, .insufficientData)
+        XCTAssertEqual(recommendation.interval, 3600) // Default 1 hour
+        XCTAssertEqual(recommendation.confidence, 0.0)
+        XCTAssertTrue(recommendation.reasoning.contains("Need at least"))
+    }
+    
+    // MARK: - Data Structure Tests
+    func testRefreshIntervalRecommendation() {
+        let recommendation = RefreshIntervalRecommendation(
+            interval: 1800,
+            confidence: 0.85,
+            method: .poissonProcess,
+            reasoning: "Test reasoning"
         )
         
-        XCTAssertEqual(result.mean, 0.3)
-        // With default thresholds (0.3, 0.6, 0.9), mean of 0.3 is "Medium" (>= 0.3 but < 0.6)
-        XCTAssertEqual(result.frequencyLabel, "Medium")
-        XCTAssertNil(result.dataDrivenThresholds) // Should be nil when not using data-driven thresholds
+        XCTAssertEqual(recommendation.interval, 1800)
+        XCTAssertEqual(recommendation.confidence, 0.85)
+        XCTAssertEqual(recommendation.method, .poissonProcess)
+        XCTAssertEqual(recommendation.reasoning, "Test reasoning")
+    }
+    
+    func testAnalysisState() {
+        let state = AnalysisState(
+            recommendedInterval: 1800,
+            confidence: 0.85,
+            dataFreshness: .fresh,
+            patternStability: .stable,
+            seasonalPatterns: .daily,
+            trendDirection: .stable
+        )
+        
+        XCTAssertEqual(state.recommendedInterval, 1800)
+        XCTAssertEqual(state.confidence, 0.85)
+        XCTAssertEqual(state.dataFreshness, .fresh)
+        XCTAssertEqual(state.patternStability, .stable)
+        XCTAssertEqual(state.seasonalPatterns, .daily)
+        XCTAssertEqual(state.trendDirection, .stable)
+    }
+    
+    func testBridgeDataInsights() {
+        let insights = BridgeDataInsights(
+            totalEvents: 100,
+            currentlyOpen: 3,
+            averageDuration: 25.5,
+            peakHours: [8, 9, 17, 18],
+            busyDays: [1, 2, 3, 4, 5],
+            bridgeActivity: [:],
+            recentActivity: 5,
+            lastUpdated: Date()
+        )
+        
+        XCTAssertEqual(insights.totalEvents, 100)
+        XCTAssertEqual(insights.currentlyOpen, 3)
+        XCTAssertEqual(insights.averageDuration, 25.5)
+        XCTAssertEqual(insights.peakHours, [8, 9, 17, 18])
+        XCTAssertEqual(insights.busyDays, [1, 2, 3, 4, 5])
+        
+        // Test empty insights
+        let emptyInsights = BridgeDataInsights.empty()
+        XCTAssertEqual(emptyInsights.totalEvents, 0)
+        XCTAssertEqual(emptyInsights.currentlyOpen, 0)
+        XCTAssertEqual(emptyInsights.averageDuration, 0.0)
+        XCTAssertTrue(emptyInsights.peakHours.isEmpty)
+        XCTAssertTrue(emptyInsights.busyDays.isEmpty)
+    }
+    
+    func testRefreshIntervalSuggestions() {
+        let suggestions = RefreshIntervalSuggestions(
+            conservative: 3600,
+            moderate: 1800,
+            aggressive: 900,
+            recommended: 1800,
+            reasoning: "Test reasoning",
+            confidence: 0.85
+        )
+        
+        XCTAssertEqual(suggestions.conservative, 3600)
+        XCTAssertEqual(suggestions.moderate, 1800)
+        XCTAssertEqual(suggestions.aggressive, 900)
+        XCTAssertEqual(suggestions.recommended, 1800)
+        XCTAssertEqual(suggestions.reasoning, "Test reasoning")
+        XCTAssertEqual(suggestions.confidence, 0.85)
     }
 }

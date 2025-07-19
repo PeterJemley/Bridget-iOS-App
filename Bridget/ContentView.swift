@@ -40,5 +40,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: [Item.self, DrawbridgeEvent.self, DrawbridgeInfo.self, TrafficFlow.self, Route.self], inMemory: true)
+        // Use shared ModelContainer from BridgetApp
 }

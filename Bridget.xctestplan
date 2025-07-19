@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "configuration_1",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Bridget.xcodeproj",
+      "identifier" : "48FF947E2E247C5A000DDE6E",
+      "name" : "BridgetTests"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Bridget.xcodeproj",
+        "identifier" : "48FF947E2E247C5A000DDE6E",
+        "name" : "BridgetTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Bridget.xcodeproj",
+        "identifier" : "48FF94882E247C5A000DDE6E",
+        "name" : "BridgetUITests"
+      }
+    }
+  ],
+  "version" : 1
+} 

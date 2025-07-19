@@ -730,7 +730,7 @@ public struct DrillDownUnusualDataExplanation: View {
                 .multilineTextAlignment(.leading)
         }
         .padding(8)
-        .background(Color(.systemGray5))
+        .background(Color.gray.opacity(0.1))
         .cornerRadius(8)
         .accessibilityElement(children: .combine)
     }
@@ -784,7 +784,7 @@ public struct OutlierWarningWithDrilldown: View {
             }
         }
         .padding(8)
-        .background(Color(.systemGray6))
+        .background(Color.gray.opacity(0.05))
         .cornerRadius(8)
         .accessibilityElement(children: .combine)
     }
@@ -814,7 +814,7 @@ public struct OutlierDrilldownExplanation: View {
                 .foregroundColor(.secondary)
         }
         .padding(8)
-        .background(Color(.systemGray5))
+        .background(Color.gray.opacity(0.1))
         .cornerRadius(8)
         .accessibilityElement(children: .combine)
     }

@@ -1,148 +1,112 @@
-# 📋 Bridget Documentation Index - Updated
+# Bridget Documentation Index - Updated
 
-## 📋 Executive Summary
-
-This index provides organized access to all Bridget project documentation in the new proactive, stepwise structure, optimized for  tagging and cross-referencing.
-
-**Recent UX/Architecture Change:**
-- Pull-to-refresh functionality has been removed from the Bridget app. Data is now loaded automatically when views appear and can be refreshed only through explicit user actions (such as tapping a refresh button). This change was made to improve accessibility, reliability, and user experience consistency. All documentation and features now reflect this new approach.
-
-**Last Updated:** January 2025
-**Organization:** Updated-Documentation folder with proactive, stepwise approach
-**Total Documents:** 7 consolidated files (new structure)
-**Status:** Core planning and implementation documents completed ✅
-
-**Important**: This documentation covers two distinct projects:
-- **Bridget iOS App**: iOS application rebuild (SwiftUI, SwiftData)
-- ****: macOS desktop application for project organization and file tagging
+**Purpose**: Central index for all Bridget project documentation
+**Status**: Core planning and implementation documents completed
 
 ---
 
-## 🚀 **Bridget Rebuild Documentation**
+## Executive Summary
 
-### **Core Planning & Strategy**
-- **[PROACTIVE_REBUILD_PLAN.md](PROACTIVE_REBUILD_PLAN.md)** - Comprehensive 12-week stepwise rebuild plan ✅ **COMPLETED**
-- **[IMPLEMENTATION_PHASES.md](IMPLEMENTATION_PHASES.md)** - Detailed phase-based implementation with deliverables ✅ **COMPLETED**
-- **[FEATURE_SPECIFICATIONS.md](FEATURE_SPECIFICATIONS.md)** - Complete feature requirements and specifications ✅ **COMPLETED**
-- **[BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md)** - **SINGLE SOURCE OF TRUTH** - Complete build plan with current status and implementation guidance ✅ **COMPLETED**
+This document serves as the central index for all Bridget project documentation, providing quick navigation to relevant documents based on your role and current needs. The documentation is organized by purpose and implementation phase.
 
-### **Technical Implementation**
-- **[TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md)** - Data models, architecture patterns, and best practices ✅ **COMPLETED**
-- **[REBUILD_IMPLEMENTATION_GUIDE.md](REBUILD_IMPLEMENTATION_GUIDE.md)** - Practical implementation guide with code templates ✅ **COMPLETED**
-
-### **Development Workflow**
-- **[COMMIT_AND_GITHUB_WORKFLOW.md](COMMIT_AND_GITHUB_WORKFLOW.md)** - Comprehensive commit strategy, GitHub CLI automation, and GitHub Issues integration ✅ **COMPLETED**
-- **[DEVELOPMENT_REFERENCE.md](DEVELOPMENT_REFERENCE.md)** - Quick reference for development workflow and commands
-
-### **Analysis & Integration**
-- **[LEGACY_DOCUMENTATION_ANALYSIS.md](LEGACY_DOCUMENTATION_ANALYSIS.md)** - Analysis of legacy docs and integration strategy
+**Status:** Core planning and implementation documents completed
 
 ---
 
-## 🏷️ ** Documentation**
+## Bridget Rebuild Documentation
 
-**Note**:  was originally planned as a **macOS application** for local project organization. However, the strategic approach has been updated to use **GitHub Issues integration** instead, providing immediate implementation with superior functionality.
+### Core Planning Documents
+- **[PROACTIVE_REBUILD_PLAN.md](PROACTIVE_REBUILD_PLAN.md)** - Comprehensive 12-week stepwise rebuild plan - COMPLETED
+- **[IMPLEMENTATION_PHASES.md](IMPLEMENTATION_PHASES.md)** - Detailed phase-based implementation with deliverables - COMPLETED
+- **[FEATURE_SPECIFICATIONS.md](FEATURE_SPECIFICATIONS.md)** - Complete feature requirements and specifications - COMPLETED
+- **[BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md)** - Current status and implementation guidance - COMPLETED
 
-### **New Strategic Approach**
-- **[GITHUB_ISSUES_INTEGRATION_PLAN.md](GITHUB_ISSUES_INTEGRATION_PLAN.md)** - Complete 6-week plan for GitHub Issues-based project management
-- **[_ENGINEERING_PLAN.md](_ENGINEERING_PLAN.md)** - Original macOS app plan (reference only)
+### Architecture & Technical Documents
+- **[TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md)** - Data models, architecture patterns, and best practices - COMPLETED
+- **[REBUILD_IMPLEMENTATION_GUIDE.md](REBUILD_IMPLEMENTATION_GUIDE.md)** - Practical implementation guide with code templates - COMPLETED
 
-### **Legacy Documentation**
-- **[_GUIDE.md](../Legacy-Documentation/_GUIDE.md)** - Legacy implementation plan and quick start guide
-- **[_HYPERLINKS.md](../Legacy-Documentation/_HYPERLINKS.md)** - Rich interactive hyperlinks specification
-- **[FILE_TAGS_SYSTEM.md](../Legacy-Documentation/FILE_TAGS_SYSTEM.md)** - File tagging system documentation
+### Development Workflow Documents
+- **[COMMIT_AND_GITHUB_WORKFLOW.md](COMMIT_AND_GITHUB_WORKFLOW.md)** - Git workflow, automation, and GitHub Issues integration - COMPLETED
 
----
+### Specialized Technical Documents
+- **[SWIFTDATA_SENDABLE_CONCURRENCY_PLAN.md](SWIFTDATA_SENDABLE_CONCURRENCY_PLAN.md)** - SwiftData concurrency and Sendable implementation - COMPLETED
+- **[ACTOR_ISOLATION_BEST_PRACTICES.md](ACTOR_ISOLATION_BEST_PRACTICES.md)** - Actor isolation patterns and best practices - COMPLETED
+- **[ACTOR_ISOLATION_STRATEGY.md](ACTOR_ISOLATION_STRATEGY.md)** - Comprehensive actor isolation strategy - COMPLETED
+- **[CONCURRENCY_AUDIT_REPORT.md](CONCURRENCY_AUDIT_REPORT.md)** - Concurrency audit and recommendations - COMPLETED
 
-## 🔧 **Technology & Reference Documentation**
+### Implementation Status Documents
+- **[NEXT_STEPS_TODO.md](NEXT_STEPS_TODO.md)** - Current implementation status and next steps - ACTIVE
+- **[UI_ELEMENT_MANIFEST.md](UI_ELEMENT_MANIFEST.md)** - UI components and behavior documentation - COMPLETED
+- **[PHASE_3_DTO_IMPLEMENTATION_REPORT.md](PHASE_3_DTO_IMPLEMENTATION_REPORT.md)** - DTO implementation status - COMPLETED
 
-### **Technology Stack**
-- **[TECHNOLOGY_GUIDE.md](TECHNOLOGY_GUIDE.md)** - Complete guide to latest Apple technologies (2025) ✅ **COMPLETED**
-- **[SWIFTDATA_GUIDE.md](../Legacy-Documentation/SWIFTDATA_GUIDE.md)** - SwiftData implementation guide (legacy reference) ✅ **COMPLETED**
-
----
-
-## 📚 **Quick Reference**
-
-### **Getting Started**
-1. **New to Bridget?** → Start with [FEATURE_SPECIFICATIONS.md](FEATURE_SPECIFICATIONS.md) ✅
-2. **Implementation Guide?** → Use [BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md) ✅ **SINGLE SOURCE OF TRUTH**
-3. **Development?** → Use [DEVELOPMENT_REFERENCE.md](DEVELOPMENT_REFERENCE.md)
-4. **Architecture?** → See [TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md) ✅
-
-### **Common Tasks**
-- **Start rebuild implementation** → [BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md) ✅ **SINGLE SOURCE OF TRUTH**
-- **Follow commit workflow** → [COMMIT_AND_GITHUB_WORKFLOW.md](COMMIT_AND_GITHUB_WORKFLOW.md) ✅
-- **Setup GitHub Issues** → [COMMIT_AND_GITHUB_WORKFLOW.md](COMMIT_AND_GITHUB_WORKFLOW.md) ✅
-- **Reference legacy docs** → [LEGACY_DOCUMENTATION_ANALYSIS.md](LEGACY_DOCUMENTATION_ANALYSIS.md)
-
-### **Troubleshooting**
-- **Implementation issues** → [BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md) ✅ **SINGLE SOURCE OF TRUTH**
-- **Workflow problems** → [DEVELOPMENT_REFERENCE.md](DEVELOPMENT_REFERENCE.md)
-- **Architecture questions** → [TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md) ✅
+### Technology & Reference Documents
+- **[TECHNOLOGY_GUIDE.md](TECHNOLOGY_GUIDE.md)** - Complete guide to latest Apple technologies (2025) - COMPLETED
+- **[SWIFTDATA_GUIDE.md](../Legacy-Documentation/SWIFTDATA_GUIDE.md)** - SwiftData implementation guide (legacy reference) - COMPLETED
 
 ---
 
-## 🏷️ ** Tagging Strategy**
+## Quick Navigation Guide
 
-### **Proposed Tags for Updated Documentation**
-- **#bridget-rebuild** - Rebuild planning and implementation
-- **#github-issues** - GitHub Issues integration and management
-- **#proactive-planning** - Proactive, stepwise planning documents
-- **#implementation-phases** - Phase-based implementation guides
-- **#feature-specs** - Feature specifications and requirements
-- **#technical-architecture** - Technical architecture and patterns
-- **#development-workflow** - Development workflow and processes
-- **#commit-strategy** - Commit and GitHub workflow
-- **#swiftdata** - SwiftData implementation guides
-- **#swiftui** - SwiftUI and UI architecture
-- **#testing** - Testing and quality assurance
-- **#documentation** - Documentation organization and management
+### For New Team Members
+1. **New to Bridget?** → Start with [FEATURE_SPECIFICATIONS.md](FEATURE_SPECIFICATIONS.md)
+2. **Implementation Guide?** → Use [BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md) - SINGLE SOURCE OF TRUTH
+3. **Current Status?** → Check [NEXT_STEPS_TODO.md](NEXT_STEPS_TODO.md)
+4. **Architecture?** → See [TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md)
 
-### **Cross-Reference Tags**
-- **#implementation** - Implementation guides and strategies
-- **#best-practices** - Best practices and guidelines
-- **#architecture** - System architecture and design
-- **#workflow** - Development workflow and processes
-- **#quality** - Quality assurance and testing
-- **#automation** - Automation and tooling
+### For Active Development
+- **Start rebuild implementation** → [BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md) - SINGLE SOURCE OF TRUTH
+- **Follow commit workflow** → [COMMIT_AND_GITHUB_WORKFLOW.md](COMMIT_AND_GITHUB_WORKFLOW.md)
+- **Setup GitHub Issues** → [COMMIT_AND_GITHUB_WORKFLOW.md](COMMIT_AND_GITHUB_WORKFLOW.md)
 
----
+### For Technical Questions
+- **Implementation issues** → [BRIDGET_PROACTIVE_BUILD_PLAN.md](BRIDGET_PROACTIVE_BUILD_PLAN.md) - SINGLE SOURCE OF TRUTH
+- **SwiftData questions** → [SWIFTDATA_SENDABLE_CONCURRENCY_PLAN.md](SWIFTDATA_SENDABLE_CONCURRENCY_PLAN.md)
+- **Architecture questions** → [TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md)
+- **Actor isolation** → [ACTOR_ISOLATION_BEST_PRACTICES.md](ACTOR_ISOLATION_BEST_PRACTICES.md)
 
-## 🔄 **Maintenance**
-
-### **Documentation Updates**
-- **Weekly:** Review and update implementation progress
-- **Monthly:** Feature documentation updates
-- **Quarterly:** Complete documentation review and consolidation
-
-### **Automated Maintenance**
-- **:** Tag new documents as they're created
-- **Cross-references:** Maintain internal links between documents
-- **Version tracking:** Track documentation version changes
+### For Project Management
+- **Current status** → [NEXT_STEPS_TODO.md](NEXT_STEPS_TODO.md)
+- **Feature planning** → [FEATURE_SPECIFICATIONS.md](FEATURE_SPECIFICATIONS.md)
+- **Implementation phases** → [IMPLEMENTATION_PHASES.md](IMPLEMENTATION_PHASES.md)
 
 ---
 
-## 🎯 **Benefits of Updated Structure**
+## Document Status Legend
 
-### **Improved Navigation**
-- **Proactive Focus**: All documentation oriented toward forward-looking planning
-- **Clear Categories**: Logical grouping by rebuild phase and purpose
-- **Easy Cross-Reference**: Related information in consolidated documents
-- **Reduced Cognitive Load**: Fewer files to remember and navigate
-
-### **Better Maintenance**
-- **Single Source of Truth**: Related information in one document
-- **Easier Updates**: Update one document instead of multiple
-- **Reduced Duplication**: Eliminate redundant information
-- **Consistent Formatting**: Unified documentation style
-
-### **Enhanced Searchability**
-- ** Ready**: Optimized for tagging and search
-- **Better Search Results**: All related content in one place
-- **Easier Discovery**: Find related information quickly
-- **Cross-Reference Links**: Internal links between sections
+- **COMPLETED** - Document is complete and up-to-date
+- **ACTIVE** - Document is actively being updated
+- **PLANNED** - Document is planned but not yet created
+- **LEGACY** - Document is from legacy implementation (for reference only)
 
 ---
 
-*This updated documentation structure provides clear navigation, easy cross-referencing, and optimal organization for  tagging while maintaining comprehensive coverage of all Bridget rebuild documentation.*
+## Maintenance
+
+### Document Updates
+- All documents should be updated when implementation changes
+- Status indicators should reflect current implementation state
+- Links should be verified regularly
+
+### Version Control
+- All documentation is version controlled with the codebase
+- Changes should be committed with related code changes
+- Documentation should be reviewed with code reviews
+
+---
+
+## Benefits of Updated Structure
+
+### Improved Navigation
+- Clear categorization by purpose and phase
+- Quick navigation based on role and needs
+- Status indicators for document currency
+
+### Better Organization
+- Logical grouping of related documents
+- Clear separation of planning vs. implementation docs
+- Easy identification of current vs. legacy content
+
+### Enhanced Usability
+- Role-based navigation paths
+- Single source of truth identification
+- Clear status indicators for all documents

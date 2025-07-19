@@ -17,7 +17,7 @@ public final class TrafficFlowService {
     public func fetchTrafficFlow(bridgeID: String? = nil) async throws -> [TrafficFlow] {
         do {
             var descriptor = FetchDescriptor<TrafficFlow>(
-                predicate: bridgeID != nil ? #Predicate<TrafficFlow> { flow in
+                predicate: bridgeID != nil ? #Predicate { flow in
                     flow.bridgeID == bridgeID!
                 } : nil,
                 sortBy: [SortDescriptor(\.timestamp, order: .reverse)]
@@ -40,11 +40,11 @@ public final class TrafficFlowService {
             let predicate: Predicate<TrafficFlow>
             
             if let bridgeID = bridgeID {
-                predicate = #Predicate<TrafficFlow> { flow in
+                predicate = #Predicate { flow in
                     flow.bridgeID == bridgeID && flow.timestamp >= since
                 }
             } else {
-                predicate = #Predicate<TrafficFlow> { flow in
+                predicate = #Predicate { flow in
                     flow.timestamp >= since
                 }
             }
@@ -66,7 +66,7 @@ public final class TrafficFlowService {
     public func fetchLatestTrafficFlow(for bridgeID: String) async throws -> TrafficFlow? {
         do {
             var descriptor = FetchDescriptor<TrafficFlow>(
-                predicate: #Predicate<TrafficFlow> { flow in
+                predicate: #Predicate { flow in
                     flow.bridgeID == bridgeID
                 },
                 sortBy: [SortDescriptor(\.timestamp, order: .reverse)]
@@ -86,7 +86,7 @@ public final class TrafficFlowService {
     public func fetchHighCongestionTraffic(threshold: Double = 0.7) async throws -> [TrafficFlow] {
         do {
             let descriptor = FetchDescriptor<TrafficFlow>(
-                predicate: #Predicate<TrafficFlow> { flow in
+                predicate: #Predicate { flow in
                     flow.congestionLevel >= threshold
                 },
                 sortBy: [SortDescriptor(\.timestamp, order: .reverse)]
@@ -171,7 +171,9 @@ public final class TrafficFlowService {
     /// - Parameter bridgeID: The bridge ID to delete traffic data for
     public func deleteTrafficFlow(for bridgeID: String) async throws {
         // Use SwiftData batch delete for efficiency (see documentation)
-        try modelContext.delete(model: TrafficFlow.self, where: #Predicate { $0.bridgeID == bridgeID })
+        try modelContext.delete(model: TrafficFlow.self, where: #Predicate { flow in
+            flow.bridgeID == bridgeID
+        })
         try modelContext.save()
     }
     
@@ -179,7 +181,9 @@ public final class TrafficFlowService {
     /// - Parameter date: Traffic data older than this date will be deleted
     public func deleteTrafficFlowOlderThan(_ date: Date) async throws {
         // Use SwiftData batch delete for efficiency (see documentation)
-        try modelContext.delete(model: TrafficFlow.self, where: #Predicate { $0.timestamp < date })
+        try modelContext.delete(model: TrafficFlow.self, where: #Predicate { flow in
+            flow.timestamp < date
+        })
         try modelContext.save()
     }
     

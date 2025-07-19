@@ -48,7 +48,7 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
     public func fetchBridge(entityID: String) async throws -> DrawbridgeInfo? {
         do {
             var descriptor = FetchDescriptor<DrawbridgeInfo>(
-                predicate: #Predicate<DrawbridgeInfo> { bridge in
+                predicate: #Predicate { bridge in
                     bridge.entityID == entityID
                 }
             )
@@ -67,7 +67,7 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
     public func fetchBridges(type entityType: String) async throws -> [DrawbridgeInfo] {
         do {
             let descriptor = FetchDescriptor<DrawbridgeInfo>(
-                predicate: #Predicate<DrawbridgeInfo> { bridge in
+                predicate: #Predicate { bridge in
                     bridge.entityType == entityType
                 },
                 sortBy: [SortDescriptor(\.entityName, order: .forward)]
@@ -85,7 +85,7 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
     public func searchBridges(name searchTerm: String) async throws -> [DrawbridgeInfo] {
         do {
             let descriptor = FetchDescriptor<DrawbridgeInfo>(
-                predicate: #Predicate<DrawbridgeInfo> { bridge in
+                predicate: #Predicate { bridge in
                     bridge.entityName.localizedStandardContains(searchTerm)
                 },
                 sortBy: [SortDescriptor(\.entityName, order: .forward)]
@@ -114,7 +114,7 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
             let maxLon = centerLongitude + radiusDegrees
             
             let descriptor = FetchDescriptor<DrawbridgeInfo>(
-                predicate: #Predicate<DrawbridgeInfo> { bridge in
+                predicate: #Predicate { bridge in
                     bridge.latitude >= minLat && bridge.latitude <= maxLat &&
                     bridge.longitude >= minLon && bridge.longitude <= maxLon
                 },
@@ -216,7 +216,9 @@ public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
     /// - Parameter entityID: The bridge ID to delete
     public func deleteBridge(entityID: String) async throws {
         do {
-            try modelContext.delete(model: DrawbridgeInfo.self, where: #Predicate { $0.entityID == entityID })
+            try modelContext.delete(model: DrawbridgeInfo.self, where: #Predicate { bridge in
+                bridge.entityID == entityID
+            })
             try modelContext.save()
         } catch {
             throw BridgetDataError.deleteFailed(error)

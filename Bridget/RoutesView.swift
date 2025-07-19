@@ -158,5 +158,5 @@ struct AddRouteView: View {
 
 #Preview {
     RoutesView()
-        .modelContainer(for: [Route.self], inMemory: true)
+        // Use shared ModelContainer from BridgetApp
 } 

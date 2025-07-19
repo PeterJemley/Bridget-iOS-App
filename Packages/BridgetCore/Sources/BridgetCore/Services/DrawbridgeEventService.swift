@@ -17,7 +17,7 @@ public final class DrawbridgeEventService {
     public func fetchEvents(for entityID: String? = nil) async throws -> [DrawbridgeEvent] {
         do {
             var descriptor = FetchDescriptor<DrawbridgeEvent>(
-                predicate: entityID != nil ? #Predicate<DrawbridgeEvent> { event in
+                predicate: entityID != nil ? #Predicate { event in
                     event.entityID == entityID!
                 } : nil,
                 sortBy: [SortDescriptor(\.openDateTime, order: .reverse)]
@@ -40,11 +40,11 @@ public final class DrawbridgeEventService {
             let predicate: Predicate<DrawbridgeEvent>
             
             if let entityID = entityID {
-                predicate = #Predicate<DrawbridgeEvent> { event in
+                predicate = #Predicate { event in
                     event.entityID == entityID && event.openDateTime >= since
                 }
             } else {
-                predicate = #Predicate<DrawbridgeEvent> { event in
+                predicate = #Predicate { event in
                     event.openDateTime >= since
                 }
             }
@@ -65,7 +65,7 @@ public final class DrawbridgeEventService {
     public func fetchOpenBridges() async throws -> [DrawbridgeEvent] {
         do {
             let descriptor = FetchDescriptor<DrawbridgeEvent>(
-                predicate: #Predicate<DrawbridgeEvent> { event in
+                predicate: #Predicate { event in
                     event.closeDateTime == nil
                 },
                 sortBy: [SortDescriptor(\.openDateTime, order: .reverse)]
@@ -151,7 +151,9 @@ public final class DrawbridgeEventService {
     /// - Parameter entityID: The bridge ID to delete events for
     public func deleteEvents(for entityID: String) async throws {
         // Use SwiftData batch delete for efficiency (see documentation)
-        try modelContext.delete(model: DrawbridgeEvent.self, where: #Predicate { $0.entityID == entityID })
+        try modelContext.delete(model: DrawbridgeEvent.self, where: #Predicate { event in
+            event.entityID == entityID
+        })
         try modelContext.save()
     }
     
@@ -159,7 +161,9 @@ public final class DrawbridgeEventService {
     /// - Parameter date: Events older than this date will be deleted
     public func deleteEventsOlderThan(_ date: Date) async throws {
         // Use SwiftData batch delete for efficiency (see documentation)
-        try modelContext.delete(model: DrawbridgeEvent.self, where: #Predicate { $0.openDateTime < date })
+        try modelContext.delete(model: DrawbridgeEvent.self, where: #Predicate { event in
+            event.openDateTime < date
+        })
         try modelContext.save()
     }
     
