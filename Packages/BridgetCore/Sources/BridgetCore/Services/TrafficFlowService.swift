@@ -1,8 +1,8 @@
 import Foundation
 import SwiftData
 
-@Observable
-public final class TrafficFlowService {
+@MainActor
+public class TrafficFlowService {
     private let modelContext: ModelContext
     
     public init(modelContext: ModelContext) {

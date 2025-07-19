@@ -4,10 +4,11 @@ import SwiftData
 import BridgetCore
 import BridgetStatistics
 
-/// Integration layer for the enhanced statistical analysis system
-/// Provides easy-to-use methods for the main app to leverage data-driven refresh intervals
+/// Integration layer that connects statistical analysis with the main app
+/// Provides a clean interface for accessing analysis results and recommendations
 @Observable
-class StatisticalAnalysisIntegration {
+@MainActor
+public class StatisticalAnalysisIntegration {
     private let analysisService: BridgeDataAnalysisService
     private let modelContext: ModelContext
     
@@ -27,7 +28,6 @@ class StatisticalAnalysisIntegration {
     // MARK: - Public Interface
     
     /// Performs comprehensive analysis and updates all published properties
-    @MainActor
     func performComprehensiveAnalysis() async {
         print("📊 INTEGRATION: Starting comprehensive analysis")
         isAnalyzing = true

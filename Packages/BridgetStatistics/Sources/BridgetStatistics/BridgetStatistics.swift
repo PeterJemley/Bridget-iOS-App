@@ -254,6 +254,7 @@ public protocol DateProvider {
 /// Enhanced statistical analysis system for determining optimal refresh intervals
 /// based on bridge opening patterns, seasonal variations, and data freshness
 @Observable
+@MainActor
 public class BridgeDataAnalyzer {
     
     // MARK: - Configuration
@@ -286,17 +287,6 @@ public class BridgeDataAnalyzer {
     
     /// Performs comprehensive analysis of bridge data to determine optimal refresh interval
     public func analyzeRefreshInterval(modelContext: ModelContext) async -> RefreshIntervalRecommendation {
-        print("📊 BRIDGE DATA ANALYSIS: DISABLED - Returning default recommendation")
-        
-        // TEMPORARILY DISABLED: Return default recommendation to prevent crashes
-        return RefreshIntervalRecommendation(
-            interval: 3600,
-            confidence: 0.0,
-            method: .insufficientData,
-            reasoning: "Statistical analysis temporarily disabled for stability"
-        )
-        
-        /* DISABLED CODE - Will be re-enabled after SwiftData fixes
         print("📊 BRIDGE DATA ANALYSIS: Starting comprehensive analysis")
         
         // Fetch all bridge events for analysis with error handling
@@ -377,7 +367,6 @@ public class BridgeDataAnalyzer {
         print("📊 BRIDGE DATA ANALYSIS: Trend direction: \(trendAnalysis.direction)")
         
         return recommendation
-        */
     }
     
     // MARK: - Enhanced Poisson Process Analysis
@@ -909,11 +898,6 @@ public class BridgeDataAnalyzer {
     
     /// Fetches all bridge events for analysis with improved error handling
     private func fetchAllBridgeEvents(modelContext: ModelContext) async throws -> [DrawbridgeEvent] {
-        // TEMPORARILY DISABLED: Return empty array to prevent crashes
-        print("📊 BRIDGE DATA ANALYSIS: fetchAllBridgeEvents DISABLED - Returning empty array")
-        return []
-        
-        /* DISABLED CODE - Will be re-enabled after SwiftData fixes
         let descriptor = FetchDescriptor<DrawbridgeEvent>(
             sortBy: [SortDescriptor(\.openDateTime)]
         )
@@ -931,7 +915,6 @@ public class BridgeDataAnalyzer {
         }
         
         return limitedEvents
-        */
     }
     
     // MARK: - Helper Methods
@@ -1378,6 +1361,7 @@ public enum PatternStability: Sendable {
 /// Comprehensive service that integrates statistical analysis with data flow
 /// Provides data-driven refresh interval recommendations and insights
 @Observable
+@MainActor
 public class BridgeDataAnalysisService {
     private let analyzer: BridgeDataAnalyzer
     private let eventService: DrawbridgeEventService

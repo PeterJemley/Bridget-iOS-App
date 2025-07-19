@@ -15,10 +15,12 @@ private struct DrawbridgeEventResponse: Codable {
 }
 
 // Protocol abstraction for dependency injection
+@MainActor
 protocol NetworkSession {
     func data(from url: URL) async throws -> (Data, URLResponse)
 }
 
+@MainActor
 extension URLSession: NetworkSession {
     func data(from url: URL) async throws -> (Data, URLResponse) {
         try await self.data(from: url, delegate: nil)
@@ -57,7 +59,11 @@ class OpenSeattleAPIService: ObservableObject {
         return Date().timeIntervalSince(lastFetch) > cacheDuration
     }
     
+    @MainActor
     private func performBackgroundRefresh(modelContext: ModelContext, progressCallback: ((Int, Int) -> Void)? = nil) async {
+        // Runtime assertion to catch thread violations
+        precondition(Thread.isMainThread, "performBackgroundRefresh must be called on main thread")
+        
         print("🔵 performBackgroundRefresh: Starting background refresh")
         isLoading = true
         defer { 
@@ -232,6 +238,7 @@ class OpenSeattleAPIService: ObservableObject {
         }
     }
     
+    @MainActor
     private func fetchBatch(offset: Int, limit: Int) async throws -> [DrawbridgeEventResponse] {
         guard let url = URL(string: "\(baseURL)?$limit=\(limit)&$offset=\(offset)") else {
             throw BridgetDataError.invalidData("Invalid URL for event data")

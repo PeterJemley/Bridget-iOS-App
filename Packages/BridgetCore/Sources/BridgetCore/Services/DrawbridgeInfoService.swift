@@ -18,8 +18,8 @@ public protocol DrawbridgeInfoServiceProtocol {
     func getBridgesByType() async throws -> [String: Int]
 }
 
-@Observable
-public final class DrawbridgeInfoService: DrawbridgeInfoServiceProtocol {
+@MainActor
+public class DrawbridgeInfoService {
     private let modelContext: ModelContext
     
     public init(modelContext: ModelContext) {

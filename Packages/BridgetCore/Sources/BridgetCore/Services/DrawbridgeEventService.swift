@@ -1,8 +1,8 @@
 import Foundation
 import SwiftData
 
-@Observable
-public final class DrawbridgeEventService {
+@MainActor
+public class DrawbridgeEventService {
     private let modelContext: ModelContext
     
     public init(modelContext: ModelContext) {
@@ -227,9 +227,20 @@ public final class DrawbridgeEventService {
     ///   - entityID: Optional bridge ID to filter events
     /// - Returns: [Date: count] for the specified window
     public func eventCountsByDay(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: Int] {
-        // TODO: Implement grouping by day, counting events, and returning a dictionary
-        // Use Calendar to extract day from openDateTime
-        return [:]
+        let events = try await fetchEvents(for: entityID)
+        let filtered = events.filter { $0.openDateTime >= from && $0.openDateTime <= to }
+        
+        // Group by day using Calendar
+        var counts: [Date: Int] = [:]
+        let calendar = Calendar.current
+        
+        for event in filtered {
+            // Get start of day for the event
+            let dayStart = calendar.startOfDay(for: event.openDateTime)
+            counts[dayStart, default: 0] += 1
+        }
+        
+        return counts
     }
 
     /// Returns average, median, and percentile range of event durations by day for a given window and optional bridge.
@@ -240,8 +251,41 @@ public final class DrawbridgeEventService {
     /// - Returns: [Date: (average, median, p25, p75, tailRisk)]
     /// - Note: Use ranges and percentiles for user-facing stats.
     public func averageDurationByDay(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: (average: Double, median: Double, p25: Double, p75: Double, tailRisk: Double)] {
-        // TODO: Implement grouping by day, compute stats for completed events
-        return [:]
+        let events = try await fetchEvents(for: entityID)
+        let filtered = events.filter { 
+            $0.openDateTime >= from && 
+            $0.openDateTime <= to && 
+            $0.closeDateTime != nil 
+        }
+        
+        // Group by day
+        var dayGroups: [Date: [Double]] = [:]
+        let calendar = Calendar.current
+        
+        for event in filtered {
+            let dayStart = calendar.startOfDay(for: event.openDateTime)
+            dayGroups[dayStart, default: []].append(event.minutesOpen)
+        }
+        
+        // Calculate statistics for each day
+        var results: [Date: (average: Double, median: Double, p25: Double, p75: Double, tailRisk: Double)] = [:]
+        
+        for (day, durations) in dayGroups {
+            let sortedDurations = durations.sorted()
+            let count = sortedDurations.count
+            
+            guard count > 0 else { continue }
+            
+            let average = sortedDurations.reduce(0, +) / Double(count)
+            let median = calculatePercentile(sortedDurations, percentile: 0.5)
+            let p25 = calculatePercentile(sortedDurations, percentile: 0.25)
+            let p75 = calculatePercentile(sortedDurations, percentile: 0.75)
+            let tailRisk = calculatePercentile(sortedDurations, percentile: 0.95)
+            
+            results[day] = (average: average, median: median, p25: p25, p75: p75, tailRisk: tailRisk)
+        }
+        
+        return results
     }
 
     /// Returns average, median, and percentile range of event durations by week for a given window and optional bridge.
@@ -251,8 +295,41 @@ public final class DrawbridgeEventService {
     ///   - entityID: Optional bridge ID to filter events
     /// - Returns: [weekStartDate: (average, median, p25, p75, tailRisk)]
     public func averageDurationByWeek(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: (average: Double, median: Double, p25: Double, p75: Double, tailRisk: Double)] {
-        // TODO: Implement grouping by week, compute stats for completed events
-        return [:]
+        let events = try await fetchEvents(for: entityID)
+        let filtered = events.filter { 
+            $0.openDateTime >= from && 
+            $0.openDateTime <= to && 
+            $0.closeDateTime != nil 
+        }
+        
+        // Group by week
+        var weekGroups: [Date: [Double]] = [:]
+        let calendar = Calendar.current
+        
+        for event in filtered {
+            let weekStart = calendar.dateInterval(of: .weekOfYear, for: event.openDateTime)?.start ?? event.openDateTime
+            weekGroups[weekStart, default: []].append(event.minutesOpen)
+        }
+        
+        // Calculate statistics for each week
+        var results: [Date: (average: Double, median: Double, p25: Double, p75: Double, tailRisk: Double)] = [:]
+        
+        for (weekStart, durations) in weekGroups {
+            let sortedDurations = durations.sorted()
+            let count = sortedDurations.count
+            
+            guard count > 0 else { continue }
+            
+            let average = sortedDurations.reduce(0, +) / Double(count)
+            let median = calculatePercentile(sortedDurations, percentile: 0.5)
+            let p25 = calculatePercentile(sortedDurations, percentile: 0.25)
+            let p75 = calculatePercentile(sortedDurations, percentile: 0.75)
+            let tailRisk = calculatePercentile(sortedDurations, percentile: 0.95)
+            
+            results[weekStart] = (average: average, median: median, p25: p25, p75: p75, tailRisk: tailRisk)
+        }
+        
+        return results
     }
 
     /// Returns a dictionary of event counts by month for a given window and optional bridge, with annotation for low-N months.
@@ -262,8 +339,27 @@ public final class DrawbridgeEventService {
     ///   - entityID: Optional bridge ID to filter events
     /// - Returns: [monthStartDate: (count, isLowN: Bool)]
     public func monthlyEventCounts(from: Date, to: Date, entityID: String? = nil) async throws -> [Date: (count: Int, isLowN: Bool)] {
-        // TODO: Implement grouping by month, count events, flag low-N months
-        return [:]
+        let events = try await fetchEvents(for: entityID)
+        let filtered = events.filter { $0.openDateTime >= from && $0.openDateTime <= to }
+        
+        // Group by month
+        var monthGroups: [Date: Int] = [:]
+        let calendar = Calendar.current
+        
+        for event in filtered {
+            let monthStart = calendar.dateInterval(of: .month, for: event.openDateTime)?.start ?? event.openDateTime
+            monthGroups[monthStart, default: 0] += 1
+        }
+        
+        // Determine low-N threshold (less than 5 events per month)
+        let lowNThreshold = 5
+        
+        var results: [Date: (count: Int, isLowN: Bool)] = [:]
+        for (monthStart, count) in monthGroups {
+            results[monthStart] = (count: count, isLowN: count < lowNThreshold)
+        }
+        
+        return results
     }
 
     /// Returns per-bridge stats (frequency, average/median duration, impact label) for a given window.
@@ -273,7 +369,89 @@ public final class DrawbridgeEventService {
     /// - Returns: [bridgeID: (frequency: Double, average: Double, median: Double, impactLabel: String, eventCount: Int)]
     /// - Note: Suppress or annotate stats for bridges with very few events.
     public func perBridgeStats(from: Date, to: Date) async throws -> [String: (frequency: Double, average: Double, median: Double, impactLabel: String, eventCount: Int)] {
-        // TODO: Implement per-bridge aggregation, label impact, handle small-N
-        return [:]
+        let events = try await fetchEvents(for: nil) // Get all events
+        let filtered = events.filter { 
+            $0.openDateTime >= from && 
+            $0.openDateTime <= to && 
+            $0.closeDateTime != nil 
+        }
+        
+        // Group by bridge
+        var bridgeGroups: [String: [Double]] = [:]
+        for event in filtered {
+            bridgeGroups[event.entityID, default: []].append(event.minutesOpen)
+        }
+        
+        // Calculate statistics for each bridge
+        var results: [String: (frequency: Double, average: Double, median: Double, impactLabel: String, eventCount: Int)] = [:]
+        let totalDays = Calendar.current.dateComponents([.day], from: from, to: to).day ?? 1
+        
+        for (bridgeID, durations) in bridgeGroups {
+            let eventCount = durations.count
+            
+            // Skip bridges with very few events (less than 3)
+            guard eventCount >= 3 else { continue }
+            
+            let sortedDurations = durations.sorted()
+            let frequency = Double(eventCount) / Double(totalDays)
+            let average = sortedDurations.reduce(0, +) / Double(eventCount)
+            let median = calculatePercentile(sortedDurations, percentile: 0.5)
+            
+            // Determine impact label based on frequency and duration
+            let impactLabel = determineImpactLabel(frequency: frequency, averageDuration: average, eventCount: eventCount)
+            
+            results[bridgeID] = (
+                frequency: frequency,
+                average: average,
+                median: median,
+                impactLabel: impactLabel,
+                eventCount: eventCount
+            )
+        }
+        
+        return results
+    }
+    
+    // MARK: - Helper Methods
+    
+    /// Calculate percentile from sorted array
+    /// - Parameters:
+    ///   - sortedArray: Sorted array of values
+    ///   - percentile: Percentile to calculate (0.0 to 1.0)
+    /// - Returns: Percentile value
+    private func calculatePercentile(_ sortedArray: [Double], percentile: Double) -> Double {
+        guard !sortedArray.isEmpty else { return 0.0 }
+        
+        let index = percentile * Double(sortedArray.count - 1)
+        let lowerIndex = Int(floor(index))
+        let upperIndex = min(lowerIndex + 1, sortedArray.count - 1)
+        
+        if lowerIndex == upperIndex {
+            return sortedArray[lowerIndex]
+        }
+        
+        let weight = index - Double(lowerIndex)
+        return sortedArray[lowerIndex] * (1 - weight) + sortedArray[upperIndex] * weight
+    }
+    
+    /// Determine impact label based on frequency and duration
+    /// - Parameters:
+    ///   - frequency: Events per day
+    ///   - averageDuration: Average duration in minutes
+    ///   - eventCount: Total number of events
+    /// - Returns: Impact label string
+    private func determineImpactLabel(frequency: Double, averageDuration: Double, eventCount: Int) -> String {
+        // High impact: frequent events (>0.5/day) or long duration (>30 min average)
+        if frequency > 0.5 || averageDuration > 30 {
+            return "High Impact"
+        }
+        
+        // Medium impact: moderate frequency (0.1-0.5/day) or moderate duration (15-30 min)
+        if frequency > 0.1 || averageDuration > 15 {
+            return "Medium Impact"
+        }
+        
+        // Low impact: infrequent events (<0.1/day) and short duration (<15 min)
+        return "Low Impact"
     }
 } 

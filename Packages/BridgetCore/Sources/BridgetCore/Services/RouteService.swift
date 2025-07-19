@@ -1,8 +1,8 @@
 import Foundation
 import SwiftData
 
-@Observable
-public final class RouteService {
+@MainActor
+public class RouteService {
     private let modelContext: ModelContext
     
     public init(modelContext: ModelContext) {

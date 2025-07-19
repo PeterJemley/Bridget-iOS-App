@@ -1,20 +1,21 @@
 import Foundation
 import SwiftData
+import BridgetCore
 
-@Observable
-public final class DataManager {
+@MainActor
+public class DataManager {
     private let modelContext: ModelContext
     
     // MARK: - Services
     public let eventService: DrawbridgeEventService
-    public let infoService: DrawbridgeInfoServiceProtocol
+    public let infoService: DrawbridgeInfoService
     public let routeService: RouteService
     public let trafficService: TrafficFlowService
     
     public init(
         modelContext: ModelContext,
         eventService: DrawbridgeEventService? = nil,
-        infoService: DrawbridgeInfoServiceProtocol? = nil,
+        infoService: DrawbridgeInfoService? = nil,
         routeService: RouteService? = nil,
         trafficService: TrafficFlowService? = nil
     ) {
@@ -41,28 +42,149 @@ public final class DataManager {
         }
     }
     
-    /// Refresh bridge events from external API
-    /// - Parameter forceRefresh: If true, force refresh even if data is recent
     private func refreshBridgeEvents(forceRefresh: Bool) async throws {
-        // TODO: Implement API call to Open Seattle API
-        // This would fetch new bridge events and save them to SwiftData
-        // For now, this is a placeholder
+        do {
+            // TODO: Replace with actual API call to Open Seattle API
+            // Example implementation structure:
+            /*
+            let apiClient = OpenSeattleAPIClient()
+            let newEvents = try await apiClient.fetchBridgeEvents(
+                since: getLastEventDate(),
+                limit: 1000
+            )
+            let events = newEvents.map { apiEvent in
+                DrawbridgeEvent(
+                    entityID: apiEvent.entityID,
+                    entityName: apiEvent.entityName,
+                    entityType: apiEvent.entityType,
+                    openDateTime: apiEvent.openDateTime,
+                    closeDateTime: apiEvent.closeDateTime,
+                    duration: apiEvent.duration,
+                    reason: apiEvent.reason
+                )
+            }
+            
+            // Save to SwiftData
+            for event in events {
+                modelContext.insert(event)
+            }
+            try modelContext.save()
+            */
+            
+            // Placeholder implementation
+            print("📊 DATA MANAGER: Bridge events refresh completed (placeholder)")
+        } catch {
+            print("📊 DATA MANAGER: Failed to refresh bridge events: \(error)")
+            throw error
+        }
     }
     
-    /// Refresh bridge information from external API
-    /// - Parameter forceRefresh: If true, force refresh even if data is recent
     private func refreshBridgeInfo(forceRefresh: Bool) async throws {
-        // TODO: Implement API call to get bridge information
-        // This would fetch bridge details and save them to SwiftData
-        // For now, this is a placeholder
+        do {
+            // TODO: Replace with actual API call to Open Seattle API
+            // Example implementation structure:
+            /*
+            let apiClient = OpenSeattleAPIClient()
+            let bridgeInfo = try await apiClient.fetchBridgeInfo()
+            
+            // Save to SwiftData
+            for info in bridgeInfo {
+                modelContext.insert(info)
+            }
+            try modelContext.save()
+            */
+            
+            // Placeholder implementation
+            print("📊 DATA MANAGER: Bridge info refresh completed (placeholder)")
+        } catch {
+            print("📊 DATA MANAGER: Failed to refresh bridge info: \(error)")
+            throw error
+        }
     }
     
-    /// Refresh traffic data from external API
-    /// - Parameter forceRefresh: If true, force refresh even if data is recent
     private func refreshTrafficData(forceRefresh: Bool) async throws {
-        // TODO: Implement API call to get traffic data
-        // This would fetch traffic information and save it to SwiftData
-        // For now, this is a placeholder
+        do {
+            // TODO: Replace with actual API call to Open Seattle API
+            // Example implementation structure:
+            /*
+            let apiClient = OpenSeattleAPIClient()
+            let trafficData = try await apiClient.fetchTrafficData()
+            
+            // Save to SwiftData
+            for traffic in trafficData {
+                modelContext.insert(traffic)
+            }
+            try modelContext.save()
+            */
+            
+            // Placeholder implementation
+            print("📊 DATA MANAGER: Traffic data refresh completed (placeholder)")
+        } catch {
+            print("📊 DATA MANAGER: Failed to refresh traffic data: \(error)")
+            throw error
+        }
+    }
+    
+    // MARK: - Helper Methods for API Integration
+    
+    /// Get the most recent event date from SwiftData
+    /// - Returns: The date of the most recent event, or nil if no events exist
+    private func getLastEventDate() -> Date? {
+        do {
+            let descriptor = FetchDescriptor<DrawbridgeEvent>(
+                sortBy: [SortDescriptor(\.openDateTime, order: .reverse)]
+            )
+            let events = try modelContext.fetch(descriptor)
+            return events.first?.openDateTime
+        } catch {
+            print("📊 DATA MANAGER: Failed to get last event date: \(error)")
+            return nil
+        }
+    }
+    
+    /// Get active bridge IDs from SwiftData
+    /// - Returns: Array of bridge IDs that have recent events
+    private func getActiveBridgeIDs() -> [String] {
+        do {
+            let descriptor = FetchDescriptor<DrawbridgeInfo>()
+            let bridges = try modelContext.fetch(descriptor)
+            return bridges.map { $0.entityID }
+        } catch {
+            print("📊 DATA MANAGER: Failed to get active bridge IDs: \(error)")
+            return []
+        }
+    }
+    
+    /// Refresh all data from external APIs
+    /// - Parameter forceRefresh: If true, force refresh even if data is recent
+    public func refreshAllData(forceRefresh: Bool = false) async throws {
+        // Runtime assertion to catch thread violations
+        precondition(Thread.isMainThread, "refreshAllData must be called on main thread")
+        
+        print("📊 DATA MANAGER: Starting comprehensive data refresh")
+        
+        do {
+            // Refresh bridge events
+            try await refreshBridgeEvents(forceRefresh: forceRefresh)
+            
+            // Refresh bridge information
+            try await refreshBridgeInfo(forceRefresh: forceRefresh)
+            
+            // Refresh traffic data
+            try await refreshTrafficData(forceRefresh: forceRefresh)
+            
+            print("📊 DATA MANAGER: Comprehensive data refresh completed successfully")
+        } catch {
+            print("📊 DATA MANAGER: Failed to refresh all data: \(error)")
+            throw error
+        }
+    }
+    
+    /// Get appropriate time window for traffic data requests
+    /// - Returns: Time interval for traffic data requests
+    private func getTrafficTimeWindow() -> TimeInterval {
+        // Return 24 hours in seconds for traffic data requests
+        return 24 * 60 * 60
     }
     
     // MARK: - Data Cleanup
@@ -239,6 +361,95 @@ public final class DataManager {
             ]
         } catch {
             throw BridgetDataError.fetchFailed(error)
+        }
+    }
+    
+    /// Get comprehensive statistics for all bridges
+    public func getAllStatistics() async throws -> [String: Any] {
+        print("📊 DATA MANAGER: Getting comprehensive statistics")
+        
+        do {
+            let eventStats = try await eventService.getBridgeStatistics(for: "all")
+            let routeStats = try await routeService.getRouteStatistics()
+            let trafficStats = try await trafficService.getOverallTrafficStatistics()
+            let bridgeStats = try await infoService.getBridgeStatistics()
+            
+            return [
+                "events": eventStats,
+                "routes": routeStats,
+                "traffic": trafficStats,
+                "bridges": bridgeStats
+            ]
+        } catch {
+            print("📊 DATA MANAGER: Failed to get statistics: \(error)")
+            throw error
+        }
+    }
+    
+    /// Get detailed information for a specific bridge
+    public func getBridgeDetails(bridgeID: String) async throws -> [String: Any] {
+        print("📊 DATA MANAGER: Getting details for bridge: \(bridgeID)")
+        
+        do {
+            let bridgeInfo = try await infoService.fetchBridge(entityID: bridgeID)
+            let events = try await eventService.fetchEvents(for: bridgeID)
+            let trafficStats = try await trafficService.getTrafficStatistics(for: bridgeID)
+            
+            let affectedRoutes = try await routeService.getRoutesAffectedByBridgeOpening(bridgeID)
+            
+            return [
+                "bridge": bridgeInfo,
+                "events": events,
+                "traffic": trafficStats,
+                "affectedRoutes": affectedRoutes
+            ]
+        } catch {
+            print("📊 DATA MANAGER: Failed to get bridge details: \(error)")
+            throw error
+        }
+    }
+    
+    /// Get all data for export or backup
+    public func getAllData() async throws -> [String: Any] {
+        print("📊 DATA MANAGER: Getting all data for export")
+        
+        do {
+            let events = try await eventService.fetchEvents()
+            let bridgeIDs = Set(try await infoService.fetchAllBridges().map { $0.entityID })
+            let trafficFlows = try await trafficService.fetchTrafficFlow()
+            let routes = try await routeService.fetchRoutes()
+            
+            return [
+                "events": events,
+                "bridgeIDs": Array(bridgeIDs),
+                "trafficFlows": trafficFlows,
+                "routes": routes
+            ]
+        } catch {
+            print("📊 DATA MANAGER: Failed to get all data: \(error)")
+            throw error
+        }
+    }
+    
+    /// Get data summary for dashboard
+    public func getDashboardData() async throws -> [String: Any] {
+        print("📊 DATA MANAGER: Getting dashboard data")
+        
+        do {
+            let events = try await eventService.fetchEvents()
+            let bridges = try await infoService.fetchAllBridges()
+            let routes = try await routeService.fetchRoutes()
+            let trafficFlows = try await trafficService.fetchTrafficFlow()
+            
+            return [
+                "events": events,
+                "bridges": bridges,
+                "routes": routes,
+                "trafficFlows": trafficFlows
+            ]
+        } catch {
+            print("📊 DATA MANAGER: Failed to get dashboard data: \(error)")
+            throw error
         }
     }
 } 
