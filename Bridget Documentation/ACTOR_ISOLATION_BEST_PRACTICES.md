@@ -254,26 +254,26 @@ public struct BadDTO: Sendable {
 
 ### DTO Implementation
 
-- ✅ **Pure value types**: All DTOs are structs with only `let` properties
-- ✅ **Sendable compliance**: All DTOs conform to Sendable
-- ✅ **@ModelActor for conversions**: Model-to-DTO and DTO-to-model conversions use @ModelActor
-- ✅ **No actor isolation on DTOs**: DTOs themselves are not actor-isolated
-- ✅ **Immutable properties**: All DTO properties are immutable (`let`)
+-   **Pure value types**: All DTOs are structs with only `let` properties
+-   **Sendable compliance**: All DTOs conform to Sendable
+-   **@ModelActor for conversions**: Model-to-DTO and DTO-to-model conversions use @ModelActor
+-   **No actor isolation on DTOs**: DTOs themselves are not actor-isolated
+-   **Immutable properties**: All DTO properties are immutable (`let`)
 
 ### Actor Communication
 
-- ✅ **Fetch on @ModelActor**: All SwiftData fetch operations use @ModelActor
-- ✅ **Convert to DTOs**: Models are converted to DTOs before leaving @ModelActor
-- ✅ **UI updates on @MainActor**: All UI updates happen on @MainActor
-- ✅ **DTOs for boundaries**: Only DTOs cross actor boundaries
-- ✅ **Error propagation**: Errors are properly propagated across actors
+-   **Fetch on @ModelActor**: All SwiftData fetch operations use @ModelActor
+-   **Convert to DTOs**: Models are converted to DTOs before leaving @ModelActor
+-   **UI updates on @MainActor**: All UI updates happen on @MainActor
+-   **DTOs for boundaries**: Only DTOs cross actor boundaries
+-   **Error propagation**: Errors are properly propagated across actors
 
 ### Performance Optimization
 
-- ✅ **Bulk operations**: Use bulk conversion methods for efficiency
-- ✅ **Memory management**: DTOs have minimal memory footprint
-- ✅ **Lazy loading**: Convert only when needed
-- ✅ **Caching**: Cache DTOs when appropriate
+-   **Bulk operations**: Use bulk conversion methods for efficiency
+-   **Memory management**: DTOs have minimal memory footprint
+-   **Lazy loading**: Convert only when needed
+-   **Caching**: Cache DTOs when appropriate
 
 ---
 
@@ -363,16 +363,16 @@ final class ActorIsolationTests: XCTestCase {
 ### Thread Safety Guarantees
 
 #### Sendable Compliance
-- ✅ **All DTOs are Sendable**: Compiler-enforced thread safety
-- ✅ **No mutable state**: Immutable value types prevent data races
-- ✅ **Actor isolation**: SwiftData models are properly isolated
-- ✅ **Message passing**: All actor communication uses Sendable types
+-   **All DTOs are Sendable**: Compiler-enforced thread safety
+-   **No mutable state**: Immutable value types prevent data races
+-   **Actor isolation**: SwiftData models are properly isolated
+-   **Message passing**: All actor communication uses Sendable types
 
 #### Data Integrity
-- ✅ **Validation**: DTOs include validation methods
-- ✅ **Error handling**: Comprehensive error propagation
-- ✅ **Consistency**: Model relationships are maintained
-- ✅ **Atomicity**: Operations are atomic within actors
+-   **Validation**: DTOs include validation methods
+-   **Error handling**: Comprehensive error propagation
+-   **Consistency**: Model relationships are maintained
+-   **Atomicity**: Operations are atomic within actors
 
 ---
 
@@ -453,11 +453,11 @@ class DataCoordinator {
 
 ### Benefits Achieved
 
-- ✅ **Thread Safety**: Compiler-enforced thread safety
-- ✅ **Performance**: Optimized actor communication
-- ✅ **Maintainability**: Clear separation of concerns
-- ✅ **Scalability**: Efficient handling of large datasets
-- ✅ **Reliability**: Robust error handling and validation
+-   **Thread Safety**: Compiler-enforced thread safety
+-   **Performance**: Optimized actor communication
+-   **Maintainability**: Clear separation of concerns
+-   **Scalability**: Efficient handling of large datasets
+-   **Reliability**: Robust error handling and validation
 
 ---
 

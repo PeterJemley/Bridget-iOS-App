@@ -1,4 +1,4 @@
-# 🏗️ Proactive Stepwise Coding Plan for Dashboard Insight Cards
+# 🏗  Proactive Stepwise Coding Plan for Dashboard Insight Cards
 
 **Last Updated:** July 17, 2025
 
@@ -8,7 +8,7 @@ This document outlines a modular, actionable plan for implementing four key dash
 
 ---
 
-## 📈 Overall Recommendations for Dashboard Metrics
+##   Overall Recommendations for Dashboard Metrics
 
 - **Trade σ for Ranges:** Standard deviation is great for analysts, but everyday users grasp “5–10 min” far better than “μ=7 min, σ=2 min.”
 - **Always show time horizons:** Prefix every stat with “Over the last X days/weeks” so nobody misinterprets the raw numbers.
@@ -138,7 +138,7 @@ By reframing each of these calculations into user-centric language, time-bounded
 
 ## 📋 Current Implementation To-Dos
 
-### Phase 1: Data Layer Preparation ✅
+### Phase 1: Data Layer Preparation  
 - [x] Implement `eventCountsByHour` method in `DrawbridgeEventService`
 - [x] Implement `eventCountsByDay` method in `DrawbridgeEventService`
 - [x] Implement `averageEventDurations` method in `DrawbridgeEventService`
@@ -146,7 +146,7 @@ By reframing each of these calculations into user-centric language, time-bounded
 - [x] Implement `perBridgeEventStats` method in `DrawbridgeEventService`
 - [x] Write unit tests for all data query methods (using XCTest)
 
-### Phase 2: Statistical Foundation ✅
+### Phase 2: Statistical Foundation  
 - [x] Create `StatisticsAPI` with unbiased estimators and robust statistical methods
 - [x] Implement mean, median, unbiased standard deviation calculations
 - [x] Implement percentile calculations (25th, 75th, 95th)
@@ -157,7 +157,7 @@ By reframing each of these calculations into user-centric language, time-bounded
 - [x] Write comprehensive unit tests for `CascadeStatisticsService` (3 tests)
 - [x] Ensure all tests pass (12/12 tests passing)
 
-### Phase 3: Statistical Method Refactoring ✅ COMPLETED
+### Phase 3: Statistical Method Refactoring   COMPLETED
 - [x] **Cascade Strength Stats** - Review and refactor for statistical soundness
   - [x] Implement data-driven thresholds instead of hardcoded values
   - [x] Add confidence intervals for cascade strength estimates
@@ -258,7 +258,7 @@ By reframing each of these calculations into user-centric language, time-bounded
   - [ ] Create migration guides for statistical changes
   - [ ] Implement monitoring for statistical method performance
 
-### 🔧 **Technical Debt**
+###   **Technical Debt**
 - [ ] **Project Configuration**
   - [ ] Fix main project build issues (BridgetCore module not found)
   - [ ] Resolve package linking problems
@@ -271,7 +271,7 @@ By reframing each of these calculations into user-centric language, time-bounded
   - [ ] Add performance monitoring for statistical operations
   - [ ] Create statistical method benchmarks
 
-### 🎯 **Immediate Next Steps**
+###   **Immediate Next Steps**
 1. **Fix main project build issues** to enable integration testing
 2. **Continue with Phase 4** - User Experience Improvements
 3. **Implement user-focused labels** to replace technical terms

@@ -5,13 +5,13 @@ Given our domain rules—events are meaningless without a bridge—.cascade rema
 
 ## Tasks
 
-### 1. ✅ Confirm the Model Structure
+### 1.   Confirm the Model Structure
 - [x] Verify `DrawbridgeInfo` has `.cascade` delete rule for events relationship
 - [x] Verify `DrawbridgeEvent` has `.nullify` delete rule for bridge relationship  
 - [x] Ensure `bridge` property in `DrawbridgeEvent` is non-optional
 - [x] Confirm inverse relationships are properly configured
 
-### 2. 🔍 Audit Code for Force Unwraps and Nil Assumptions
+### 2.   Audit Code for Force Unwraps and Nil Assumptions
 - [x] Search codebase for `!` on bridge property
 - [x] Search for `guard let` or `if let` that drops into error path if bridge is nil
 - [x] Replace force-unwraps with safe patterns
@@ -22,7 +22,7 @@ Given our domain rules—events are meaningless without a bridge—.cascade rema
 - [x] Verify test teardown logic is consistent with new delete rules
 - [x] Ensure tests don't create orphaned events
 
-### 4. 🔧 Update UI Code
+### 4.   Update UI Code
 - [x] Review UI code that accesses `event.bridge`
 - [x] Ensure safe unwrapping patterns in views
 - [x] Add proper error handling for unexpected nil bridges
@@ -35,8 +35,8 @@ Given our domain rules—events are meaningless without a bridge—.cascade rema
 ## Current Status
 - **Branch**: `experimental/domain-model-refactor`
 - **Last Updated**: December 2024
-- **Status**: ✅ All tasks completed successfully
-- **Build Status**: ✅ BUILD SUCCEEDED
+- **Status**:   All tasks completed successfully
+- **Build Status**:   BUILD SUCCEEDED
 - **Next Action**: Run tests to verify functionality
 
 ## Build Fixes Applied

@@ -1,4 +1,4 @@
-# 🏗️ Bridget Technical Architecture
+# 🏗  Bridget Technical Architecture
 
 **Purpose:** Define the technical architecture for the Bridget iOS app rebuild, supporting a proactive, stepwise development approach.
 **Target:** Xcode 16.4+, iOS 18.5+, Swift 6.0+, SwiftUI 6.0+, SwiftData 2.0+
@@ -11,7 +11,7 @@ This document describes the core technical architecture, data models, and best p
 
 ---
 
-## 🏛️ Architecture Overview
+## 🏛  Architecture Overview
 
 - **Modular Swift Package Manager (SPM) Architecture**
   - 10+ packages for separation of concerns
@@ -23,7 +23,7 @@ This document describes the core technical architecture, data models, and best p
 
 ---
 
-## 🗂️ Data Models (SwiftData)
+## 🗂  Data Models (SwiftData)
 
 ### Core Models
 ```swift
@@ -98,7 +98,7 @@ let modelContainer = try ModelContainer(
 
 ---
 
-## 🔄 Data Layer & Services
+##   Data Layer & Services
 
 - **Service Protocols** for CRUD and business logic
 - **BackgroundDataProcessor** for async/background operations
@@ -117,7 +117,7 @@ let modelContainer = try ModelContainer(
 
 ---
 
-## 🖥️ UI Architecture (SwiftUI)
+## 🖥  UI Architecture (SwiftUI)
 
 - **Atomic Design System**: Atoms, Molecules, Organisms, Templates
 - **Reusable components** in BridgetSharedUI
@@ -127,7 +127,7 @@ let modelContainer = try ModelContainer(
 
 ---
 
-## ⚡ Performance & Optimization
+##   Performance & Optimization
 
 - **Indexed fields** for fast queries
 - **Batch operations** for data updates
@@ -146,7 +146,7 @@ let modelContainer = try ModelContainer(
 
 ---
 
-## 🔄 Migration & Evolution
+##   Migration & Evolution
 
 - **Schema versioning** for future data migrations
 - **Modular upgrades**: Each package can evolve independently
@@ -172,7 +172,7 @@ All core SwiftData models (e.g., DrawbridgeEvent, DrawbridgeInfo) use locally-ge
 
 ---
 
-## 🕵️ Deep Audit Findings & Advanced Recommendations
+## 🕵  Deep Audit Findings & Advanced Recommendations
 
 ### Error Handling & Transactional Saves
 - All `modelContext.save()` calls are wrapped in `do/catch`, but transactional closures (if available) are not yet used. Recommend adopting transactional blocks for multi-step imports to ensure atomicity and rollback on failure.

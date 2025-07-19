@@ -1,4 +1,4 @@
-# 🛠️ Bridget Development Reference
+# 🛠  Bridget Development Reference
 
 **Purpose:** Quick reference for development workflow, commands, and project structure for the Bridget iOS app rebuild.
 **Target:** Xcode 16.4+, iOS 18.5+, Swift 6.0+, SwiftUI 6.0+, SwiftData 2.0+
@@ -11,7 +11,7 @@ This document provides essential commands, workflow patterns, and project struct
 
 ---
 
-## 🏗️ Project Structure
+## 🏗  Project Structure
 
 ```
 Bridget/
@@ -34,7 +34,7 @@ Bridget/
 
 ---
 
-## 🛠️ Essential Commands
+## 🛠  Essential Commands
 
 ### **Development**
 ```sh
@@ -74,7 +74,7 @@ gh pr create --fill --web
 
 ---
 
-## 🔄 Workflow Patterns
+##   Workflow Patterns
 
 - **Proactive, stepwise development:** Follow the implementation phases and checklists
 - **Branch per feature/fix:** Use feature branches for all work
@@ -85,7 +85,7 @@ gh pr create --fill --web
 
 ---
 
-## 🏷️ Tagging & Organization
+## 🏷  Tagging & Organization
 
 - **Priority tags:** #critical, #high, #medium, #low
 - **Audience tags:** #developer, #qa, #pm, #user
@@ -106,7 +106,7 @@ gh pr create --fill --web
 
 ---
 
-## ⚠️ SwiftData & Toolchain Note
+##    SwiftData & Toolchain Note
 
 **SwiftData macros and features (e.g., @Model) require macOS 14+ and iOS 17+.**
 

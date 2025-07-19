@@ -67,7 +67,7 @@ public final class DrawbridgeEvent {
 
 ### Safe Access Patterns
 
-#### ✅ Recommended (Current Implementation)
+####   Recommended (Current Implementation)
 ```swift
 // In UI Views
 if let bridge = event.bridge {
