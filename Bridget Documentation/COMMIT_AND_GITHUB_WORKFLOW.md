@@ -1,6 +1,6 @@
 # 🚦 **Bridget Commit & GitHub Workflow Strategy**
 
-**Created**: January 2025  
+  
 **Purpose**: Comprehensive, automated workflow for local development to GitHub with full GitHub Issues integration  
 **Repository**: https://github.com/PeterJemley/Bridget  
 **Tools**: Git, GitHub CLI, GitHub Issues, GitHub Actions
